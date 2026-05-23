@@ -5,44 +5,6 @@ app = Flask(__name__)
 # Store users temporarily
 users = {}
 
-# ---------------- SIGNUP PAGE ----------------
-
-@app.route("/", methods=["GET", "POST"])
-def signup():
-
-    if request.method == "POST":
-
-        email = request.form.get("email")
-        password = request.form.get("password")
-
-        # Save user
-        users[email] = password
-
-        # Redirect to home page
-        return redirect("/home")
-
-    return render_template("signup.html")
-
-
-# ---------------- SIGNIN PAGE ----------------
-
-@app.route("/signin", methods=["GET", "POST"])
-def signin():
-
-    if request.method == "POST":
-
-        email = request.form.get("email")
-        password = request.form.get("password")
-
-        # Check user
-        if email in users and users[email] == password:
-
-            return redirect("/home")
-
-        return "Invalid Email or Password"
-
-    return render_template("signin.html")
-
 
 # ---------------- HOME PAGE ----------------
 
