@@ -1,29 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Sign Up</title>
+  <meta charset="UTF-8">
+  <title>Avengineers - Sign Up</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
+  <!-- Navbar -->
+  <header class="navbar">
+        <div class="logo">
+  <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+  <span>AVENGINEERS</span>
+</div>
 
-<h1>Create Account</h1>
+    <div class="menu">
+      <div class="menu-icon">⋮</div>
+      <ul class="menu-list">
+        <li><a href="/">Fleet</a></li>
+        <li><a href="/vision">Our Vision</a></li>
+        <li><a href="/team">Team</a></li>
+        <li><a href="/">Achievement</a></li>
+        <li><a href="#">contact</a></li>
+        <li><a href="#">News and updates</a></li>
+      </ul>
+    </div>
+  </header>
 
-<form method="POST">
+  <!-- Sign Up Section -->
+  <section class="signin">
+    <h2>CREATE ACCOUNT</h2>
+    <form action="/" method="post" class="signin-form">
+      <label for="email">Email</label>
+      <input type="text" id="email" name="email" required>
 
-    <input type="email" name="email" placeholder="Enter Gmail" required>
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
 
-    <br><br>
+      <button type="submit" class="btn">Sign Up</button>
+    </form>
+    <p style="margin-top:15px;">Already have an account? <a href="/signin" style="color:#00bfff;">Sign in here</a></p>
+  </section>
 
-    <input type="password" name="password" placeholder="Create Password" required>
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Avengineers. All rights reserved.</p>
+  </footer>
 
-    <br><br>
-
-    <button type="submit">Sign Up</button>
-
-</form>
-
-<br>
-
-<a href="/signin">Already have account?</a>
-
+  <!-- Script for 3-dot menu -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const menu = document.querySelector(".menu");
+      const icon = document.querySelector(".menu-icon");
+      icon.addEventListener("click", function() {
+        menu.classList.toggle("active");
+      });
+    });
+  </script>
 </body>
 </html>
