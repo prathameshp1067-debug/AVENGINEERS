@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Team AVEngineers</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#050505;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    header{
+      width:100%;
+      position:fixed;
+      top:0;
+      left:0;
+      padding:20px 8%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background:rgba(0,0,0,0.7);
+      backdrop-filter:blur(10px);
+      z-index:1000;
+    }
+
+    .logo{
+      font-size:28px;
+      font-weight:bold;
+      color:#00bfff;
+      letter-spacing:2px;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      margin-left:25px;
+      transition:0.3s;
+    }
+
+    nav a:hover{
+      color:#00bfff;
+    }
+
+    .hero{
+      height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:0 10%;
+      background:
+      linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.8)),
+      url('https://images.unsplash.com/photo-1517479149777-5f3b1511d5ad?q=80&w=1600') center/cover;
+    }
+
+    .hero-content h1{
+      font-size:70px;
+      margin-bottom:20px;
+      color:#00bfff;
+    }
+
+    .hero-content p{
+      font-size:22px;
+      max-width:700px;
+      margin:auto;
+      line-height:1.6;
+    }
+
+    .btn{
+      display:inline-block;
+      margin-top:35px;
+      padding:14px 35px;
+      background:#00bfff;
+      color:black;
+      text-decoration:none;
+      border-radius:40px;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      transform:scale(1.08);
+    }
+
+    section{
+      padding:100px 8%;
+    }
+
+    .section-title{
+      text-align:center;
+      font-size:42px;
+      margin-bottom:60px;
+      color:#00bfff;
+    }
+
+    .about{
+      text-align:center;
+      max-width:900px;
+      margin:auto;
+      line-height:1.8;
+      font-size:18px;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:30px;
+    }
+
+    .card{
+      background:#111;
+      padding:30px;
+      border-radius:20px;
+      transition:0.4s;
+      border:1px solid #1f1f1f;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 0 20px rgba(0,191,255,0.3);
+    }
+
+    .card h3{
+      margin-bottom:15px;
+      color:#00bfff;
+    }
+
+    .stats{
+      display:flex;
+      justify-content:center;
+      gap:60px;
+      flex-wrap:wrap;
+      text-align:center;
+    }
+
+    .stat h2{
+      font-size:50px;
+      color:#00bfff;
+    }
+
+    .stat p{
+      margin-top:10px;
+      font-size:18px;
+    }
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:20px;
+    }
+
+    .gallery img{
+      width:100%;
+      border-radius:20px;
+      transition:0.4s;
+    }
+
+    .gallery img:hover{
+      transform:scale(1.05);
+    }
+
+    footer{
+      background:#000;
+      text-align:center;
+      padding:30px;
+      margin-top:50px;
+      border-top:1px solid #1f1f1f;
+    }
+
+    footer p{
+      color:#888;
+    }
+
+    @media(max-width:768px){
+
+      .hero-content h1{
+        font-size:45px;
+      }
+
+      nav{
+        display:none;
+      }
+
+      .hero-content p{
+        font-size:18px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">AVENGINEERS</div>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+
+  <div class="hero-content">
+    <h1>TEAM AVENGINEERS</h1>
+
+    <p>
+      Innovating the Future of RC Aviation through creativity,
+      engineering excellence, and hands-on aerospace development.
+    </p>
+
+    <a href="#projects" class="btn">Explore Projects</a>
+  </div>
+
+</section>
+
+<section id="about">
+
+  <h2 class="section-title">About Us</h2>
+
+  <div class="about">
+
+    <p>
+      Team AVEngineers is a passionate aerospace and engineering team
+      focused on designing, building, and testing high-performance
+      RC aircraft and innovative engineering systems.
+      Our mission is to inspire innovation, teamwork,
+      and practical engineering excellence.
+    </p>
+
+  </div>
+
+</section>
+
+<section id="projects">
+
+  <h2 class="section-title">Our Projects</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>RC Trainer Aircraft</h3>
+      <p>
+        Stable fixed-wing aircraft designed for training and endurance flying.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>FPV Drone</h3>
+      <p>
+        High-speed FPV drone built for agility, aerial footage, and racing.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Autonomous Aircraft</h3>
+      <p>
+        Experimental aircraft using flight controllers and navigation systems.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="achievements">
+
+  <h2 class="section-title">Achievements</h2>
+
+  <div class="stats">
+
+    <div class="stat">
+      <h2>15+</h2>
+      <p>Projects Built</p>
+    </div>
+
+    <div class="stat">
+      <h2>20+</h2>
+      <p>Team Members</p>
+    </div>
+
+    <div class="stat">
+      <h2>100+</h2>
+      <p>Flight Hours</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="gallery">
+
+  <h2 class="section-title">Gallery</h2>
+
+  <div class="gallery">
+
+    <img src="https://images.unsplash.com/photo-1517976487492-576ea6b2936d?q=80&w=1200">
+    <img src="https://images.unsplash.com/photo-1474302770737-173ee21bab63?q=80&w=1200">
+    <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=1200">
+
+  </div>
+
+</section>
+
+<section id="contact">
+
+  <h2 class="section-title">Contact Us</h2>
+
+  <div class="about">
+
+    <p>Email: avengineers.team@gmail.com</p>
+    <p>Instagram: @team_avengineers</p>
+    <p>YouTube: Team AVEngineers</p>
+
+    <a href="#" class="btn">Join Our Team</a>
+
+  </div>
+
+</section>
+
+<footer>
+
+  <p>© 2026 Team AVEngineers | All Rights Reserved</p>
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Avengineers - Team</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<header class="navbar">
+  <!-- Left side -->
+  <!-- Center -->
+  <div class="logo">
+  <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+  <span>AVENGINEERS</span>
+</div>
+
+
+  <!-- Right side: 3-dot menu -->
+  <div class="menu">
+    <div class="menu-icon">⋮</div>
+    <ul class="menu-list">
+      <li><a href="/">Fleet</a></li>
+      <li><a href="/">Our Vision</a></li>
+      <li><a href="{{ url_for('team') }}" class="active">Team</a></li>
+      <li><a href="{{ url_for('achievements') }}">Achievements</a></li>
+      <li><a href="{{ url_for('teamwork') }}" >Galary</a></li>
+      <li><a href="/contact">contact</a></li>
+           <li><a href="{{ url_for('news') }}" >News and Updates</a></li>
+
+    </ul>
+  </div>
+</header>
+
+  <!-- Team Section -->
+  <section class="team">
+    <h2>OUR TEAM</h2>
+    <div class="team-container">
+      <div class="team-member">
+        <img src="/static/images/member1.jpg" alt="Om Survase">
+        <h3>Om Survase</h3>
+        <p>Team vice captain,Aerodynamic lead & pilot</p>
+      </div>
+      <div class="team-member">
+        <img src="/static/images/member2.jpg" alt="Om Sonawane">
+        <h3>Om Sonawane</h3>
+        <p>Technical Head & Sponsorship lead</p>
+      </div>
+      <div class="team-member">
+        <img src="/static/images/member3.jpg" alt="Bansode Manisha">
+        <h3>Bansode Manisha</h3>
+        <p>Manufacturing and quality control Lead</p>
+      </div>
+      <div class="team-member">
+        <img src="/static/images/member4.jpg" alt="Samruddhi Pukale">
+        <h3>Samruddhi Pukale</h3>
+        <p>Co-pilot</p>
+      </div>
+      <div class="team-member">
+        <img src="/static/images/member5.jpg" alt="Samruddhi Chavan">
+        <h3>Samruddhi Chavan</h3>
+        <p>Electronics</p>
+      </div>
+      <div class="team-member">
+        <img src="/static/images/member6.jpg" alt="Tanuja shravan">
+        <h3>Tanuja shravan</h3>
+        <p>Documentation,Electronics</p>
+      </div>
+      <div class="team-member">
+        <img src="/static/images/member7.jpg" alt="Avadhoot Gajjam">
+        <h3>Avadhoot Gajjam</h3>
+        <p>Manufacturing Team</p>
+      </div>
+      <div class="team-member">
+        <img src="/static/images/member8.jpg" alt="Prasanna Karle">
+        <h3>Prasanna Karle</h3>
+        <p>Documentation & Aerodynamic</p>
+      </div>
+      <div class="team-member">
+        <img src="/static/images/member9.jpg" alt="Aditya Potdar">
+        <h3>Aditya Potdar</h3>
+        <p>Sponcer Member</p>
+      </div>
+      <div class="team-member">
+        <img src="/static/images/member10.jpg" alt="Suman ubale">
+        <h3>Suman ubale</h3>
+        <p>Electronics</p>
+      </div>
+      <div class="team-member">
+        <img src="/static/images/member11.jpg" alt="Onkar Shinde">
+        <h3>Onkar Shinde</h3>
+        <p>Sponsorship team</p>
+      </div>
+      <div class="team-member">
+        <img src="/static/images/member12.jpg" alt="Apurva pawar">
+        <h3>Apurva pawar</h3>
+        <p>Aerodynamic Design Engineer</p>
+      </div>
+      <div class="team-member">
+        <img src="/static/images/member13.jpg" alt="Prathamesh Patil">
+        <h3>Prathamesh Patil</h3>
+        <p>Software Design and Developer Engineer</p>
+      </div>
+      <div class="team-member">
+        <img src="/static/images/member14.jpg" alt="Vaishnavi Survase">
+        <h3>Vaishnavi Survase</h3>
+        <p>Documention & Manufacturing</p>
+      </div>
+       <div class="team-member">
+        <img src="/static/images/member15.jpg" alt="Komal Talkokul">
+        <h3>Komal Talkokul</h3>
+        <p>Design Calculations</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Avengineers. All rights reserved.</p>
+  </footer>
+  <!-- Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const menu = document.querySelector(".menu");
+      const icon = document.querySelector(".menu-icon");
+      icon.addEventListener("click", function() {
+        menu.classList.toggle("active");
+      });
+    });
+  </script>
+</body>
+</html>

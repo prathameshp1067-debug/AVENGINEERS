@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Achievements</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Navbar with 3-dot menu -->
+    <header class="navbar">
+        <a href="#" class="btn">TAKE OFF</a>
+        <div class="logo">
+  <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+  <span>AVENGINEERS</span>
+</div>
+
+        <div class="menu">
+            <div class="menu-icon">⋮</div>
+            <ul class="menu-list">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('team') }}">Team</a></li>
+                <li><a href="{{ url_for('vision') }}">Vision</a></li>
+                <li><a href="{{ url_for('achievements') }}" class="active">Achievements</a></li>
+                <li><a href="{{ url_for('teamwork') }}">Galary</a></li>
+                <li><a href="/contact">contact</a></li>
+                <li><a href="{{ url_for('news') }}" >News and Updates</a></li>
+
+            </ul>
+        </div>
+    </header>
+
+    <!-- Achievements Section -->
+    <section class="achievements">
+        <h2>Our Achievements</h2>
+       <div class="achievements-container">
+            {% for achievement in achievements %}
+            <div class="achievement-card">
+                <h3>{{ achievement.title }}</h3>
+                <p>{{ achievement.year }}</p>
+            </div>
+            {% endfor %}
+       </div>
+    </section>
+
+    <a href="{{ url_for('teamwork_detail', media='work1.jpg') }}">
+      <img src="{{ url_for('static', filename='images/work1.jpg') }}" alt="Team working together"
+      alt="Team working together" 
+     style="width:500px; height:auto; border-radius:40px;">
+    </a>
+    <!-- Script for menu toggle -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const menu = document.querySelector(".menu");
+        const icon = document.querySelector(".menu-icon");
+        icon.addEventListener("click", function() {
+          menu.classList.toggle("active");
+        });
+      });
+    </script>
+</body>
+</html>

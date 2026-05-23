@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Avengineers - Our Vision</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    
+    <div class="logo">
+  <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+  <span>AVENGINEERS</span>
+</div>
+
+    <div class="menu">
+      <div class="menu-icon">⋮</div>
+      <ul class="menu-list">
+        <li><a href="/">Fleet</a></li>
+        <li><a href="/vision" class="active">Our Vision</a></li>
+        <li><a href="/team">Team</a></li>
+        <li><a href="{{ url_for('achievements') }}">Achievements</a></li>
+        <li><a href="{{ url_for('teamwork') }}>Galary</a></li>
+        <li><a href="/contact">contact</a></li>
+         <li><a href="{{ url_for('news') }}" >News and Updates</a></li>
+
+
+        
+
+      </ul>
+    </div>
+  </header>
+
+  <!-- Vision Section -->
+  <section class="vision">
+    <h2>OUR VISION</h2>
+    <p>At Team Avengineers, our mission is to transform ideas into innovative engineering solutions through creativity, technology, and teamwork. We strive to design and develop high-performance RC aircraft and engineering projects that combine precision, learning, and real-world application.</p>
+  
+    <p>We are committed to fostering technical excellence, problem-solving skills, and continuous innovation while creating an environment where passionate minds collaborate, learn, and push the boundaries of engineering. Through dedication and hands-on experience, we aim to inspire the next generation of engineers and innovators</p>
+    </section>
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Avengineers. All rights reserved.</p>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const menu = document.querySelector(".menu");
+      const icon = document.querySelector(".menu-icon");
+      icon.addEventListener("click", function() {
+        menu.classList.toggle("active");
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Teamwork Detail</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <section class="teamwork-detail">
+    <h2>Teamwork Media</h2>
+
+    {% if media.endswith('.jpg') or media.endswith('.png') %}
+      <img src="{{ url_for('static', filename='images/' + media) }}" alt="Teamwork image">
+    {% elif media.endswith('.mp4') %}
+      <video controls>
+        <source src="{{ url_for('static', filename='videos/' + media) }}" type="video/mp4">
+      </video>
+    {% endif %}
+
+    <div class="back-link">
+      <a href="{{ url_for('teamwork') }}" class="btn">← Back to Teamwork</a>
+    </div>
+  </section>
+</body>
+</html>

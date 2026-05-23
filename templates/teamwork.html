@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Teamwork</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <!-- Navbar with 3-dot menu -->
+  <header class="navbar">
+    <div class="logo">
+  <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+  <span>AVENGINEERS</span>
+</div>
+
+    <div class="menu">
+      <div class="menu-icon">⋮</div>
+      <ul class="menu-list">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('team') }}">Team</a></li>
+        <li><a href="{{ url_for('vision') }}">Vision</a></li>
+        <li><a href="{{ url_for('achievements') }}">Achievements</a></li>
+        <li><a href="{{ url_for('teamwork') }}" class="active">Galary</a></li>
+        <li><a href="/contact">contact</a></li>
+        <li><a href="{{ url_for('news') }}" >News and Updates</a></li>
+
+      </ul>
+    </div>
+  </header>
+
+  <!-- Teamwork Section -->
+ <section class="teamwork">
+  <h2> Galary </h2>
+  <div class="teamwork-gallery">
+    <!-- Photos -->
+    <a href="{{ url_for('teamwork_detail', media='work1.jpg') }}">
+      <img src="{{ url_for('static', filename='images/work1.jpg') }}" alt="Team working together"
+      alt="Team working together" 
+     style="width:500px; height:auto; border-radius:40px;">
+    </a>
+    <a href="{{ url_for('teamwork_detail', media='work6.jpg') }}">
+      <img src="{{ url_for('static', filename='images/work6.jpg') }}" alt="Group brainstorming"
+      alt="Team working together" 
+     style="width:400px; height:auto; border-radius:40px;">
+    </a>
+    
+
+    <a href="{{ url_for('teamwork_detail', media='work4.jpg') }}">
+      <img src="{{ url_for('static', filename='images/work4.jpg') }}" alt="Group brainstorming"
+      alt="Team working together" 
+     style="width:400px; height:auto; border-radius:40px;">
+    </a>
+
+    <a href="{{ url_for('teamwork_detail', media='work7.jpg') }}">
+      <img src="{{ url_for('static', filename='images/work7.jpg') }}" alt="Group brainstorming"
+      alt="Team working together" 
+     style="width:250px; height:auto; border-radius:40px;">
+    </a>
+    <a href="{{ url_for('teamwork_detail', media='work2.jpg') }}">
+      <img src="{{ url_for('static', filename='images/work2.jpg') }}" alt="Collaboration session"
+      alt="Team working together" 
+     style="width:200px; height:auto; border-radius:40px;">
+    </a>
+    <a href="{{ url_for('teamwork_detail', media='work5.jpg') }}">
+      <img src="{{ url_for('static', filename='images/work5.jpg') }}" alt="Group brainstorming"
+      alt="Team working together" 
+     style="width:300px; height:auto; border-radius:40px;">
+    </a>
+    <a href="{{ url_for('teamwork_detail', media='work3.jpg') }}">
+      <img src="{{ url_for('static', filename='images/work3.jpg') }}" alt="Group brainstorming"
+      alt="Team working together" 
+     style="width:200px; height:auto; border-radius:40px;">
+    </a>
+    
+    
+    <a href="{{ url_for('teamwork_detail', media='work8.jpg') }}">
+      <img src="{{ url_for('static', filename='images/work8.jpg') }}" alt="Group brainstorming"
+      alt="Team working together" 
+     style="width:300px; height:auto; border-radius:40px;">
+    </a>
+    <a href="{{ url_for('teamwork_detail', media='work9.jpg') }}">
+      <img src="{{ url_for('static', filename='images/work9.jpg') }}" alt="Group brainstorming"
+      alt="Team working together" 
+     style="width:300px; height:auto; border-radius:40px;">
+    </a>
+    <a href="{{ url_for('teamwork_detail', media='work10.jpg') }}">
+      <img src="{{ url_for('static', filename='images/work10.jpg') }}" alt="Group brainstorming"
+      alt="Team working together" 
+     style="width:300px; height:auto; border-radius:40px;">
+    </a>
+    <a href="{{ url_for('teamwork_detail', media='work11.jpg') }}">
+      <img src="{{ url_for('static', filename='images/work11.jpg') }}" alt="Group brainstorming"
+      alt="Team working together" 
+     style="width:300px; height:auto; border-radius:40px;">
+    </a>
+
+    <!-- Videos -->
+    <a href="{{ url_for('teamwork_detail', media='teamwork1.mp4') }}">
+      <video controls style="width:500px; height:auto; border-radius:10px;">
+  <source src="{{ url_for('static', filename='videos/teamwork1.mp4') }}" type="video/mp4">
+</video>
+
+    </a>
+
+    <a href="{{ url_for('teamwork_detail', media='teamwork2.mp4') }}">
+     <video controls style="width:500px; height:auto; border-radius:10px;">
+  <source src="{{ url_for('static', filename='videos/teamwork2.mp4') }}" type="video/mp4">
+</video>
+
+    </a>
+  </div>
+</section>
+
+
+ 
+  <!-- Script for menu toggle -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const menu = document.querySelector(".menu");
+      const icon = document.querySelector(".menu-icon");
+      icon.addEventListener("click", function() {
+        menu.classList.toggle("active");
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <!-- Navbar with dot menu -->
+  <header class="navbar">
+    <div class="logo">
+  <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+  <span>AVENGINEERS</span>
+</div>
+
+    <div class="menu">
+      <div class="menu-icon">⋮</div>
+      <ul class="menu-list">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('team') }}">Team</a></li>
+        <li><a href="{{ url_for('vision') }}">Vision</a></li>
+        <li><a href="{{ url_for('achievements') }}">Achievements</a></li>
+        <li><a href="{{ url_for('teamwork') }}">Galary</a></li>
+        <li><a href="{{ url_for('contact') }}" class="active">Contact</a></li>
+        <li><a href="{{ url_for('news') }}" >News and Updates</a></li>
+
+      </ul>
+    </div>
+  </header>
+
+  <!-- Contact Section -->
+  <section class="contact">
+    <h2>Contact Us</h2>
+    <p>  </p>
+
+    <div class="contact-container">
+      <!-- Contact Form -->
+      
+
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <h3>Reach Us</h3>
+        <p>Email: Email-teamavengineers03@gmail.com</p>
+	<p>  </p>
+        <p>Team captain:-8080628694</p>
+	<p>Technical Head :-8459621691  </p>
+        <p>Address: Avengineers HQ, N.K. Orchid College of Engineering & Technology, Solapur, Maharashtra, India</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Avengineers. All rights reserved.</p>
+  </footer>
+
+  <!-- Script for menu toggle -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const menu = document.querySelector(".menu");
+      const icon = document.querySelector(".menu-icon");
+      icon.addEventListener("click", function() {
+        menu.classList.toggle("active");
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>News and Updates</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <a href="#" class="btn">TAKE OFF</a>
+    <div class="logo">
+      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+      <span>AVENGINEERS</span>
+    </div>
+    <div class="menu">
+      <div class="menu-icon">⋮</div>
+      <ul class="menu-list">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('team') }}">Team</a></li>
+        <li><a href="{{ url_for('vision') }}">Vision</a></li>
+        <li><a href="{{ url_for('achievements') }}">Achievements</a></li>
+        <li><a href="{{ url_for('teamwork') }}">Galary</a></li>
+        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        <li><a href="{{ url_for('news') }}" class="active">News and Updates</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- News Section -->
+  <section class="news">
+    <h2>News and Updates</h2>
+    <div class="news-container">
+      {% for item in updates %}
+      <div class="news-card">
+        <h3>{{ item.title }}</h3>
+        <p class="date">{{ item.date }}</p>
+        <p>{{ item.content }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const menu = document.querySelector(".menu");
+    const icon = document.querySelector(".menu-icon");
+    icon.addEventListener("click", function() {
+      menu.classList.toggle("active");
+    });
+  });
+</script>
+
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Avengineers. All rights reserved.</p>
+  </footer>
+</body>
+</html>
