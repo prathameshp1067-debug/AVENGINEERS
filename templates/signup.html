@@ -8,7 +8,8 @@
 <body>
   <!-- Navbar -->
   <header class="navbar">
-        <div class="logo">
+    <a href="/signin" class="btn">TAKE OFF</a>
+    <div class="logo">
   <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
   <span>AVENGINEERS</span>
 </div>
@@ -29,7 +30,7 @@
   <!-- Sign Up Section -->
   <section class="signin">
     <h2>CREATE ACCOUNT</h2>
-    <form action="/" method="post" class="signin-form">
+    <form action="/signup" method="post" class="signin-form">
       <label for="email">Email</label>
       <input type="text" id="email" name="email" required>
 

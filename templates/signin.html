@@ -8,7 +8,8 @@
 <body>
   <!-- Navbar -->
   <header class="navbar">
-        <div class="logo">
+    <a href="/signin" class="btn">TAKE OFF</a>
+    <div class="logo">
   <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
   <span>AVENGINEERS</span>
 </div>
@@ -20,7 +21,7 @@
         <li><a href="/vision">Our Vision</a></li>
         <li><a href="/team">Team</a></li>
         <li><a href="/">Achievement</a></li>
-        <li><a href="{{ url_for('teamwork') }}" class="active">Gallery</a></li>
+        <li><a href="{{ url_for('teamworks') }}" class="active">Gallery</a></li>
         <li><a href="#">contact</a></li>
         <li><a href="{{ url_for('news') }}" >News and Updates</a></li>
 
