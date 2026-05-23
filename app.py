@@ -50,7 +50,7 @@ def news():
     updates = [
         {"title": "New Jet Prototype Tested", "content": "Our team successfully tested the latest jet prototype with improved aerodynamics."},
         {"title": "Avengineers Won Innovation Award", "content": "We received the National Innovation Award for aerospace engineering excellence."},
-        {"title": , "content": "Avengineers has made a new Prototype."}
+
     ]
     return render_template("news.html", updates=updates)
 
