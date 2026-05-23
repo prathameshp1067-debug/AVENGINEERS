@@ -48,9 +48,9 @@ def contact():
 def news():
     # Example data: you can later load this from a database or file
     updates = [
-        {"date": "2026-05-20", "title": "New Jet Prototype Tested", "content": "Our team successfully tested the latest jet prototype with improved aerodynamics."},
-        {"date": "2026-05-15", "title": "Avengineers Won Innovation Award", "content": "We received the National Innovation Award for aerospace engineering excellence."},
-        {"date": "2026-05-10", "title": "Collaboration with ISRO", "content": "Avengineers announced a partnership with ISRO for advanced research."}
+        {"title": "New Jet Prototype Tested", "content": "Our team successfully tested the latest jet prototype with improved aerodynamics."},
+        {"title": "Avengineers Won Innovation Award", "content": "We received the National Innovation Award for aerospace engineering excellence."},
+        {"title": "Collaboration with ISRO", "content": "Avengineers has made a new Prototype."}
     ]
     return render_template("news.html", updates=updates)
 
