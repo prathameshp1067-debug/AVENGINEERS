@@ -1,110 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Avengineers - Sign In</title>
-
-  <style>
-
-    body{
-      margin:0;
-      padding:0;
-      font-family: Arial, sans-serif;
-      background-image: url("../static/images/bg.jpg");
-      background-size: cover;
-      background-position: center;
-      min-height: 100vh;
-    }
-
-    /* SIGNIN BOX */
-
-    .signin {
-      width: 350px;
-      margin: 120px auto;
-      background: rgba(0, 0, 0, 0.8);
-      padding: 40px;
-      border-radius: 15px;
-      text-align: center;
-      box-shadow: 0px 0px 20px rgba(0,0,0,0.5);
-    }
-
-    .signin h2 {
-      color: white;
-      margin-bottom: 25px;
-    }
-
-    .signin-form {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .signin-form label {
-      color: white;
-      text-align: left;
-      margin-bottom: 5px;
-    }
-
-    .signin-form input {
-      padding: 12px;
-      margin-bottom: 20px;
-      border: none;
-      border-radius: 8px;
-      outline: none;
-    }
-
-    .btn {
-      background: #00bfff;
-      color: white;
-      padding: 12px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-
-    .btn:hover {
-      background: #009acd;
-    }
-
-    p{
-      color:white;
-    }
-
-    a{
-      color:#00bfff;
-      text-decoration:none;
-    }
-
-  </style>
-
+    <meta charset="UTF-8">
+    <title>Signin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
-
 <body>
 
-  <!-- SIGN IN SECTION -->
+<section class="signin">
 
-  <section class="signin">
+    <h2>Sign In</h2>
 
-    <h2>SIGN IN</h2>
+    <form action="/signin" method="POST">
 
-    <form action="/signin" method="post" class="signin-form">
+        <input type="email" name="email" placeholder="Enter Email" required>
 
-      <label>Email</label>
-      <input type="text" name="email" required>
+        <input type="password" name="password" placeholder="Enter Password" required>
 
-      <label>Password</label>
-      <input type="password" name="password" required>
-
-      <button type="submit" class="btn">Sign In</button>
+        <button type="submit">Login</button>
 
     </form>
 
-    <p style="margin-top:15px;">
-      Don’t have an account?
-      <a href="/signup">Create one here</a>
-    </p>
+    <p>Create new account?</p>
 
-  </section>
+    <a href="/">Signup</a>
+
+</section>
 
 </body>
 </html>
