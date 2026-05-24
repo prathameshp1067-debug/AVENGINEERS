@@ -2,44 +2,79 @@ from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
 
-# Store users temporarily
 users = {}
 
+# SIGNUP PAGE
+@app.route("/", methods=["GET", "POST"])
+def signup():
 
-# ---------------- HOME PAGE ----------------
+    if request.method == "POST":
 
+        email = request.form.get("email")
+        password = request.form.get("password")
+
+        users[email] = password
+
+        return redirect("/signin")
+
+    return render_template("signup.html")
+
+
+# SIGNIN PAGE
+@app.route("/signin", methods=["GET", "POST"])
+def signin():
+
+    if request.method == "POST":
+
+        email = request.form.get("email")
+        password = request.form.get("password")
+
+        if email in users and users[email] == password:
+
+            return redirect("/home")
+
+        return "Invalid Email or Password"
+
+    return render_template("signin.html")
+
+
+# HOME PAGE
 @app.route("/home")
 def home():
     return render_template("index.html")
 
 
-# ---------------- OTHER PAGES ----------------
-
+# TEAM PAGE
 @app.route("/team")
 def team():
     return render_template("team.html")
 
 
+# VISION PAGE
 @app.route("/vision")
 def vision():
     return render_template("vision.html")
 
 
+# ACHIEVEMENTS PAGE
 @app.route("/achievements")
 def achievements():
     return render_template("achievements.html")
 
 
+# GALLERY PAGE
 @app.route("/teamwork")
 def teamwork():
     return render_template("teamwork.html")
 
 
+# CONTACT PAGE
 @app.route("/contact")
 def contact():
     return render_template("contact.html")
 
 
+# NEWS PAGE
 @app.route("/news")
 def news():
 
@@ -47,12 +82,12 @@ def news():
 
         {
             "title": "New Jet Prototype Tested",
-            "content": "Our team successfully tested the latest jet prototype."
+            "content": "Prototype tested successfully"
         },
 
         {
-            "title": "Avengineers Won Innovation Award",
-            "content": "We received the National Innovation Award."
+            "title": "Innovation Award",
+            "content": "Avengineers won award"
         }
 
     ]
@@ -60,7 +95,5 @@ def news():
     return render_template("news.html", updates=updates)
 
 
-# ---------------- RUN APP ----------------
-
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(debug=True)
