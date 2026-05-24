@@ -68,6 +68,10 @@ def teamwork():
     return render_template("teamwork.html")
 
 
+@app.route("/teamwork/<media>")
+def teamwork_detail(media):
+    return render_template("teamwork_detail.html", media=media)
+
 # CONTACT PAGE
 @app.route("/contact")
 def contact():
