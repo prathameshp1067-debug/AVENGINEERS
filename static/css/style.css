@@ -1,29 +1,17 @@
-/* =========================
-   RESET
-========================= */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* =========================
-   BODY
-========================= */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
   color: #fff;
   background-color: #000;
-  background-image: url("/static/images/f22.jpg");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  min-height: 100vh;
 }
 
-/* =========================
-   NAVBAR
-========================= */
+/* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -40,20 +28,17 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 10px; /* space between logo and text */
   font-size: 1.5em;
   font-weight: bold;
   color: #fff;
 }
 
 .logo-img {
-  width: 40px;
-  height: auto;
+  width: 40px;   /* control logo size */
+  height: auto;  /* keep aspect ratio */
 }
 
-/* =========================
-   BUTTON
-========================= */
 .btn {
   background: #00bfff;
   color: #000;
@@ -61,9 +46,7 @@ body {
   text-decoration: none;
   font-weight: bold;
   border-radius: 5px;
-  transition: 0.3s;
-  border: none;
-  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
 }
 
 .btn:hover {
@@ -71,9 +54,7 @@ body {
   color: #000;
 }
 
-/* =========================
-   MENU
-========================= */
+/* 3-dot menu */
 .menu {
   position: relative;
   display: inline-block;
@@ -114,7 +95,7 @@ body {
   text-decoration: none;
   color: #fff;
   display: block;
-  transition: 0.3s;
+  transition: background 0.3s;
 }
 
 .menu-list li a:hover,
@@ -127,11 +108,10 @@ body {
   display: block;
 }
 
-/* =========================
-   HERO SECTION
-========================= */
+/* Hero Section */
 .hero {
   height: 100vh;
+  background: url("/static/images/f22.jpg") no-repeat center center/cover;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -139,9 +119,9 @@ body {
 }
 
 .hero .overlay {
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.6);
   padding: 40px;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 
 .hero h1 {
@@ -159,72 +139,13 @@ body {
   margin-bottom: 20px;
 }
 
-/* =========================
-   SIGNIN / SIGNUP
-========================= */
-.signin {
-  width: 380px;
-  margin: 140px auto;
-  background: rgba(0,0,0,0.85);
-  padding: 40px;
-  border-radius: 15px;
-  text-align: center;
-  box-shadow: 0px 0px 20px rgba(0,0,0,0.7);
-}
-
-.signin h2 {
-  margin-bottom: 25px;
-  color: #00bfff;
-  font-size: 2em;
-}
-
-.signin-form {
+.hero-buttons {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
 }
 
-.signin-form label {
-  text-align: left;
-  margin-bottom: 8px;
-  color: #fff;
-}
-
-.signin-form input {
-  padding: 12px;
-  margin-bottom: 20px;
-  border: none;
-  border-radius: 8px;
-  outline: none;
-  font-size: 1em;
-}
-
-.signin-form input:focus {
-  border: 2px solid #00bfff;
-}
-
-.signin .btn {
-  width: 100%;
-  padding: 12px;
-  font-size: 1em;
-}
-
-.signin p {
-  margin-top: 15px;
-  color: #ccc;
-}
-
-.signin a {
-  color: #00bfff;
-  text-decoration: none;
-}
-
-.signin a:hover {
-  text-decoration: underline;
-}
-
-/* =========================
-   TEAM SECTION
-========================= */
+/* Team Section */
 .team {
   padding: 120px 20px;
   background: #111;
@@ -249,7 +170,7 @@ body {
   padding: 20px;
   border-radius: 10px;
   width: 220px;
-  transition: 0.3s;
+  transition: transform 0.3s, background 0.3s;
 }
 
 .team-member:hover {
@@ -265,9 +186,17 @@ body {
   margin-bottom: 15px;
 }
 
-/* =========================
-   VISION
-========================= */
+.team-member h3 {
+  font-size: 1.3em;
+  margin-bottom: 5px;
+}
+
+.team-member p {
+  font-size: 1em;
+  color: #aaa;
+}
+
+/* Vision Section */
 .vision {
   padding: 120px 20px;
   background: #111;
@@ -281,19 +210,19 @@ body {
 }
 
 .vision p {
-  font-size: 1.2em;
-  max-width: 800px;
-  margin: 20px auto;
-  line-height: 1.8;
+  font-size: 1.4em;
+  color: #fff;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
-/* =========================
-   ACHIEVEMENTS
-========================= */
+/* Achievements Section */
 .achievements {
   padding: 120px 20px;
   background: #111;
   text-align: center;
+  width: 100%;
+  margin: 0;
 }
 
 .achievements h2 {
@@ -314,7 +243,8 @@ body {
   padding: 25px;
   border-radius: 10px;
   width: 260px;
-  transition: 0.3s;
+  transition: transform 0.3s, background 0.3s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
 }
 
 .achievement-card:hover {
@@ -322,13 +252,24 @@ body {
   background: #333;
 }
 
-/* =========================
-   GALLERY
-========================= */
+.achievement-card h3 {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+  color: #00bfff;
+}
+
+.achievement-card p {
+  font-size: 1em;
+  color: #aaa;
+}
+
+/* Teamwork Section */
 .teamwork {
   padding: 120px 20px;
   background: #111;
   text-align: center;
+  width: 100%;
+  margin: 0;
 }
 
 .teamwork h2 {
@@ -344,22 +285,43 @@ body {
   gap: 30px;
 }
 
-.teamwork-gallery img,
-.teamwork-gallery video {
-  width: 300px;
-  border-radius: 15px;
-  transition: 0.3s;
-  box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+.teamwork-gallery a {
+  display: inline-block;
+  transition: transform 0.3s;
 }
 
-.teamwork-gallery img:hover,
-.teamwork-gallery video:hover {
+.teamwork-gallery a:hover {
   transform: scale(1.05);
 }
 
-/* =========================
-   CONTACT
-========================= */
+.teamwork-gallery img,
+.teamwork-gallery video {
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  cursor: pointer;
+}
+
+/* Teamwork Detail Subpage */
+.teamwork-detail {
+  padding: 120px 20px;
+  text-align: center;
+  background: #111;
+}
+
+.teamwork-detail img,
+.teamwork-detail video {
+  max-width: 80%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  margin-bottom: 20px;
+}
+
+.back-link {
+  margin-top: 20px;
+}
+
+/* Contact Section */
 .contact {
   padding: 120px 20px;
   background: #111;
@@ -373,15 +335,26 @@ body {
 }
 
 .contact-info {
-  max-width: 600px;
-  margin: auto;
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
   font-size: 1.2em;
-  line-height: 2;
+  color: #fff;
 }
 
-/* =========================
-   NEWS
-========================= */
+.contact-info p {
+  margin-bottom: 15px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #000;
+  border-top: 1px solid #333;
+}
+
+/* News Section */
 .news {
   padding: 120px 20px;
   background: #111;
@@ -407,19 +380,22 @@ body {
   border-radius: 10px;
   width: 70%;
   text-align: left;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
 }
 
 .news-card h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
   color: #00bfff;
+}
+
+.news-card .date {
+  font-size: 0.9em;
+  color: #aaa;
   margin-bottom: 10px;
 }
 
-/* =========================
-   FOOTER
-========================= */
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #000;
-  border-top: 1px solid #333;
+.news-card p {
+  font-size: 1.1em;
+  color: #fff;
 }
