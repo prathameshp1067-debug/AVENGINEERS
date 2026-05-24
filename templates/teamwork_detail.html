@@ -1,25 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Teamwork Detail</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Gallery View</title>
 </head>
-<body>
-  <section class="teamwork-detail">
-    <h2>Teamwork Media</h2>
+<body style="background:black; text-align:center;">
 
-    {% if media.endswith('.jpg') or media.endswith('.png') %}
-      <img src="{{ url_for('static', filename='images/' + media) }}" alt="Teamwork image">
-    {% elif media.endswith('.mp4') %}
-      <video controls>
+{% if media.endswith('.mp4') %}
+    <video controls autoplay style="width:80%; margin-top:40px;">
         <source src="{{ url_for('static', filename='videos/' + media) }}" type="video/mp4">
-      </video>
-    {% endif %}
+    </video>
+{% else %}
+    <img src="{{ url_for('static', filename='images/' + media) }}"
+         style="width:80%; margin-top:40px;">
+{% endif %}
 
-    <div class="back-link">
-      <a href="{{ url_for('teamwork') }}" class="btn">← Back to Teamwork</a>
-    </div>
-  </section>
 </body>
 </html>
