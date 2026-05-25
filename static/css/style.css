@@ -334,14 +334,46 @@ footer{
         font-size:1rem;
     }
 
-    .menu-box{
-        width:70px;
-        height:70px;
-    }
+    /* MENU BOX */
 
-    .menu-icon span{
-        width:28px;
-    }
+.menu-box{
+    width:85px;
+    height:85px;
+    border:1px solid rgba(255,255,255,0.25);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    background:transparent;
+    transition:0.3s ease;
+    position:relative;
+}
+
+/* MENU ICON */
+
+.menu-icon{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:8px;
+}
+
+/* 3 LINES */
+
+.menu-icon span{
+    width:34px;
+    height:2px;
+    background:#fff;
+    display:block;
+    transition:0.3s ease;
+}
+
+/* HOVER EFFECT */
+
+.menu-box:hover .menu-icon span{
+    width:40px;
+}
 
     .hero h1{
         font-size:2rem;
