@@ -37,7 +37,21 @@
       </div>
 
       <!-- MENU LINKS -->
-      <ul class="menu-list">
+      <div class="menu">
+
+    <!-- MENU BUTTON -->
+    <div class="menu-box">
+
+        <div class="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </div>
+
+    <!-- DROPDOWN -->
+    <ul class="menu-list">
 
         <li><a href="/" class="active">Fleet</a></li>
 
@@ -52,12 +66,12 @@
         <li><a href="/contact">Contact</a></li>
 
         <li><a href="{{ url_for('news') }}">
-          News and Updates
+            News and Updates
         </a></li>
 
-      </ul>
+    </ul>
 
-    </div>
+</div>
 
   </header>
 
@@ -87,20 +101,19 @@
   <!-- SCRIPT -->
   <script>
 
-    document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function(){
 
-      const menu = document.querySelector(".menu");
-      const menuBox = document.querySelector(".menu-box");
+    const menu = document.querySelector(".menu");
+    const menuBox = document.querySelector(".menu-box");
 
-      menuBox.addEventListener("click", function () {
+    menuBox.addEventListener("click", function(){
 
         menu.classList.toggle("active");
 
-      });
-
     });
 
-  </script>
+});
 
+</script>
 </body>
 </html>

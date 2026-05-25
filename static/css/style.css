@@ -66,11 +66,13 @@ body{
    MENU
 ========================= */
 
+/* MENU */
+
 .menu{
     position:relative;
 }
 
-/* MENU BOX */
+/* BOX */
 
 .menu-box{
     width:95px;
@@ -83,22 +85,14 @@ body{
     align-items:center;
 
     cursor:pointer;
-
-    background:transparent;
-
-    transition:0.3s ease;
 }
 
-/* HOVER */
-
-.menu-box:hover{
-    border-color:#fff;
-    background:rgba(255,255,255,0.03);
-}
-
-/* MENU ICON */
+/* ICON */
 
 .menu-icon{
+    width:40px;
+    height:40px;
+
     display:flex;
     flex-direction:column;
 
@@ -108,7 +102,7 @@ body{
     gap:8px;
 }
 
-/* MENU LINES */
+/* LINES */
 
 .menu-icon span{
     width:34px;
@@ -117,8 +111,6 @@ body{
     background:#fff;
 
     display:block;
-
-    transition:0.3s ease;
 }
 
 /* HOVER EFFECT */
