@@ -399,3 +399,78 @@ footer {
   font-size: 1.1em;
   color: #fff;
 }
+
+/* SIGNIN PAGE */
+
+.signin{
+    width:400px;
+
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%, -50%);
+
+    background:rgba(0,0,0,0.85);
+
+    padding:40px;
+
+    border-radius:12px;
+
+    text-align:center;
+
+    box-shadow:0 0 20px rgba(0,0,0,0.5);
+}
+
+/* SIGNIN TITLE */
+
+.signin h2{
+    margin-bottom:25px;
+
+    color:#00bfff;
+
+    font-size:2rem;
+}
+
+/* FORM */
+
+.signin-form{
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+}
+
+/* LABEL */
+
+.signin-form label{
+    text-align:left;
+
+    font-size:0.95rem;
+}
+
+/* INPUT */
+
+.signin-form input{
+    padding:12px;
+
+    border:none;
+
+    border-radius:6px;
+
+    outline:none;
+
+    font-size:1rem;
+}
+
+/* BUTTON */
+
+.signin-form .btn{
+    margin-top:10px;
+
+    border:none;
+
+    cursor:pointer;
+}
