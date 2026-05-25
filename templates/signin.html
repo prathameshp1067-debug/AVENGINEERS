@@ -1,31 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Signin</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <meta charset="UTF-8">
+  <title>Avengineers - Sign In</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <a href="/signin" class="btn">TAKE OFF</a>
+    <div class="logo">
+  <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+  <span>AVENGINEERS</span>
+</div>
 
-<section class="signin">
+    <div class="menu">
+      <div class="menu-icon">⋮</div>
+      <ul class="menu-list">
+        <li><a href="/">Fleet</a></li>
+        <li><a href="/vision">Our Vision</a></li>
+        <li><a href="/team">Team</a></li>
+        <li><a href="/">Achievement</a></li>
+        <li><a href="{{ url_for('teamworks') }}" class="active">Gallery</a></li>
+        <li><a href="#">contact</a></li>
+        <li><a href="{{ url_for('news') }}" >News and Updates</a></li>
 
-    <h2>Sign In</h2>
+      </ul>
+    </div>
+  </header>
 
-    <form action="/signin" method="POST">
+  <!-- Sign In Section -->
+  <section class="signin">
+    <h2>SIGN IN</h2>
+    <form action="/signin" method="post" class="signin-form">
+      <label for="email">Email</label>
+      <input type="text" id="email" name="email" required>
 
-        <input type="email" name="email" placeholder="Enter Email" required>
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
 
-        <input type="password" name="password" placeholder="Enter Password" required>
-
-        <button type="submit">Login</button>
-
+      <button type="submit" class="btn">Sign In</button>
     </form>
+    <p style="margin-top:15px;">Don’t have an account? <a href="/signup" style="color:#00bfff;">Create one here</a></p>
+  </section>
 
-    <p>Create new account?</p>
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Avengineers. All rights reserved.</p>
+  </footer>
 
-    <a href="/">Signup</a>
-
-</section>
-
+  <!-- Script for 3-dot menu -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const menu = document.querySelector(".menu");
+      const icon = document.querySelector(".menu-icon");
+      icon.addEventListener("click", function() {
+        menu.classList.toggle("active");
+      });
+    });
+  </script>
 </body>
 </html>
