@@ -1,110 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avengineers - Home</title>
-
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <meta charset="UTF-8">
+  <title>Avengineers - Home</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
-
 <body>
+  <!-- Navbar -->
+  <header class="navbar">
+   <div class="logo">
+  <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+  <span>AVENGINEERS</span>
+</div>
 
-    <!-- NAVBAR -->
-    <header class="navbar">
+    <div class="menu">
+      <div class="menu-icon">⋮</div>
+      <ul class="menu-list">
+        <li><a href="/" class="active">Fleet</a></li>
+        
+        <li><a href="/vision">Our Vision</a></li>
+        <li><a href="/team">Team</a></li>
+        <li><a href="/achievements">Achievements</a></li>
+        <li><a href="/teamwork">Galary</a></li>
+        <li><a href="/contact">contact</a></li>
+        <li><a href="{{ url_for('news') }}" >News and Updates</a></li>
+      </ul>
+    </div>
+  </header>
 
-        <!-- LOGO -->
-        <div class="logo">
-            <img src="{{ url_for('static', filename='images/logo.png') }}"
-                 alt="Logo"
-                 class="logo-img">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="overlay">
+      <h1>AVIATION ENGINEERING SQUAD</h1>
+      <h2>ENGINEER THE SKY</h2>
+      <p>We are Avengineers — a team of pilots, engineers and dreamers building the next generation of aircraft.</p>
+      <div class="hero-buttons">
+    
+        
 
-            <span>AVENGINEERS</span>
-        </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- MENU -->
-        <div class="menu">
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Avengineers. All rights reserved.</p>
+  </footer>
 
-            <!-- MENU BUTTON -->
-            <div class="menu-box">
-
-                <div class="menu-icon">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-
-            </div>
-
-            <!-- DROPDOWN -->
-            <ul class="menu-list">
-
-                <li><a href="/" class="active">Fleet</a></li>
-
-                <li><a href="/vision">Our Vision</a></li>
-
-                <li><a href="/team">Team</a></li>
-
-                <li><a href="/achievements">Achievements</a></li>
-
-                <li><a href="/teamwork">Gallery</a></li>
-
-                <li><a href="/contact">Contact</a></li>
-
-                <li>
-                    <a href="{{ url_for('news') }}">
-                        News and Updates
-                    </a>
-                </li>
-
-            </ul>
-
-        </div>
-
-    </header>
-
-    <!-- HERO SECTION -->
-    <section class="hero">
-
-        <div class="overlay">
-
-            <h1>AVIATION ENGINEERING SQUAD</h1>
-
-            <h2>ENGINEER THE SKY</h2>
-
-            <p>
-                We are Avengineers — a team of pilots, engineers
-                and dreamers building the next generation of aircraft.
-            </p>
-
-        </div>
-
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <p>© 2026 Avengineers. All rights reserved.</p>
-    </footer>
-
-    <!-- SCRIPT -->
-    <script>
-
-        document.addEventListener("DOMContentLoaded", function () {
-
-            const menu = document.querySelector(".menu");
-            const menuBox = document.querySelector(".menu-box");
-
-            menuBox.addEventListener("click", function () {
-
-                menu.classList.toggle("active");
-
-            });
-
-        });
-
-    </script>
-
+  <!-- Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const menu = document.querySelector(".menu");
+      const icon = document.querySelector(".menu-icon");
+      icon.addEventListener("click", function() {
+        menu.classList.toggle("active");
+      });
+    });
+  </script>
 </body>
-
 </html>

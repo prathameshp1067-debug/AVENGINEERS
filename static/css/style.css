@@ -1,564 +1,401 @@
-/* =========================
-   RESET
-========================= */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* =========================
-   BODY
-========================= */
-
-body{
-    font-family:Arial, sans-serif;
-    background:#000;
-    color:#fff;
-    overflow-x:hidden;
+body {
+  font-family: 'Arial', sans-serif;
+  color: #fff;
+  background-color: #000;
 }
 
-/* =========================
-   NAVBAR
-========================= */
-
-.navbar{
-    position:fixed;
-    top:0;
-    left:0;
-
-    width:100%;
-    height:120px;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding:0 35px;
-
-    background:rgba(0,0,0,0.70);
-
-    backdrop-filter:blur(10px);
-
-    z-index:1000;
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: rgba(0,0,0,0.7);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
 }
 
-/* =========================
-   LOGO
-========================= */
-
-.logo{
-    display:flex;
-    align-items:center;
-
-    gap:12px;
-
-    color:#fff;
-
-    font-size:1.8rem;
-    font-weight:bold;
-
-    letter-spacing:2px;
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* space between logo and text */
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #fff;
 }
 
-.logo-img{
-    width:50px;
-    height:auto;
+.logo-img {
+  width: 40px;   /* control logo size */
+  height: auto;  /* keep aspect ratio */
 }
 
-/* =========================
-   MENU
-========================= */
-
-.menu{
-    position:relative;
+.btn {
+  background: #00bfff;
+  color: #000;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background 0.3s, color 0.3s;
 }
 
-/* =========================
-   MENU BOX
-========================= */
-
-.menu-box{
-    width:95px;
-    height:95px;
-
-    border:1px solid rgba(255,255,255,0.25);
-
-    position:relative;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    margin-top:10px;
-
-    background:transparent;
-
-    cursor:pointer;
-
-    transition:0.3s ease;
+.btn:hover {
+  background: #fff;
+  color: #000;
 }
 
-/* HOVER */
-
-.menu-box:hover{
-    border-color:#fff;
+/* 3-dot menu */
+.menu {
+  position: relative;
+  display: inline-block;
 }
 
-/* =========================
-   MENU ICON
-========================= */
-
-.menu-icon{
-    position:absolute;
-
-    top:50%;
-    left:50%;
-
-    transform:translate(-50%, -50%);
-
-    display:flex;
-    flex-direction:column;
-
-    justify-content:center;
-    align-items:center;
-
-    gap:9px;
+.menu-icon {
+  font-size: 1.8em;
+  cursor: pointer;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background 0.3s;
 }
 
-/* =========================
-   3 LINES
-========================= */
-
-.menu-icon span{
-    width:36px;
-    height:2px;
-
-    background:#fff;
-
-    display:block;
-
-    transition:0.3s ease;
+.menu-icon:hover {
+  background: rgba(255,255,255,0.1);
 }
 
-/* HOVER EFFECT */
-
-.menu-box:hover .menu-icon span{
-    width:42px;
+.menu-list {
+  display: none;
+  position: absolute;
+  top: 35px;
+  right: 0;
+  background: #111;
+  border: 1px solid #333;
+  border-radius: 5px;
+  list-style: none;
+  padding: 10px 0;
+  min-width: 260px;
+  z-index: 3000;
 }
 
-/* =========================
-   DROPDOWN MENU
-========================= */
-
-.menu-list{
-    display:none;
-
-    position:absolute;
-
-    top:110px;
-    right:0;
-
-    width:260px;
-
-    list-style:none;
-
-    background:#111;
-
-    border:1px solid #333;
-
-    border-radius:6px;
-
-    overflow:hidden;
-
-    z-index:2000;
-
-    box-shadow:0 10px 25px rgba(0,0,0,0.5);
+.menu-list li {
+  padding: 10px 20px;
 }
 
-/* SHOW MENU */
-
-.menu.active .menu-list{
-    display:block;
+.menu-list li a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  transition: background 0.3s;
 }
-
-/* =========================
-   MENU ITEMS
-========================= */
-
-.menu-list li{
-    width:100%;
-}
-
-/* =========================
-   MENU LINKS
-========================= */
-
-.menu-list li a{
-    display:block;
-
-    padding:16px 22px;
-
-    color:#fff;
-
-    text-decoration:none;
-
-    font-size:1rem;
-
-    transition:0.3s;
-}
-
-/* HOVER */
 
 .menu-list li a:hover,
-.menu-list li a.active{
-    background:#00bfff;
-    color:#000;
+.menu-list li a.active {
+  background: #00bfff;
+  color: #000;
 }
 
-/* =========================
-   HERO SECTION
-========================= */
-
-.hero{
-    width:100%;
-    height:100vh;
-
-    background:url("/static/images/f22.jpg")
-    no-repeat center center/cover;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    text-align:center;
+.menu.active .menu-list {
+  display: block;
 }
 
-/* =========================
-   OVERLAY
-========================= */
-
-.overlay{
-    background:rgba(0,0,0,0.55);
-
-    padding:60px 50px;
-
-    border-radius:18px;
-
-    width:80%;
-    max-width:1000px;
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background: url("/static/images/f22.jpg") no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-/* =========================
-   HERO TITLE
-========================= */
-
-.hero h1{
-    font-size:4rem;
-    font-weight:bold;
-
-    margin-bottom:20px;
+.hero .overlay {
+  background: rgba(0,0,0,0.6);
+  padding: 40px;
+  border-radius: 10px;
 }
 
-/* =========================
-   HERO SUBTITLE
-========================= */
-
-.hero h2{
-    font-size:2.2rem;
-
-    color:#00bfff;
-
-    margin-bottom:25px;
+.hero h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
 }
 
-/* =========================
-   HERO TEXT
-========================= */
-
-.hero p{
-    font-size:1.3rem;
-
-    line-height:1.8;
-
-    max-width:800px;
-
-    margin:auto;
+.hero h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
 }
 
-/* =========================
-   BUTTON
-========================= */
-
-.btn{
-    display:inline-block;
-
-    margin-top:25px;
-
-    padding:14px 28px;
-
-    background:#00bfff;
-
-    color:#000;
-
-    text-decoration:none;
-
-    font-weight:bold;
-
-    border-radius:6px;
-
-    transition:0.3s;
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
 }
 
-.btn:hover{
-    background:#fff;
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
-/* =========================
-   COMMON SECTIONS
-========================= */
-
-.team,
-.vision,
-.achievements,
-.teamwork,
-.contact,
-.news{
-    padding:120px 20px;
-
-    background:#111;
-
-    text-align:center;
+/* Team Section */
+.team {
+  padding: 120px 20px;
+  background: #111;
+  text-align: center;
 }
 
-/* SECTION TITLES */
-
-.team h2,
-.vision h2,
-.achievements h2,
-.teamwork h2,
-.contact h2,
-.news h2{
-    font-size:2.8rem;
-
-    margin-bottom:40px;
-
-    color:#00bfff;
+.team h2 {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  color: #00bfff;
 }
 
-/* =========================
-   TEAM SECTION
-========================= */
-
-.team-container{
-    display:flex;
-    flex-wrap:wrap;
-
-    justify-content:center;
-
-    gap:30px;
+.team-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
 }
 
-.team-member{
-    width:240px;
-
-    background:#222;
-
-    padding:20px;
-
-    border-radius:14px;
-
-    transition:0.3s ease;
+.team-member {
+  background: #222;
+  padding: 20px;
+  border-radius: 10px;
+  width: 220px;
+  transition: transform 0.3s, background 0.3s;
 }
 
-.team-member:hover{
-    transform:translateY(-10px);
-
-    background:#333;
+.team-member:hover {
+  transform: translateY(-10px);
+  background: #333;
 }
 
-.team-member img{
-    width:100%;
-    height:240px;
-
-    object-fit:cover;
-
-    border-radius:10px;
-
-    margin-bottom:15px;
+.team-member img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
 }
 
-/* =========================
-   ACHIEVEMENTS
-========================= */
-
-.achievements-container{
-    display:flex;
-    flex-wrap:wrap;
-
-    justify-content:center;
-
-    gap:30px;
+.team-member h3 {
+  font-size: 1.3em;
+  margin-bottom: 5px;
 }
 
-.achievement-card{
-    width:260px;
-
-    background:#222;
-
-    padding:25px;
-
-    border-radius:14px;
-
-    transition:0.3s ease;
+.team-member p {
+  font-size: 1em;
+  color: #aaa;
 }
 
-.achievement-card:hover{
-    transform:translateY(-10px);
-
-    background:#333;
+/* Vision Section */
+.vision {
+  padding: 120px 20px;
+  background: #111;
+  text-align: center;
 }
 
-/* =========================
-   GALLERY
-========================= */
+.vision h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #00bfff;
+}
 
-.teamwork-gallery{
-    display:flex;
-    flex-wrap:wrap;
+.vision p {
+  font-size: 1.4em;
+  color: #fff;
+  max-width: 700px;
+  margin: 0 auto;
+}
 
-    justify-content:center;
+/* Achievements Section */
+.achievements {
+  padding: 120px 20px;
+  background: #111;
+  text-align: center;
+  width: 100%;
+  margin: 0;
+}
 
-    gap:25px;
+.achievements h2 {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  color: #00bfff;
+}
+
+.achievements-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.achievement-card {
+  background: #222;
+  padding: 25px;
+  border-radius: 10px;
+  width: 260px;
+  transition: transform 0.3s, background 0.3s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+.achievement-card:hover {
+  transform: translateY(-10px);
+  background: #333;
+}
+
+.achievement-card h3 {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+  color: #00bfff;
+}
+
+.achievement-card p {
+  font-size: 1em;
+  color: #aaa;
+}
+
+/* Teamwork Section */
+.teamwork {
+  padding: 120px 20px;
+  background: #111;
+  text-align: center;
+  width: 100%;
+  margin: 0;
+}
+
+.teamwork h2 {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  color: #00bfff;
+}
+
+.teamwork-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.teamwork-gallery a {
+  display: inline-block;
+  transition: transform 0.3s;
+}
+
+.teamwork-gallery a:hover {
+  transform: scale(1.05);
 }
 
 .teamwork-gallery img,
-.teamwork-gallery video{
-    width:300px;
-
-    border-radius:12px;
-
-    transition:0.3s ease;
+.teamwork-gallery video {
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  cursor: pointer;
 }
 
-.teamwork-gallery img:hover,
-.teamwork-gallery video:hover{
-    transform:scale(1.05);
+/* Teamwork Detail Subpage */
+.teamwork-detail {
+  padding: 120px 20px;
+  text-align: center;
+  background: #111;
 }
 
-/* =========================
-   CONTACT
-========================= */
-
-.contact-info{
-    font-size:1.2rem;
-
-    line-height:2;
+.teamwork-detail img,
+.teamwork-detail video {
+  max-width: 80%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  margin-bottom: 20px;
 }
 
-/* =========================
-   NEWS
-========================= */
-
-.news-container{
-    display:flex;
-    flex-direction:column;
-
-    align-items:center;
-
-    gap:25px;
+.back-link {
+  margin-top: 20px;
 }
 
-.news-card{
-    width:70%;
-
-    background:#222;
-
-    padding:25px;
-
-    border-radius:12px;
-
-    text-align:left;
+/* Contact Section */
+.contact {
+  padding: 120px 20px;
+  background: #111;
+  text-align: center;
 }
 
-.news-card h3{
-    color:#00bfff;
-
-    margin-bottom:10px;
+.contact h2 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  color: #00bfff;
 }
 
-.news-card .date{
-    color:#aaa;
-
-    margin-bottom:10px;
+.contact-info {
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+  font-size: 1.2em;
+  color: #fff;
 }
 
-/* =========================
-   FOOTER
-========================= */
-
-footer{
-    text-align:center;
-
-    padding:20px;
-
-    background:#000;
-
-    border-top:1px solid #333;
+.contact-info p {
+  margin-bottom: 15px;
 }
 
-/* =========================
-   MOBILE RESPONSIVE
-========================= */
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #000;
+  border-top: 1px solid #333;
+}
 
-@media(max-width:768px){
+/* News Section */
+.news {
+  padding: 120px 20px;
+  background: #111;
+  text-align: center;
+}
 
-    .navbar{
-        height:100px;
-        padding:0 18px;
-    }
+.news h2 {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  color: #00bfff;
+}
 
-    .logo{
-        font-size:1rem;
-    }
+.news-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
 
-    .logo-img{
-        width:40px;
-    }
+.news-card {
+  background: #222;
+  padding: 20px;
+  border-radius: 10px;
+  width: 70%;
+  text-align: left;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
 
-    .menu-box{
-        width:75px;
-        height:75px;
-    }
+.news-card h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #00bfff;
+}
 
-    .menu-icon span{
-        width:28px;
-    }
+.news-card .date {
+  font-size: 0.9em;
+  color: #aaa;
+  margin-bottom: 10px;
+}
 
-    .menu-list{
-        width:220px;
-        top:90px;
-    }
-
-    .hero h1{
-        font-size:2rem;
-    }
-
-    .hero h2{
-        font-size:1.4rem;
-    }
-
-    .hero p{
-        font-size:1rem;
-    }
-
-    .overlay{
-        width:92%;
-        padding:35px 25px;
-    }
-
-    .news-card{
-        width:95%;
-    }
+.news-card p {
+  font-size: 1.1em;
+  color: #fff;
 }
