@@ -14,8 +14,8 @@
 
 body{
     font-family:Arial, sans-serif;
-    color:#fff;
     background:#000;
+    color:#fff;
     overflow-x:hidden;
 }
 
@@ -24,23 +24,23 @@ body{
 ========================= */
 
 .navbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding:20px 40px;
-
     position:fixed;
     top:0;
     left:0;
 
     width:100%;
 
-    z-index:1000;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 
-    background:rgba(0,0,0,0.75);
+    padding:14px 30px;
+
+    background:rgba(0,0,0,0.70);
 
     backdrop-filter:blur(10px);
+
+    z-index:1000;
 }
 
 /* =========================
@@ -54,14 +54,14 @@ body{
 
     color:#fff;
 
-    font-size:1.4rem;
-    font-weight:700;
+    font-size:1.6rem;
+    font-weight:bold;
 
     letter-spacing:2px;
 }
 
 .logo-img{
-    width:42px;
+    width:50px;
     height:auto;
 }
 
@@ -76,33 +76,41 @@ body{
 /* MENU BOX */
 
 .menu-box{
-    width:85px;
-    height:85px;
+    width:95px;
+    height:95px;
 
     border:1px solid rgba(255,255,255,0.25);
+
+    position:relative;
 
     display:flex;
     justify-content:center;
     align-items:center;
 
-    cursor:pointer;
-
     background:transparent;
+
+    cursor:pointer;
 
     transition:0.3s ease;
 }
 
-/* HOVER */
+/* HOVER EFFECT */
 
 .menu-box:hover{
     border-color:#fff;
 }
 
-/* MENU ICON */
+/* =========================
+   MENU ICON
+========================= */
 
 .menu-icon{
-    width:100%;
-    height:100%;
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%, -50%);
 
     display:flex;
     flex-direction:column;
@@ -116,7 +124,7 @@ body{
 /* 3 LINES */
 
 .menu-icon span{
-    width:34px;
+    width:36px;
     height:2px;
 
     background:#fff;
@@ -126,10 +134,10 @@ body{
     transition:0.3s ease;
 }
 
-/* HOVER EFFECT */
+/* HOVER LINE EFFECT */
 
 .menu-box:hover .menu-icon span{
-    width:40px;
+    width:42px;
 }
 
 /* =========================
@@ -141,8 +149,10 @@ body{
 
     position:absolute;
 
-    top:105px;
+    top:110px;
     right:0;
+
+    width:260px;
 
     list-style:none;
 
@@ -150,13 +160,11 @@ body{
 
     border:1px solid #333;
 
-    min-width:260px;
+    border-radius:6px;
 
-    padding:15px 0;
+    overflow:hidden;
 
-    z-index:3000;
-
-    border-radius:5px;
+    z-index:2000;
 
     box-shadow:0 10px 25px rgba(0,0,0,0.5);
 }
@@ -173,16 +181,16 @@ body{
     width:100%;
 }
 
-/* LINKS */
+/* MENU LINKS */
 
 .menu-list li a{
     display:block;
 
-    padding:14px 24px;
-
-    text-decoration:none;
+    padding:16px 22px;
 
     color:#fff;
+
+    text-decoration:none;
 
     font-size:1rem;
 
@@ -202,6 +210,7 @@ body{
 ========================= */
 
 .hero{
+    width:100%;
     height:100vh;
 
     background:url("/static/images/f22.jpg")
@@ -214,41 +223,48 @@ body{
     text-align:center;
 }
 
-/* OVERLAY */
+/* DARK OVERLAY */
 
 .overlay{
     background:rgba(0,0,0,0.55);
 
-    padding:50px;
+    padding:60px 50px;
 
-    border-radius:15px;
+    border-radius:18px;
 
     width:80%;
     max-width:1000px;
 }
 
-/* HERO TEXT */
+/* MAIN TITLE */
 
 .hero h1{
-    font-size:3rem;
-    margin-bottom:15px;
+    font-size:4rem;
+    font-weight:bold;
+
+    margin-bottom:20px;
 }
+
+/* SUB TITLE */
 
 .hero h2{
-    font-size:2rem;
-    margin-bottom:20px;
+    font-size:2.2rem;
 
     color:#00bfff;
+
+    margin-bottom:25px;
 }
 
-.hero p{
-    font-size:1.2rem;
+/* PARAGRAPH */
 
-    max-width:700px;
+.hero p{
+    font-size:1.3rem;
+
+    line-height:1.8;
+
+    max-width:800px;
 
     margin:auto;
-
-    line-height:1.6;
 }
 
 /* =========================
@@ -258,9 +274,9 @@ body{
 .btn{
     display:inline-block;
 
-    margin-top:20px;
+    margin-top:25px;
 
-    padding:12px 24px;
+    padding:14px 28px;
 
     background:#00bfff;
 
@@ -296,7 +312,7 @@ body{
     text-align:center;
 }
 
-/* HEADINGS */
+/* SECTION TITLES */
 
 .team h2,
 .vision h2,
@@ -304,11 +320,11 @@ body{
 .teamwork h2,
 .contact h2,
 .news h2{
-    font-size:2.5rem;
-
-    color:#00bfff;
+    font-size:2.8rem;
 
     margin-bottom:40px;
+
+    color:#00bfff;
 }
 
 /* =========================
@@ -325,15 +341,15 @@ body{
 }
 
 .team-member{
-    width:220px;
+    width:240px;
 
     background:#222;
 
     padding:20px;
 
-    border-radius:12px;
+    border-radius:14px;
 
-    transition:0.3s;
+    transition:0.3s ease;
 }
 
 .team-member:hover{
@@ -344,7 +360,7 @@ body{
 
 .team-member img{
     width:100%;
-    height:220px;
+    height:240px;
 
     object-fit:cover;
 
@@ -373,9 +389,9 @@ body{
 
     padding:25px;
 
-    border-radius:12px;
+    border-radius:14px;
 
-    transition:0.3s;
+    transition:0.3s ease;
 }
 
 .achievement-card:hover{
@@ -403,7 +419,7 @@ body{
 
     border-radius:12px;
 
-    transition:0.3s;
+    transition:0.3s ease;
 }
 
 .teamwork-gallery img:hover,
@@ -417,6 +433,7 @@ body{
 
 .contact-info{
     font-size:1.2rem;
+
     line-height:2;
 }
 
@@ -478,7 +495,7 @@ footer{
 @media(max-width:768px){
 
     .navbar{
-        padding:15px 20px;
+        padding:12px 18px;
     }
 
     .logo{
@@ -486,21 +503,21 @@ footer{
     }
 
     .logo-img{
-        width:35px;
+        width:40px;
     }
 
     .menu-box{
-        width:70px;
-        height:70px;
+        width:75px;
+        height:75px;
     }
 
     .menu-icon span{
-        width:28px;
+        width:30px;
     }
 
     .menu-list{
-        top:85px;
-        min-width:220px;
+        width:220px;
+        top:90px;
     }
 
     .hero h1{
@@ -517,11 +534,10 @@ footer{
 
     .overlay{
         width:92%;
-        padding:30px;
+        padding:35px 25px;
     }
 
     .news-card{
         width:95%;
     }
-
 }
