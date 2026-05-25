@@ -1,4 +1,6 @@
-/* RESET */
+/* =========================
+   RESET
+========================= */
 
 *{
     margin:0;
@@ -6,38 +8,55 @@
     box-sizing:border-box;
 }
 
-/* BODY */
+/* =========================
+   BODY
+========================= */
 
 body{
     font-family:Arial, sans-serif;
     color:#fff;
     background:#000;
+    overflow-x:hidden;
 }
 
-/* NAVBAR */
+/* =========================
+   NAVBAR
+========================= */
 
 .navbar{
     display:flex;
     justify-content:space-between;
     align-items:center;
+
     padding:20px 40px;
+
     position:fixed;
     top:0;
+    left:0;
+
     width:100%;
+
     z-index:1000;
+
     background:rgba(0,0,0,0.75);
+
     backdrop-filter:blur(10px);
 }
 
-/* LOGO */
+/* =========================
+   LOGO
+========================= */
 
 .logo{
     display:flex;
     align-items:center;
     gap:12px;
+
     color:#fff;
+
     font-size:1.4rem;
     font-weight:700;
+
     letter-spacing:2px;
 }
 
@@ -46,82 +65,100 @@ body{
     height:auto;
 }
 
-/* MENU */
+/* =========================
+   MENU
+========================= */
 
 .menu{
     position:relative;
 }
 
-/* CRED STYLE MENU BOX */
+/* MENU BOX */
 
 .menu-box{
     width:85px;
     height:85px;
+
     border:1px solid rgba(255,255,255,0.25);
+
     display:flex;
     justify-content:center;
     align-items:center;
+
     cursor:pointer;
-    transition:0.3s;
+
     background:transparent;
+
+    transition:0.3s ease;
 }
+
+/* HOVER */
 
 .menu-box:hover{
     border-color:#fff;
 }
 
-/* HAMBURGER ICON */
+/* MENU ICON */
 
 .menu-icon{
+    width:100%;
+    height:100%;
+
     display:flex;
     flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
     gap:9px;
 }
+
+/* 3 LINES */
 
 .menu-icon span{
     width:34px;
     height:2px;
+
     background:#fff;
+
     display:block;
-    transition:0.3s;
+
+    transition:0.3s ease;
 }
+
+/* HOVER EFFECT */
 
 .menu-box:hover .menu-icon span{
     width:40px;
 }
 
-/* DROPDOWN MENU */
+/* =========================
+   DROPDOWN MENU
+========================= */
 
 .menu-list{
     display:none;
+
     position:absolute;
-    top:100px;
+
+    top:105px;
     right:0;
+
     list-style:none;
+
     background:#111;
+
     border:1px solid #333;
+
     min-width:260px;
+
     padding:15px 0;
-    z-index:2000;
-}
 
-.menu-list li{
-    padding:0;
-}
+    z-index:3000;
 
-.menu-list li a{
-    display:block;
-    padding:14px 24px;
-    text-decoration:none;
-    color:#fff;
-    font-size:1rem;
-    transition:0.3s;
-}
+    border-radius:5px;
 
-.menu-list li a:hover,
-.menu-list li a.active{
-    background:#00bfff;
-    color:#000;
+    box-shadow:0 10px 25px rgba(0,0,0,0.5);
 }
 
 /* SHOW MENU */
@@ -130,22 +167,67 @@ body{
     display:block;
 }
 
-/* HERO SECTION */
+/* MENU ITEMS */
+
+.menu-list li{
+    width:100%;
+}
+
+/* LINKS */
+
+.menu-list li a{
+    display:block;
+
+    padding:14px 24px;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    font-size:1rem;
+
+    transition:0.3s;
+}
+
+/* HOVER */
+
+.menu-list li a:hover,
+.menu-list li a.active{
+    background:#00bfff;
+    color:#000;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
 
 .hero{
     height:100vh;
-    background:url("/static/images/f22.jpg") no-repeat center center/cover;
+
+    background:url("/static/images/f22.jpg")
+    no-repeat center center/cover;
+
     display:flex;
     justify-content:center;
     align-items:center;
+
     text-align:center;
 }
 
+/* OVERLAY */
+
 .overlay{
     background:rgba(0,0,0,0.55);
+
     padding:50px;
-    border-radius:12px;
+
+    border-radius:15px;
+
+    width:80%;
+    max-width:1000px;
 }
+
+/* HERO TEXT */
 
 .hero h1{
     font-size:3rem;
@@ -155,26 +237,41 @@ body{
 .hero h2{
     font-size:2rem;
     margin-bottom:20px;
+
     color:#00bfff;
 }
 
 .hero p{
     font-size:1.2rem;
+
     max-width:700px;
+
+    margin:auto;
+
     line-height:1.6;
 }
 
-/* BUTTON */
+/* =========================
+   BUTTON
+========================= */
 
 .btn{
     display:inline-block;
+
     margin-top:20px;
+
     padding:12px 24px;
+
     background:#00bfff;
+
     color:#000;
+
     text-decoration:none;
+
     font-weight:bold;
+
     border-radius:6px;
+
     transition:0.3s;
 }
 
@@ -182,7 +279,9 @@ body{
     background:#fff;
 }
 
-/* SECTION COMMON */
+/* =========================
+   COMMON SECTION
+========================= */
 
 .team,
 .vision,
@@ -191,9 +290,13 @@ body{
 .contact,
 .news{
     padding:120px 20px;
+
     background:#111;
+
     text-align:center;
 }
+
+/* HEADINGS */
 
 .team h2,
 .vision h2,
@@ -202,75 +305,104 @@ body{
 .contact h2,
 .news h2{
     font-size:2.5rem;
+
     color:#00bfff;
+
     margin-bottom:40px;
 }
 
-/* TEAM */
+/* =========================
+   TEAM
+========================= */
 
 .team-container{
     display:flex;
     flex-wrap:wrap;
+
     justify-content:center;
+
     gap:30px;
 }
 
 .team-member{
     width:220px;
+
     background:#222;
+
     padding:20px;
+
     border-radius:12px;
+
     transition:0.3s;
 }
 
 .team-member:hover{
     transform:translateY(-10px);
+
     background:#333;
 }
 
 .team-member img{
     width:100%;
     height:220px;
+
     object-fit:cover;
+
     border-radius:10px;
+
     margin-bottom:15px;
 }
 
-/* ACHIEVEMENTS */
+/* =========================
+   ACHIEVEMENTS
+========================= */
 
 .achievements-container{
     display:flex;
     flex-wrap:wrap;
+
     justify-content:center;
+
     gap:30px;
 }
 
 .achievement-card{
     width:260px;
+
     background:#222;
+
     padding:25px;
+
     border-radius:12px;
+
     transition:0.3s;
 }
 
 .achievement-card:hover{
     transform:translateY(-10px);
+
     background:#333;
 }
 
-/* GALLERY */
+/* =========================
+   GALLERY
+========================= */
 
 .teamwork-gallery{
     display:flex;
     flex-wrap:wrap;
+
     justify-content:center;
+
     gap:25px;
 }
 
 .teamwork-gallery img,
 .teamwork-gallery video{
     width:300px;
+
     border-radius:12px;
+
     transition:0.3s;
 }
 
@@ -279,50 +411,69 @@ body{
     transform:scale(1.05);
 }
 
-/* CONTACT */
+/* =========================
+   CONTACT
+========================= */
 
 .contact-info{
     font-size:1.2rem;
     line-height:2;
 }
 
-/* NEWS */
+/* =========================
+   NEWS
+========================= */
 
 .news-container{
     display:flex;
     flex-direction:column;
+
     align-items:center;
+
     gap:25px;
 }
 
 .news-card{
     width:70%;
+
     background:#222;
+
     padding:25px;
+
     border-radius:12px;
+
     text-align:left;
 }
 
 .news-card h3{
     color:#00bfff;
+
     margin-bottom:10px;
 }
 
 .news-card .date{
     color:#aaa;
+
     margin-bottom:10px;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer{
     text-align:center;
+
     padding:20px;
+
     background:#000;
+
     border-top:1px solid #333;
 }
 
-/* MOBILE RESPONSIVE */
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
 
 @media(max-width:768px){
 
@@ -334,46 +485,23 @@ footer{
         font-size:1rem;
     }
 
-    /* MENU BOX */
+    .logo-img{
+        width:35px;
+    }
 
-.menu-box{
-    width:85px;
-    height:85px;
-    border:1px solid rgba(255,255,255,0.25);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    cursor:pointer;
-    background:transparent;
-    transition:0.3s ease;
-    position:relative;
-}
+    .menu-box{
+        width:70px;
+        height:70px;
+    }
 
-/* MENU ICON */
+    .menu-icon span{
+        width:28px;
+    }
 
-.menu-icon{
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    gap:8px;
-}
-
-/* 3 LINES */
-
-.menu-icon span{
-    width:34px;
-    height:2px;
-    background:#fff;
-    display:block;
-    transition:0.3s ease;
-}
-
-/* HOVER EFFECT */
-
-.menu-box:hover .menu-icon span{
-    width:40px;
-}
+    .menu-list{
+        top:85px;
+        min-width:220px;
+    }
 
     .hero h1{
         font-size:2rem;
@@ -388,6 +516,7 @@ footer{
     }
 
     .overlay{
+        width:92%;
         padding:30px;
     }
 
@@ -395,8 +524,4 @@ footer{
         width:95%;
     }
 
-    .menu-list{
-        min-width:220px;
-        top:85px;
-    }
 }
