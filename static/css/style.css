@@ -1,4 +1,6 @@
-/* RESET */
+/* =========================
+   RESET
+========================= */
 
 *{
     margin:0;
@@ -6,347 +8,92 @@
     box-sizing:border-box;
 }
 
-/* BODY */
+/* =========================
+   BODY
+========================= */
 
 body{
     font-family:Arial, sans-serif;
-    color:#fff;
     background:#000;
+    color:#fff;
+    overflow-x:hidden;
 }
 
-/* NAVBAR */
+/* =========================
+   NAVBAR
+========================= */
 
 .navbar{
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1000;
+
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:20px 40px;
-    position:fixed;
-    top:0;
-    width:100%;
-    z-index:1000;
-    background:rgba(0,0,0,0.75);
-    backdrop-filter:blur(10px);
+
+    padding:20px 35px;
+
+    background:rgba(0,0,0,0.55);
+    backdrop-filter:blur(8px);
 }
 
-/* LOGO */
+/* =========================
+   LOGO
+========================= */
 
 .logo{
     display:flex;
     align-items:center;
     gap:12px;
-    color:#fff;
-    font-size:1.4rem;
-    font-weight:700;
-    letter-spacing:2px;
 }
 
 .logo-img{
-    width:42px;
+    width:48px;
     height:auto;
 }
 
-/* MENU */
+.logo span{
+    font-size:2rem;
+    font-weight:700;
+    letter-spacing:2px;
+    color:#fff;
+}
+
+/* =========================
+   MENU
+========================= */
 
 .menu{
     position:relative;
 }
 
-/* CRED STYLE MENU BOX */
+/* MENU BOX */
 
 .menu-box{
-    width:85px;
-    height:85px;
+    width:95px;
+    height:95px;
+
     border:1px solid rgba(255,255,255,0.25);
+
     display:flex;
     justify-content:center;
     align-items:center;
+
     cursor:pointer;
-    transition:0.3s;
+
     background:transparent;
+
+    transition:0.3s ease;
 }
+
+/* HOVER */
 
 .menu-box:hover{
     border-color:#fff;
-}
-
-/* HAMBURGER ICON */
-
-.menu-icon{
-    display:flex;
-    flex-direction:column;
-    gap:9px;
-}
-
-.menu-icon span{
-    width:34px;
-    height:2px;
-    background:#fff;
-    display:block;
-    transition:0.3s;
-}
-
-.menu-box:hover .menu-icon span{
-    width:40px;
-}
-
-/* DROPDOWN MENU */
-
-.menu-list{
-    display:none;
-    position:absolute;
-    top:100px;
-    right:0;
-    list-style:none;
-    background:#111;
-    border:1px solid #333;
-    min-width:260px;
-    padding:15px 0;
-    z-index:2000;
-}
-
-.menu-list li{
-    padding:0;
-}
-
-.menu-list li a{
-    display:block;
-    padding:14px 24px;
-    text-decoration:none;
-    color:#fff;
-    font-size:1rem;
-    transition:0.3s;
-}
-
-.menu-list li a:hover,
-.menu-list li a.active{
-    background:#00bfff;
-    color:#000;
-}
-
-/* SHOW MENU */
-
-.menu.active .menu-list{
-    display:block;
-}
-
-/* HERO SECTION */
-
-.hero{
-    height:100vh;
-    background:url("/static/images/f22.jpg") no-repeat center center/cover;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-}
-
-.overlay{
-    background:rgba(0,0,0,0.55);
-    padding:50px;
-    border-radius:12px;
-}
-
-.hero h1{
-    font-size:3rem;
-    margin-bottom:15px;
-}
-
-.hero h2{
-    font-size:2rem;
-    margin-bottom:20px;
-    color:#00bfff;
-}
-
-.hero p{
-    font-size:1.2rem;
-    max-width:700px;
-    line-height:1.6;
-}
-
-/* BUTTON */
-
-.btn{
-    display:inline-block;
-    margin-top:20px;
-    padding:12px 24px;
-    background:#00bfff;
-    color:#000;
-    text-decoration:none;
-    font-weight:bold;
-    border-radius:6px;
-    transition:0.3s;
-}
-
-.btn:hover{
-    background:#fff;
-}
-
-/* SECTION COMMON */
-
-.team,
-.vision,
-.achievements,
-.teamwork,
-.contact,
-.news{
-    padding:120px 20px;
-    background:#111;
-    text-align:center;
-}
-
-.team h2,
-.vision h2,
-.achievements h2,
-.teamwork h2,
-.contact h2,
-.news h2{
-    font-size:2.5rem;
-    color:#00bfff;
-    margin-bottom:40px;
-}
-
-/* TEAM */
-
-.team-container{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:30px;
-}
-
-.team-member{
-    width:220px;
-    background:#222;
-    padding:20px;
-    border-radius:12px;
-    transition:0.3s;
-}
-
-.team-member:hover{
-    transform:translateY(-10px);
-    background:#333;
-}
-
-.team-member img{
-    width:100%;
-    height:220px;
-    object-fit:cover;
-    border-radius:10px;
-    margin-bottom:15px;
-}
-
-/* ACHIEVEMENTS */
-
-.achievements-container{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:30px;
-}
-
-.achievement-card{
-    width:260px;
-    background:#222;
-    padding:25px;
-    border-radius:12px;
-    transition:0.3s;
-}
-
-.achievement-card:hover{
-    transform:translateY(-10px);
-    background:#333;
-}
-
-/* GALLERY */
-
-.teamwork-gallery{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:25px;
-}
-
-.teamwork-gallery img,
-.teamwork-gallery video{
-    width:300px;
-    border-radius:12px;
-    transition:0.3s;
-}
-
-.teamwork-gallery img:hover,
-.teamwork-gallery video:hover{
-    transform:scale(1.05);
-}
-
-/* CONTACT */
-
-.contact-info{
-    font-size:1.2rem;
-    line-height:2;
-}
-
-/* NEWS */
-
-.news-container{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:25px;
-}
-
-.news-card{
-    width:70%;
-    background:#222;
-    padding:25px;
-    border-radius:12px;
-    text-align:left;
-}
-
-.news-card h3{
-    color:#00bfff;
-    margin-bottom:10px;
-}
-
-.news-card .date{
-    color:#aaa;
-    margin-bottom:10px;
-}
-
-/* FOOTER */
-
-footer{
-    text-align:center;
-    padding:20px;
-    background:#000;
-    border-top:1px solid #333;
-}
-
-/* MOBILE RESPONSIVE */
-
-@media(max-width:768px){
-
-    .navbar{
-        padding:15px 20px;
-    }
-
-    .logo{
-        font-size:1rem;
-    }
-
-    /* MENU BOX */
-
-.menu-box{
-    width:85px;
-    height:85px;
-    border:1px solid rgba(255,255,255,0.25);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    cursor:pointer;
-    background:transparent;
-    transition:0.3s ease;
-    position:relative;
+    background:rgba(255,255,255,0.03);
 }
 
 /* MENU ICON */
@@ -354,18 +101,23 @@ footer{
 .menu-icon{
     display:flex;
     flex-direction:column;
+
     justify-content:center;
     align-items:center;
+
     gap:8px;
 }
 
-/* 3 LINES */
+/* MENU LINES */
 
 .menu-icon span{
     width:34px;
     height:2px;
+
     background:#fff;
+
     display:block;
+
     transition:0.3s ease;
 }
 
@@ -375,28 +127,405 @@ footer{
     width:40px;
 }
 
+/* =========================
+   MENU LIST
+========================= */
+
+.menu-list{
+    display:none;
+
+    position:absolute;
+
+    top:110px;
+    right:0;
+
+    min-width:260px;
+
+    background:#111;
+
+    border:1px solid #333;
+
+    list-style:none;
+
+    padding:15px 0;
+
+    border-radius:6px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.6);
+
+    z-index:9999;
+}
+
+/* SHOW MENU */
+
+.menu.active .menu-list{
+    display:block;
+}
+
+/* MENU ITEMS */
+
+.menu-list li{
+    width:100%;
+}
+
+/* LINKS */
+
+.menu-list li a{
+    display:block;
+
+    padding:14px 24px;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-size:1rem;
+
+    transition:0.3s;
+}
+
+/* HOVER */
+
+.menu-list li a:hover,
+.menu-list li a.active{
+    background:#00bfff;
+    color:#000;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero{
+    width:100%;
+    height:100vh;
+
+    background:url("/static/images/f22.jpg")
+    no-repeat center center/cover;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    position:relative;
+}
+
+/* OVERLAY */
+
+.overlay{
+    background:rgba(0,0,0,0.5);
+
+    padding:60px;
+
+    border-radius:18px;
+
+    max-width:1100px;
+    width:80%;
+}
+
+/* HERO TEXT */
+
+.hero h1{
+    font-size:4rem;
+    font-weight:700;
+
+    margin-bottom:20px;
+}
+
+.hero h2{
+    font-size:3rem;
+
+    color:#00bfff;
+
+    margin-bottom:25px;
+}
+
+.hero p{
+    font-size:1.5rem;
+
+    line-height:1.7;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.btn{
+    display:inline-block;
+
+    margin-top:25px;
+
+    padding:14px 30px;
+
+    background:#00bfff;
+
+    color:#000;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    border-radius:6px;
+
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#fff;
+}
+
+/* =========================
+   COMMON SECTION
+========================= */
+
+.team,
+.vision,
+.achievements,
+.teamwork,
+.contact,
+.news{
+    padding:120px 20px;
+
+    background:#111;
+
+    text-align:center;
+}
+
+/* SECTION HEADINGS */
+
+.team h2,
+.vision h2,
+.achievements h2,
+.teamwork h2,
+.contact h2,
+.news h2{
+    font-size:2.7rem;
+
+    color:#00bfff;
+
+    margin-bottom:40px;
+}
+
+/* =========================
+   TEAM SECTION
+========================= */
+
+.team-container{
+    display:flex;
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:30px;
+}
+
+.team-member{
+    width:240px;
+
+    background:#222;
+
+    padding:20px;
+
+    border-radius:12px;
+
+    transition:0.3s;
+}
+
+.team-member:hover{
+    transform:translateY(-10px);
+
+    background:#333;
+}
+
+.team-member img{
+    width:100%;
+    height:240px;
+
+    object-fit:cover;
+
+    border-radius:10px;
+
+    margin-bottom:15px;
+}
+
+/* =========================
+   ACHIEVEMENTS
+========================= */
+
+.achievements-container{
+    display:flex;
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:30px;
+}
+
+.achievement-card{
+    width:270px;
+
+    background:#222;
+
+    padding:25px;
+
+    border-radius:12px;
+
+    transition:0.3s;
+}
+
+.achievement-card:hover{
+    transform:translateY(-10px);
+
+    background:#333;
+}
+
+/* =========================
+   GALLERY
+========================= */
+
+.teamwork-gallery{
+    display:flex;
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:25px;
+}
+
+.teamwork-gallery img,
+.teamwork-gallery video{
+    width:320px;
+
+    border-radius:12px;
+
+    transition:0.3s;
+}
+
+.teamwork-gallery img:hover,
+.teamwork-gallery video:hover{
+    transform:scale(1.05);
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-info{
+    font-size:1.3rem;
+
+    line-height:2;
+}
+
+/* =========================
+   NEWS
+========================= */
+
+.news-container{
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:25px;
+}
+
+.news-card{
+    width:70%;
+
+    background:#222;
+
+    padding:25px;
+
+    border-radius:12px;
+
+    text-align:left;
+}
+
+.news-card h3{
+    color:#00bfff;
+
+    margin-bottom:10px;
+}
+
+.news-card .date{
+    color:#aaa;
+
+    margin-bottom:10px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    text-align:center;
+
+    padding:20px;
+
+    background:#000;
+
+    border-top:1px solid #333;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    .navbar{
+        padding:15px 20px;
+    }
+
+    .logo span{
+        font-size:1.2rem;
+    }
+
+    .logo-img{
+        width:40px;
+    }
+
+    .menu-box{
+        width:72px;
+        height:72px;
+    }
+
+    .menu-icon span{
+        width:28px;
+    }
+
+    .menu-list{
+        top:85px;
+
+        min-width:220px;
+    }
+
+    .hero{
+        padding:20px;
+    }
+
+    .overlay{
+        width:95%;
+
+        padding:30px;
+    }
+
     .hero h1{
         font-size:2rem;
     }
 
     .hero h2{
-        font-size:1.4rem;
+        font-size:1.5rem;
     }
 
     .hero p{
         font-size:1rem;
     }
 
-    .overlay{
-        padding:30px;
-    }
-
     .news-card{
         width:95%;
     }
 
-    .menu-list{
-        min-width:220px;
-        top:85px;
-    }
 }
