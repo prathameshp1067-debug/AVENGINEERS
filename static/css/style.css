@@ -10,16 +10,13 @@
 /* =========================
    BODY
 ========================= */
-html, body {
+html,
+body {
   font-family: Arial, sans-serif;
   color: #fff;
   background-color: #000;
-  background-image: url("/static/images/f22.jpg");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  min-height: 100%;
-  overflow-y: auto; /* enable scrolling */
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 /* =========================
@@ -29,7 +26,7 @@ html, body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 20px 40px;
   background: rgba(0,0,0,0.7);
   position: fixed;
   width: 100%;
@@ -37,17 +34,20 @@ html, body {
   z-index: 1000;
 }
 
+/* =========================
+   LOGO
+========================= */
 .logo {
   display: flex;
   align-items: center;
   gap: 10px;
   font-size: 1.5em;
   font-weight: bold;
-  color: #fff;
+  color: white;
 }
 
 .logo-img {
-  width: 40px;
+  width: 45px;
   height: auto;
 }
 
@@ -56,50 +56,72 @@ html, body {
 ========================= */
 .menu {
   position: relative;
-  display: inline-block;
 }
 
-.menu-icon {
-  font-size: 1.8em;
+/* MENU BUTTON BOX */
+.menu-box {
+  width: 50px;
+  height: 50px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
-  color: #fff;
-  padding: 5px 10px;
-  border-radius: 5px;
-  transition: background 0.3s;
+  transition: 0.3s;
 }
 
-.menu-icon:hover {
-  background: rgba(255,255,255,0.1);
+.menu-box:hover {
+  background: rgba(255,255,255,0.15);
 }
 
+/* HAMBURGER ICON */
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.menu-icon span {
+  width: 28px;
+  height: 3px;
+  background: white;
+  border-radius: 10px;
+}
+
+/* DROPDOWN MENU */
 .menu-list {
   display: none;
   position: absolute;
-  top: 35px;
+  top: 60px;
   right: 0;
   background: #111;
-  border: 1px solid #333;
-  border-radius: 5px;
+  border-radius: 10px;
+  overflow: hidden;
+  min-width: 240px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  z-index: 9999;
+}
+
+.menu-list li {
   list-style: none;
-  padding: 10px 0;
-  min-width: 260px;
-  z-index: 3000;
 }
 
 .menu-list li a {
-  text-decoration: none;
-  color: #fff;
   display: block;
-  padding: 10px 20px;
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
   transition: 0.3s;
 }
 
 .menu-list li a:hover,
 .menu-list li a.active {
   background: #00bfff;
-  color: #000;
+  color: black;
 }
 
+/* SHOW MENU */
 .menu.active .menu-list {
   display: block;
 }
@@ -108,32 +130,39 @@ html, body {
    HERO SECTION
 ========================= */
 .hero {
-  min-height: 100vh; /* fullscreen hero */
+  min-height: 100vh;
+  background: url("../images/f22.jpg") no-repeat center center/cover;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   text-align: center;
+  padding: 120px 20px 40px;
 }
 
-.hero .overlay {
-  background: rgba(0,0,0,0.7);
-  padding: 40px;
-  border-radius: 15px;
+/* OVERLAY BOX */
+.overlay {
+  background: rgba(0,0,0,0.75);
+  padding: 50px;
+  border-radius: 20px;
+  max-width: 1000px;
+  width: 100%;
 }
 
+/* HERO TEXT */
 .hero h1 {
-  font-size: 2.5em;
-  margin-bottom: 10px;
+  font-size: 4rem;
+  margin-bottom: 20px;
 }
 
 .hero h2 {
-  font-size: 2em;
-  margin-bottom: 20px;
+  font-size: 3rem;
+  color: #00bfff;
+  margin-bottom: 30px;
 }
 
 .hero p {
-  font-size: 1.2em;
-  margin-bottom: 20px;
+  font-size: 1.3rem;
+  line-height: 1.8;
 }
 
 /* =========================
@@ -146,9 +175,9 @@ html, body {
 }
 
 .team h2 {
-  font-size: 2.5em;
-  margin-bottom: 40px;
+  font-size: 2.5rem;
   color: #00bfff;
+  margin-bottom: 40px;
 }
 
 .team-container {
@@ -160,11 +189,10 @@ html, body {
 
 .team-member {
   background: #222;
+  width: 240px;
   padding: 20px;
-  border-radius: 10px;
-  width: 220px;
+  border-radius: 15px;
   transition: 0.3s;
-  text-align: center;
 }
 
 .team-member:hover {
@@ -176,33 +204,18 @@ html, body {
   width: 150px;
   height: 150px;
   object-fit: cover;
-  border-radius: 50%; /* circular profile */
+  border-radius: 50%;
   margin-bottom: 15px;
 }
 
 .team-member h3 {
-  font-size: 1.2em;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+  color: #00bfff;
 }
 
 .team-member p {
-  font-size: 0.95em;
-  color: #aaa;
-}
-
-/* =========================
-   GENERIC SECTIONS (Vision, Achievements, Gallery, Contact, News)
-========================= */
-section {
-  padding: 120px 20px;
-  background: #111;
-  text-align: center;
-}
-
-section h2 {
-  font-size: 2.5em;
-  margin-bottom: 40px;
-  color: #00bfff;
+  color: #ccc;
+  font-size: 15px;
 }
 
 /* =========================
@@ -215,16 +228,16 @@ section h2 {
 }
 
 .vision h2 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
+  font-size: 2.5rem;
   color: #00bfff;
+  margin-bottom: 30px;
 }
 
 .vision p {
-  font-size: 1.2em;
-  max-width: 800px;
+  max-width: 900px;
   margin: 20px auto;
-  line-height: 1.8;
+  line-height: 1.9;
+  font-size: 1.2rem;
 }
 
 /* =========================
@@ -237,9 +250,9 @@ section h2 {
 }
 
 .achievements h2 {
-  font-size: 2.5em;
-  margin-bottom: 40px;
+  font-size: 2.5rem;
   color: #00bfff;
+  margin-bottom: 40px;
 }
 
 .achievements-container {
@@ -250,16 +263,21 @@ section h2 {
 }
 
 .achievement-card {
+  width: 260px;
   background: #222;
   padding: 25px;
-  border-radius: 10px;
-  width: 260px;
+  border-radius: 15px;
   transition: 0.3s;
 }
 
 .achievement-card:hover {
   transform: translateY(-10px);
   background: #333;
+}
+
+.achievement-card h3 {
+  color: #00bfff;
+  margin-bottom: 10px;
 }
 
 /* =========================
@@ -272,16 +290,16 @@ section h2 {
 }
 
 .teamwork h2 {
-  font-size: 2.5em;
-  margin-bottom: 40px;
+  font-size: 2.5rem;
   color: #00bfff;
+  margin-bottom: 40px;
 }
 
 .teamwork-gallery {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 30px;
+  gap: 25px;
 }
 
 .teamwork-gallery img,
@@ -289,7 +307,7 @@ section h2 {
   width: 300px;
   border-radius: 15px;
   transition: 0.3s;
-  box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
 }
 
 .teamwork-gallery img:hover,
@@ -307,16 +325,16 @@ section h2 {
 }
 
 .contact h2 {
-  font-size: 2.5em;
-  margin-bottom: 30px;
+  font-size: 2.5rem;
   color: #00bfff;
+  margin-bottom: 30px;
 }
 
 .contact-info {
-  max-width: 600px;
+  max-width: 700px;
   margin: auto;
-  font-size: 1.2em;
   line-height: 2;
+  font-size: 1.2rem;
 }
 
 /* =========================
@@ -329,9 +347,9 @@ section h2 {
 }
 
 .news h2 {
-  font-size: 2.5em;
-  margin-bottom: 40px;
+  font-size: 2.5rem;
   color: #00bfff;
+  margin-bottom: 40px;
 }
 
 .news-container {
@@ -342,10 +360,10 @@ section h2 {
 }
 
 .news-card {
-  background: #222;
-  padding: 20px;
-  border-radius: 10px;
   width: 70%;
+  background: #222;
+  padding: 25px;
+  border-radius: 15px;
   text-align: left;
 }
 
@@ -354,12 +372,72 @@ section h2 {
   margin-bottom: 10px;
 }
 
+.news-card p {
+  line-height: 1.8;
+}
+
+/* =========================
+   SIGN IN / SIGN UP
+========================= */
+.signin {
+  min-height: 100vh;
+  background: url("../images/f22.jpg") no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 120px 20px;
+}
+
+.signin-form {
+  background: rgba(0,0,0,0.8);
+  padding: 40px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.signin-form h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #00bfff;
+}
+
+.signin-form label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.signin-form input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+}
+
+.signin-form button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #00bfff;
+  color: black;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.signin-form button:hover {
+  background: white;
+}
+
 /* =========================
    FOOTER
 ========================= */
 footer {
   text-align: center;
   padding: 20px;
-  background: #000;
+  background: black;
   border-top: 1px solid #333;
 }
