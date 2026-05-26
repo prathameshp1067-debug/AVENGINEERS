@@ -131,7 +131,7 @@ body {
    HERO SECTION
 ========================= */
 .hero {
-   min-height: 100vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -244,10 +244,12 @@ body {
   gap: 30px;
 }
 
-.team-member img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
+.team-member {
+  background: #222;
+  padding: 20px;
+  border-radius: 10px;
+  width: 220px;
+  transition: 0.3s;
 }
 
 .team-member:hover {
@@ -256,21 +258,11 @@ body {
 }
 
 .team-member img {
-  width: 150px;       /* smaller image */
-  height: 150px;      /* square thumbnail */
-  object-fit: cover;  /* crop nicely */
-  border-radius: 50%; /* circular profile */
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
   margin-bottom: 15px;
-}
-
-.team-member h3 {
-  font-size: 1.2em;
-  margin-bottom: 8px;
-}
-
-.team-member p {
-  font-size: 0.95em;
-  color: #aaa;
 }
 
 /* =========================
@@ -393,4 +385,41 @@ body {
 .news {
   padding: 120px 20px;
   background: #111;
-  text-align: center
+  text-align: center;
+}
+
+.news h2 {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  color: #00bfff;
+}
+
+.news-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.news-card {
+  background: #222;
+  padding: 20px;
+  border-radius: 10px;
+  width: 70%;
+  text-align: left;
+}
+
+.news-card h3 {
+  color: #00bfff;
+  margin-bottom: 10px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #000;
+  border-top: 1px solid #333;
+}
