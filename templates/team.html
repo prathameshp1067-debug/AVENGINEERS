@@ -30,32 +30,198 @@
 
             </div>
 
-            <!-- DROPDOWN -->
-            <ul class="menu-list">
+            <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Avengineers - Team</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
 
-                <li><a href="/" class="active">Fleet</a></li>
+<body>
 
-                <li><a href="/vision">Our Vision</a></li>
+<!-- Navbar -->
+<header class="navbar">
 
-                <li><a href="/team">Team</a></li>
+  <div class="logo">
+    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+    <span>AVENGINEERS</span>
+  </div>
 
-                <li><a href="/achievements">Achievements</a></li>
+  <div class="menu">
+    <div class="menu-icon">⋮</div>
 
-                <li><a href="/teamwork">Gallery</a></li>
+    <ul class="menu-list">
+      <li><a href="{{ url_for('home') }}">Home</a></li>
+      <li><a href="{{ url_for('vision') }}">Vision</a></li>
+      <li><a href="{{ url_for('team') }}" class="active">Team</a></li>
+      <li><a href="{{ url_for('achievements') }}">Achievements</a></li>
+      <li><a href="{{ url_for('teamwork') }}">Gallery</a></li>
+      <li><a href="{{ url_for('contact') }}">Contact</a></li>
+      <li><a href="{{ url_for('news') }}">News & Updates</a></li>
+    </ul>
+  </div>
 
-                <li><a href="/contact">Contact</a></li>
+</header>
 
-                <li>
-                    <a href="{{ url_for('news') }}">
-                        News and Updates
-                    </a>
-                </li>
+<!-- Team Section -->
+<section class="team">
 
-            </ul>
+  <h2>OUR TEAM</h2>
 
-        </div>
+  <div class="team-container">
 
-    </header>
+    <!-- Member 1 -->
+    <div class="team-member">
+      <img src="{{ url_for('static', filename='images/member1.jpg') }}" alt="Om Survase">
+      <h3>Om Survase</h3>
+      <p>Team Vice Captain, Aerodynamic Lead & Pilot</p>
+    </div>
+
+    <!-- Member 2 -->
+    <div class="team-member">
+      <img src="{{ url_for('static', filename='images/member2.jpg') }}" alt="Om Sonawane">
+      <h3>Om Sonawane</h3>
+      <p>Technical Head & Sponsorship Lead</p>
+    </div>
+
+    <!-- Member 3 -->
+    <div class="team-member">
+      <img src="{{ url_for('static', filename='images/member3.jpg') }}" alt="Bansode Manisha">
+      <h3>Bansode Manisha</h3>
+      <p>Manufacturing & Quality Control Lead</p>
+    </div>
+
+    <!-- Member 4 -->
+    <div class="team-member">
+      <img src="{{ url_for('static', filename='images/member4.jpg') }}" alt="Samruddhi Pukale">
+      <h3>Samruddhi Pukale</h3>
+      <p>Co-Pilot</p>
+    </div>
+
+    <!-- Member 5 -->
+    <div class="team-member">
+      <img src="{{ url_for('static', filename='images/member5.jpg') }}" alt="Samruddhi Chavan">
+      <h3>Samruddhi Chavan</h3>
+      <p>Electronics</p>
+    </div>
+
+    <!-- Member 6 -->
+    <div class="team-member">
+      <img src="{{ url_for('static', filename='images/member6.jpg') }}" alt="Tanuja Shravan">
+      <h3>Tanuja Shravan</h3>
+      <p>Documentation & Electronics</p>
+    </div>
+
+    <!-- Member 7 -->
+    <div class="team-member">
+      <img src="{{ url_for('static', filename='images/member7.jpg') }}" alt="Avadhoot Gajjam">
+      <h3>Avadhoot Gajjam</h3>
+      <p>Manufacturing Team</p>
+    </div>
+
+    <!-- Member 8 -->
+    <div class="team-member">
+      <img src="{{ url_for('static', filename='images/member8.jpg') }}" alt="Prasanna Karle">
+      <h3>Prasanna Karle</h3>
+      <p>Documentation & Aerodynamic</p>
+    </div>
+
+    <!-- Member 9 -->
+    <div class="team-member">
+      <img src="{{ url_for('static', filename='images/member9.jpg') }}" alt="Aditya Potdar">
+      <h3>Aditya Potdar</h3>
+      <p>Sponsorship Member</p>
+    </div>
+
+    <!-- Member 10 -->
+    <div class="team-member">
+      <img src="{{ url_for('static', filename='images/member10.jpg') }}" alt="Suman Ubale">
+      <h3>Suman Ubale</h3>
+      <p>Electronics</p>
+    </div>
+
+    <!-- Member 11 -->
+    <div class="team-member">
+      <img src="{{ url_for('static', filename='images/member11.jpg') }}" alt="Onkar Shinde">
+      <h3>Onkar Shinde</h3>
+      <p>Sponsorship Team</p>
+    </div>
+
+    <!-- Member 12 -->
+    <div class="team-member">
+      <img src="{{ url_for('static', filename='images/member12.jpg') }}" alt="Apurva Pawar">
+      <h3>Apurva Pawar</h3>
+      <p>Aerodynamic Design Engineer</p>
+    </div>
+
+    <!-- Member 13 -->
+    <div class="team-member">
+      <img src="{{ url_for('static', filename='images/member13.jpg') }}" alt="Prathamesh Patil">
+      <h3>Prathamesh Patil</h3>
+      <p>Software Developer, Tech & Media Lead</p>
+    </div>
+
+    <!-- Member 14 -->
+    <div class="team-member">
+      <img src="{{ url_for('static', filename='images/member14.jpg') }}" alt="Vaishnavi Survase">
+      <h3>Vaishnavi Survase</h3>
+      <p>Documentation & Manufacturing</p>
+    </div>
+
+    <!-- Member 15 -->
+    <div class="team-member">
+      <img src="{{ url_for('static', filename='images/member15.jpg') }}" alt="Komal Talkokul">
+      <h3>Komal Talkokul</h3>
+      <p>Calculation Engineering</p>
+    </div>
+
+    <!-- Member 16 -->
+    <div class="team-member">
+      <img src="{{ url_for('static', filename='images/member16.jpg') }}" alt="Shantanu Deshpande">
+      <h3>Shantanu Deshpande</h3>
+      <p>Captain - Phase 3</p>
+    </div>
+
+    <!-- Member 17 -->
+    <div class="team-member">
+      <img src="{{ url_for('static', filename='images/member17.jpg') }}" alt="Nandkishor Pagade">
+      <h3>Nandkishor Pagade</h3>
+      <p>Design Engineer & Manufacturing</p>
+    </div>
+
+    <!-- Member 18 -->
+    <div class="team-member">
+      <img src="{{ url_for('static', filename='images/member18.jpg') }}" alt="Nikesh Patil">
+      <h3>Nikesh Patil</h3>
+      <p>Electronics</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>© 2026 Avengineers. All rights reserved.</p>
+</footer>
+
+<!-- Menu Script -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+
+    const menu = document.querySelector(".menu");
+    const icon = document.querySelector(".menu-icon");
+
+    icon.addEventListener("click", function() {
+      menu.classList.toggle("active");
+    });
+
+  });
+</script>
+
+</body>
+</html>
 
 
   <!-- Team Section -->
