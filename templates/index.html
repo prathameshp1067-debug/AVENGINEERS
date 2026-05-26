@@ -4,73 +4,99 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Avengineers - Home</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+  <link rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}">
 </head>
+
 <body>
 
-  <!-- NAVBAR -->
-  <header class="navbar">
-    <div class="logo">
-      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
-      <span>AVENGINEERS</span>
+<!-- NAVBAR -->
+<header class="navbar">
+
+  <!-- LOGO -->
+  <div class="logo">
+    <img src="{{ url_for('static', filename='images/logo.png') }}"
+         alt="Logo"
+         class="logo-img">
+
+    <span>AVENGINEERS</span>
+  </div>
+
+  <!-- MENU -->
+  <div class="menu">
+
+    <!-- MENU BUTTON -->
+    <div class="menu-icon">
+      ⋮
     </div>
-  </header>
 
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <div class="overlay">
+    <!-- DROPDOWN -->
+    <ul class="menu-list">
 
-      <!-- LEFT MESSAGE -->
-      <div class="hero-message">
-        <h1>AVIATION ENGINEERING SQUAD</h1>
-        <h2>ENGINEER THE SKY</h2>
-        <p>
-          We are Avengineers — a team of pilots, engineers
-          and dreamers building the next generation of aircraft.
-        </p>
-      </div>
+      <li><a href="/" class="active">Fleet</a></li>
 
-      <!-- RIGHT MENU -->
-      <div class="menu-right">
-        <div class="menu-box">
-          <div class="menu-icon">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </div>
+      <li><a href="/vision">Our Vision</a></li>
 
-        <!-- DROPDOWN -->
-        <ul class="menu-list">
-          <li><a href="/" class="active">Fleet</a></li>
-          <li><a href="/vision">Our Vision</a></li>
-          <li><a href="/team">Team</a></li>
-          <li><a href="/achievements">Achievements</a></li>
-          <li><a href="/teamwork">Gallery</a></li>
-          <li><a href="/contact">Contact</a></li>
-          <li><a href="{{ url_for('news') }}">News and Updates</a></li>
-        </ul>
-      </div>
+      <li><a href="/team">Team</a></li>
 
-    </div>
-  </section>
+      <li><a href="/achievements">Achievements</a></li>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2026 Avengineers. All rights reserved.</p>
-  </footer>
+      <li><a href="/teamwork">Gallery</a></li>
 
-  <!-- SCRIPT -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const menuRight = document.querySelector(".menu-right");
-      const menuBox = document.querySelector(".menu-box");
+      <li><a href="/contact">Contact</a></li>
 
-      menuBox.addEventListener("click", function () {
-        menuRight.classList.toggle("active");
-      });
+      <li><a href="{{ url_for('news') }}">
+        News and Updates
+      </a></li>
+
+    </ul>
+
+  </div>
+
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero">
+
+  <div class="overlay">
+
+    <h1>AVIATION ENGINEERING SQUAD</h1>
+
+    <h2>ENGINEER THE SKY</h2>
+
+    <p>
+      We are Avengineers — a team of pilots,
+      engineers and dreamers building the
+      next generation of aircraft.
+    </p>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Avengineers. All rights reserved.</p>
+</footer>
+
+<!-- SCRIPT -->
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const menu = document.querySelector(".menu");
+    const icon = document.querySelector(".menu-icon");
+
+    icon.addEventListener("click", function () {
+
+        menu.classList.toggle("active");
+
     });
-  </script>
+
+});
+
+</script>
 
 </body>
 </html>
