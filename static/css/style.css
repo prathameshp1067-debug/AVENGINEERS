@@ -1,9 +1,5 @@
 /* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 /* BODY */
 body {
@@ -16,8 +12,7 @@ body {
 /* NAVBAR */
 .navbar {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 0; left: 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -38,10 +33,7 @@ body {
   font-weight: bold;
   letter-spacing: 2px;
 }
-.logo-img {
-  width: 50px;
-  height: auto;
-}
+.logo-img { width: 50px; height: auto; }
 
 /* HERO SECTION */
 .hero {
@@ -51,7 +43,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
   position: relative;
 }
 .overlay {
@@ -72,20 +63,9 @@ body {
   text-align: left;
   margin-right: 40px;
 }
-.hero-message h1 {
-  font-size: 3.5rem;
-  margin-bottom: 20px;
-}
-.hero-message h2 {
-  font-size: 2rem;
-  color: #00bfff;
-  margin-bottom: 25px;
-}
-.hero-message p {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  max-width: 600px;
-}
+.hero-message h1 { font-size: 3.5rem; margin-bottom: 20px; }
+.hero-message h2 { font-size: 2rem; color: #00bfff; margin-bottom: 25px; }
+.hero-message p { font-size: 1.2rem; line-height: 1.8; max-width: 600px; }
 
 /* MENU RIGHT */
 .menu-right {
@@ -96,12 +76,9 @@ body {
 
 /* MENU BOX */
 .menu-box {
-  width: 75px;
-  height: 75px;
+  width: 75px; height: 75px;
   border: 1px solid rgba(255,255,255,0.25);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: flex; justify-content: center; align-items: center;
   cursor: pointer;
   transition: 0.3s ease;
 }
@@ -114,8 +91,7 @@ body {
   gap: 8px;
 }
 .menu-icon span {
-  width: 30px;
-  height: 2px;
+  width: 30px; height: 2px;
   background: #fff;
   display: block;
   transition: 0.3s ease;
@@ -133,8 +109,7 @@ body {
   border-radius: 6px;
   overflow: hidden;
   box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-
-  animation: fadeIn 0.4s ease; /* fade-in animation */
+  animation: fadeIn 0.4s ease;
 }
 .menu-right.active .menu-list { display: block; }
 .menu-list li a {
