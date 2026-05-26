@@ -11,86 +11,128 @@
 
 <body>
 
-<!-- NAVBAR -->
-<header class="navbar">
+  <!-- =========================
+       NAVBAR
+  ========================== -->
+  <header class="navbar">
 
-  <!-- LOGO -->
-  <div class="logo">
-    <img src="{{ url_for('static', filename='images/logo.png') }}"
-         alt="Logo"
-         class="logo-img">
+    <!-- LOGO -->
+    <div class="logo">
+      <img src="{{ url_for('static', filename='images/logo.png') }}"
+           alt="Logo"
+           class="logo-img">
 
-    <span>AVENGINEERS</span>
-  </div>
-
-  <!-- MENU -->
-  <div class="menu">
-
-    <!-- MENU BUTTON -->
-    <div class="menu-icon">
-      ⋮
+      <span>AVENGINEERS</span>
     </div>
 
-    <!-- DROPDOWN -->
-    <ul class="menu-list">
+    <!-- MENU -->
+    <div class="menu">
 
-      <li><a href="/" class="active">Fleet</a></li>
+      <!-- HAMBURGER ICON -->
+      <div class="menu-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
 
-      <li><a href="/vision">Our Vision</a></li>
+      <!-- DROPDOWN MENU -->
+      <ul class="menu-list">
 
-      <li><a href="/team">Team</a></li>
+        <li>
+          <a href="/home" class="active">
+            Fleet
+          </a>
+        </li>
 
-      <li><a href="/achievements">Achievements</a></li>
+        <li>
+          <a href="/vision">
+            Our Vision
+          </a>
+        </li>
 
-      <li><a href="/teamwork">Gallery</a></li>
+        <li>
+          <a href="/team">
+            Team
+          </a>
+        </li>
 
-      <li><a href="/contact">Contact</a></li>
+        <li>
+          <a href="/achievements">
+            Achievements
+          </a>
+        </li>
 
-      <li><a href="{{ url_for('news') }}">
-        News and Updates
-      </a></li>
+        <li>
+          <a href="/teamwork">
+            Gallery
+          </a>
+        </li>
 
-    </ul>
+        <li>
+          <a href="/contact">
+            Contact
+          </a>
+        </li>
 
-  </div>
+        <li>
+          <a href="/news">
+            News and Updates
+          </a>
+        </li>
 
-</header>
+      </ul>
 
-<!-- HERO SECTION -->
-<section class="hero">
+    </div>
 
-  <div class="overlay">
+  </header>
 
-    <h1>AVIATION ENGINEERING SQUAD</h1>
+  <!-- =========================
+       HERO SECTION
+  ========================== -->
+  <section class="hero">
 
-    <h2>ENGINEER THE SKY</h2>
+    <div class="overlay">
 
-    <p>
-      We are Avengineers — a team of pilots,
-      engineers and dreamers building the
-      next generation of aircraft.
-    </p>
+      <h1>AVIATION ENGINEERING SQUAD</h1>
 
-  </div>
+      <h2>ENGINEER THE SKY</h2>
 
-</section>
+      <p>
+        We are Avengineers — a team of pilots,
+        engineers and dreamers building the next
+        generation of aircraft.
+      </p>
 
-<!-- FOOTER -->
-<footer>
-  <p>© 2026 Avengineers. All rights reserved.</p>
-</footer>
+    </div>
 
-<!-- SCRIPT -->
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const menu = document.querySelector(".menu");
-  const menuBox = document.querySelector(".menu-box");
+  </section>
 
-  menuBox.addEventListener("click", function () {
-    menu.classList.toggle("active");
-  });
-});
-</script>
+  <!-- =========================
+       FOOTER
+  ========================== -->
+  <footer>
+    <p>© 2026 Avengineers. All rights reserved.</p>
+  </footer>
+
+  <!-- =========================
+       MENU SCRIPT
+  ========================== -->
+  <script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const menu = document.querySelector(".menu");
+      const icon = document.querySelector(".menu-icon");
+
+      icon.addEventListener("click", function () {
+
+        menu.classList.toggle("active");
+
+      });
+
+    });
+
+  </script>
 
 </body>
 </html>
