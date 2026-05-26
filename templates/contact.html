@@ -13,20 +13,47 @@
   <span>AVENGINEERS</span>
 </div>
 
-    <div class="menu">
-      <div class="menu-icon">⋮</div>
-      <ul class="menu-list">
-        <li><a href="{{ url_for('home') }}">Home</a></li>
-        <li><a href="{{ url_for('team') }}">Team</a></li>
-        <li><a href="{{ url_for('vision') }}">Vision</a></li>
-        <li><a href="{{ url_for('achievements') }}">Achievements</a></li>
-        <li><a href="{{ url_for('teamwork') }}">Gallery</a></li>
-        <li><a href="{{ url_for('contact') }}" class="active">Contact</a></li>
-        <li><a href="{{ url_for('news') }}" >News and Updates</a></li>
+    <!-- MENU -->
+        <div class="menu">
 
-      </ul>
-    </div>
-  </header>
+            <!-- MENU BUTTON -->
+            <div class="menu-box">
+
+                <div class="menu-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+            </div>
+
+            <!-- DROPDOWN -->
+            <ul class="menu-list">
+
+                <li><a href="/" class="active">Fleet</a></li>
+
+                <li><a href="/vision">Our Vision</a></li>
+
+                <li><a href="/team">Team</a></li>
+
+                <li><a href="/achievements">Achievements</a></li>
+
+                <li><a href="/teamwork">Gallery</a></li>
+
+                <li><a href="/contact">Contact</a></li>
+
+                <li>
+                    <a href="{{ url_for('news') }}">
+                        News and Updates
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </header>
+
 
   <!-- Contact Section -->
   <section class="contact">

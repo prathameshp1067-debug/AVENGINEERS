@@ -16,20 +16,47 @@
 
 
   <!-- Right side: 3-dot menu -->
-  <div class="menu">
-    <div class="menu-icon">⋮</div>
-    <ul class="menu-list">
-      <li><a href="/">Fleet</a></li>
-      <li><a href="/">Our Vision</a></li>
-      <li><a href="{{ url_for('team') }}" class="active">Team</a></li>
-      <li><a href="{{ url_for('achievements') }}">Achievements</a></li>
-      <li><a href="{{ url_for('teamwork') }}" >Gallery</a></li>
-      <li><a href="/contact">contact</a></li>
-           <li><a href="{{ url_for('news') }}" >News and Updates</a></li>
+   <!-- MENU -->
+        <div class="menu">
 
-    </ul>
-  </div>
-</header>
+            <!-- MENU BUTTON -->
+            <div class="menu-box">
+
+                <div class="menu-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+            </div>
+
+            <!-- DROPDOWN -->
+            <ul class="menu-list">
+
+                <li><a href="/" class="active">Fleet</a></li>
+
+                <li><a href="/vision">Our Vision</a></li>
+
+                <li><a href="/team">Team</a></li>
+
+                <li><a href="/achievements">Achievements</a></li>
+
+                <li><a href="/teamwork">Gallery</a></li>
+
+                <li><a href="/contact">Contact</a></li>
+
+                <li>
+                    <a href="{{ url_for('news') }}">
+                        News and Updates
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </header>
+
 
   <!-- Team Section -->
   <section class="team">
