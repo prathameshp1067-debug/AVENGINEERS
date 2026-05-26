@@ -18,37 +18,42 @@
 
   <!-- HERO SECTION -->
   <section class="hero">
-    <div class="overlay">
+  <div class="overlay">
+
+    <!-- LEFT MESSAGE -->
+    <div class="hero-message">
       <h1>AVIATION ENGINEERING SQUAD</h1>
       <h2>ENGINEER THE SKY</h2>
       <p>
         We are Avengineers — a team of pilots, engineers
         and dreamers building the next generation of aircraft.
       </p>
-
-      <!-- CENTERED MENU -->
-      <div class="menu-center">
-        <div class="menu-box">
-          <div class="menu-icon">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </div>
-
-        <!-- DROPDOWN -->
-        <ul class="menu-list">
-          <li><a href="/" class="active">Fleet</a></li>
-          <li><a href="/vision">Our Vision</a></li>
-          <li><a href="/team">Team</a></li>
-          <li><a href="/achievements">Achievements</a></li>
-          <li><a href="/teamwork">Gallery</a></li>
-          <li><a href="/contact">Contact</a></li>
-          <li><a href="{{ url_for('news') }}">News and Updates</a></li>
-        </ul>
-      </div>
     </div>
-  </section>
+
+    <!-- RIGHT MENU -->
+    <div class="menu-right">
+      <div class="menu-box">
+        <div class="menu-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <ul class="menu-list">
+        <li><a href="/" class="active">Fleet</a></li>
+        <li><a href="/vision">Our Vision</a></li>
+        <li><a href="/team">Team</a></li>
+        <li><a href="/achievements">Achievements</a></li>
+        <li><a href="/teamwork">Gallery</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="{{ url_for('news') }}">News and Updates</a></li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
 
   <!-- FOOTER -->
   <footer>
@@ -57,15 +62,15 @@
 
   <!-- SCRIPT -->
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const menuCenter = document.querySelector(".menu-center");
-      const menuBox = document.querySelector(".menu-box");
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuRight = document.querySelector(".menu-right");
+    const menuBox = document.querySelector(".menu-box");
 
-      menuBox.addEventListener("click", function () {
-        menuCenter.classList.toggle("active");
-      });
+    menuBox.addEventListener("click", function () {
+      menuRight.classList.toggle("active");
     });
-  </script>
+  });
+</script>
 
 </body>
 </html>
