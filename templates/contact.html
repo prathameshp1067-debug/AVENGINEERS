@@ -14,43 +14,25 @@
 </div>
 
     <!-- MENU -->
-        <div class="menu">
+       <div class="menu">
+  <div class="menu-box">
+    <div class="menu-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
 
-            <!-- MENU BUTTON -->
-            <div class="menu-box">
-
-                <div class="menu-icon">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-
-            </div>
-
-            <!-- DROPDOWN -->
-            <ul class="menu-list">
-
-                <li><a href="/" class="active">Fleet</a></li>
-
-                <li><a href="/vision">Our Vision</a></li>
-
-                <li><a href="/team">Team</a></li>
-
-                <li><a href="/achievements">Achievements</a></li>
-
-                <li><a href="/teamwork">Gallery</a></li>
-
-                <li><a href="/contact">Contact</a></li>
-
-                <li>
-                    <a href="{{ url_for('news') }}">
-                        News and Updates
-                    </a>
-                </li>
-
-            </ul>
-
-        </div>
+  <ul class="menu-list">
+    <li><a href="/home">Fleet</a></li>
+    <li><a href="/vision">Our Vision</a></li>
+    <li><a href="/team">Team</a></li>
+    <li><a href="/achievements">Achievements</a></li>
+    <li><a href="/teamwork">Gallery</a></li>
+    <li><a href="/contact">Contact</a></li>
+    <li><a href="/news">News and Updates</a></li>
+  </ul>
+</div>
 
     </header>
 
@@ -82,14 +64,15 @@
   </footer>
 
   <!-- Script for menu toggle -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const menu = document.querySelector(".menu");
-      const icon = document.querySelector(".menu-icon");
-      icon.addEventListener("click", function() {
-        menu.classList.toggle("active");
-      });
-    });
-  </script>
+ <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const menu = document.querySelector(".menu");
+  const menuBox = document.querySelector(".menu-box");
+
+  menuBox.addEventListener("click", function () {
+    menu.classList.toggle("active");
+  });
+});
+</script>
 </body>
 </html>

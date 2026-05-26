@@ -78,13 +78,14 @@
 
   <!-- Script for 3-dot menu -->
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const menu = document.querySelector(".menu");
-      const icon = document.querySelector(".menu-icon");
-      icon.addEventListener("click", function() {
-        menu.classList.toggle("active");
-      });
-    });
-  </script>
+document.addEventListener("DOMContentLoaded", function () {
+  const menu = document.querySelector(".menu");
+  const menuBox = document.querySelector(".menu-box");
+
+  menuBox.addEventListener("click", function () {
+    menu.classList.toggle("active");
+  });
+});
+</script>
 </body>
 </html>

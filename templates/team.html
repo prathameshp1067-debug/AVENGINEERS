@@ -14,17 +14,24 @@
   </div>
 
   <div class="menu">
-    <div class="menu-icon">⋮</div>
-    <ul class="menu-list">
-      <li><a href="{{ url_for('home') }}">Home</a></li>
-      <li><a href="{{ url_for('vision') }}">Vision</a></li>
-      <li><a href="{{ url_for('team') }}" class="active">Team</a></li>
-      <li><a href="{{ url_for('achievements') }}">Achievements</a></li>
-      <li><a href="{{ url_for('teamwork') }}">Gallery</a></li>
-      <li><a href="{{ url_for('contact') }}">Contact</a></li>
-      <li><a href="{{ url_for('news') }}">News & Updates</a></li>
-    </ul>
+  <div class="menu-box">
+    <div class="menu-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </div>
+
+  <ul class="menu-list">
+    <li><a href="/home">Fleet</a></li>
+    <li><a href="/vision">Our Vision</a></li>
+    <li><a href="/team">Team</a></li>
+    <li><a href="/achievements">Achievements</a></li>
+    <li><a href="/teamwork">Gallery</a></li>
+    <li><a href="/contact">Contact</a></li>
+    <li><a href="/news">News and Updates</a></li>
+  </ul>
+</div>
 
 </header>
 
@@ -290,13 +297,14 @@
   </footer>
   <!-- Script -->
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const menu = document.querySelector(".menu");
-      const icon = document.querySelector(".menu-icon");
-      icon.addEventListener("click", function() {
-        menu.classList.toggle("active");
-      });
-    });
-  </script>
+document.addEventListener("DOMContentLoaded", function () {
+  const menu = document.querySelector(".menu");
+  const menuBox = document.querySelector(".menu-box");
+
+  menuBox.addEventListener("click", function () {
+    menu.classList.toggle("active");
+  });
+});
+</script>
 </body>
 </html>

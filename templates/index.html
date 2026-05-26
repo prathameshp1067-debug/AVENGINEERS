@@ -82,20 +82,14 @@
 
 <!-- SCRIPT -->
 <script>
-
 document.addEventListener("DOMContentLoaded", function () {
+  const menu = document.querySelector(".menu");
+  const menuBox = document.querySelector(".menu-box");
 
-    const menu = document.querySelector(".menu");
-    const icon = document.querySelector(".menu-icon");
-
-    icon.addEventListener("click", function () {
-
-        menu.classList.toggle("active");
-
-    });
-
+  menuBox.addEventListener("click", function () {
+    menu.classList.toggle("active");
+  });
 });
-
 </script>
 
 </body>
