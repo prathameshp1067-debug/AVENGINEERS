@@ -10,7 +10,7 @@
 /* =========================
    BODY
 ========================= */
-body {
+html, body {
   font-family: Arial, sans-serif;
   color: #fff;
   background-color: #000;
@@ -18,7 +18,8 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  min-height: 100vh;
+  min-height: 100%;
+  overflow-y: auto; /* enable scrolling */
 }
 
 /* =========================
@@ -39,7 +40,6 @@ body {
 .logo {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 10px;
   font-size: 1.5em;
   font-weight: bold;
@@ -49,26 +49,6 @@ body {
 .logo-img {
   width: 40px;
   height: auto;
-}
-
-/* =========================
-   BUTTON
-========================= */
-.btn {
-  background: #00bfff;
-  color: #000;
-  padding: 10px 20px;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 5px;
-  transition: 0.3s;
-  border: none;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background: #fff;
-  color: #000;
 }
 
 /* =========================
@@ -106,14 +86,11 @@ body {
   z-index: 3000;
 }
 
-.menu-list li {
-  padding: 10px 20px;
-}
-
 .menu-list li a {
   text-decoration: none;
   color: #fff;
   display: block;
+  padding: 10px 20px;
   transition: 0.3s;
 }
 
@@ -131,7 +108,7 @@ body {
    HERO SECTION
 ========================= */
 .hero {
-  height: 100vh;
+  min-height: 100vh; /* fullscreen hero */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -157,69 +134,6 @@ body {
 .hero p {
   font-size: 1.2em;
   margin-bottom: 20px;
-}
-
-/* =========================
-   SIGNIN / SIGNUP
-========================= */
-.signin {
-  width: 380px;
-  margin: 140px auto;
-  background: rgba(0,0,0,0.85);
-  padding: 40px;
-  border-radius: 15px;
-  text-align: center;
-  box-shadow: 0px 0px 20px rgba(0,0,0,0.7);
-}
-
-.signin h2 {
-  margin-bottom: 25px;
-  color: #00bfff;
-  font-size: 2em;
-}
-
-.signin-form {
-  display: flex;
-  flex-direction: column;
-}
-
-.signin-form label {
-  text-align: left;
-  margin-bottom: 8px;
-  color: #fff;
-}
-
-.signin-form input {
-  padding: 12px;
-  margin-bottom: 20px;
-  border: none;
-  border-radius: 8px;
-  outline: none;
-  font-size: 1em;
-}
-
-.signin-form input:focus {
-  border: 2px solid #00bfff;
-}
-
-.signin .btn {
-  width: 100%;
-  padding: 12px;
-  font-size: 1em;
-}
-
-.signin p {
-  margin-top: 15px;
-  color: #ccc;
-}
-
-.signin a {
-  color: #00bfff;
-  text-decoration: none;
-}
-
-.signin a:hover {
-  text-decoration: underline;
 }
 
 /* =========================
@@ -250,6 +164,7 @@ body {
   border-radius: 10px;
   width: 220px;
   transition: 0.3s;
+  text-align: center;
 }
 
 .team-member:hover {
@@ -258,11 +173,36 @@ body {
 }
 
 .team-member img {
-  width: 100%;
-  height: 220px;
+  width: 150px;
+  height: 150px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 50%; /* circular profile */
   margin-bottom: 15px;
+}
+
+.team-member h3 {
+  font-size: 1.2em;
+  margin-bottom: 8px;
+}
+
+.team-member p {
+  font-size: 0.95em;
+  color: #aaa;
+}
+
+/* =========================
+   GENERIC SECTIONS (Vision, Achievements, Gallery, Contact, News)
+========================= */
+section {
+  padding: 120px 20px;
+  background: #111;
+  text-align: center;
+}
+
+section h2 {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  color: #00bfff;
 }
 
 /* =========================
