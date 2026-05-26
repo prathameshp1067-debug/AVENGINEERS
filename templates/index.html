@@ -12,55 +12,35 @@
 <body>
 
     <!-- NAVBAR -->
-    <header class="navbar">
+   <!-- NAVBAR -->
+<header class="navbar">
+    <div class="logo">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+        <span>AVENGINEERS</span>
+    </div>
+</header>
 
-        <!-- LOGO -->
-        <div class="logo">
-            <img src="{{ url_for('static', filename='images/logo.png') }}"
-                 alt="Logo"
-                 class="logo-img">
-
-            <span>AVENGINEERS</span>
+<!-- CENTERED MENU -->
+<div class="menu-center">
+    <div class="menu-box">
+        <div class="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
+    </div>
 
-        <!-- MENU -->
-        <div class="menu">
+    <ul class="menu-list">
+        <li><a href="/" class="active">Fleet</a></li>
+        <li><a href="/vision">Our Vision</a></li>
+        <li><a href="/team">Team</a></li>
+        <li><a href="/achievements">Achievements</a></li>
+        <li><a href="/teamwork">Gallery</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="{{ url_for('news') }}">News and Updates</a></li>
+    </ul>
+</div>
 
-            <!-- MENU BUTTON -->
-            <div class="menu-box">
-
-                <div class="menu-icon">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-
-            </div>
-
-            <!-- DROPDOWN -->
-            <ul class="menu-list">
-
-                <li><a href="/" class="active">Fleet</a></li>
-
-                <li><a href="/vision">Our Vision</a></li>
-
-                <li><a href="/team">Team</a></li>
-
-                <li><a href="/achievements">Achievements</a></li>
-
-                <li><a href="/teamwork">Gallery</a></li>
-
-                <li><a href="/contact">Contact</a></li>
-
-                <li>
-                    <a href="{{ url_for('news') }}">
-                        News and Updates
-                    </a>
-                </li>
-
-            </ul>
-
-        </div>
 
     </header>
 
