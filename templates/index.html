@@ -89,23 +89,21 @@
   <!-- =========================
        HERO SECTION
   ========================== -->
-  <section class="hero">
+ <section class="hero">
+  <div class="overlay">
+    <h1>AVIATION ENGINEERING SQUAD</h1>
+    <h2>ENGINEER THE SKY</h2>
+    <p>
+      We are Avengineers — a team of pilots,
+      engineers and dreamers building the next
+      generation of aircraft.
+    </p>
+  </div>
 
-    <div class="overlay">
+  <!-- Aircraft element -->
+  <img src="/static/images/aircraft.png" alt="Aircraft" class="aircraft">
+</section>
 
-      <h1>AVIATION ENGINEERING SQUAD</h1>
-
-      <h2>ENGINEER THE SKY</h2>
-
-      <p>
-        We are Avengineers — a team of pilots,
-        engineers and dreamers building the next
-        generation of aircraft.
-      </p>
-
-    </div>
-
-  </section>
 
   <!-- =========================
        FOOTER
@@ -118,21 +116,17 @@
        MENU SCRIPT
   ========================== -->
   <script>
+  document.addEventListener("scroll", function() {
+    const aircraft = document.querySelector(".aircraft");
+    const section = document.querySelector(".aircraft-section");
+    const sectionTop = section.getBoundingClientRect().top;
 
-    document.addEventListener("DOMContentLoaded", function () {
+    if (sectionTop < window.innerHeight - 100) {
+      aircraft.classList.add("animate");
+    }
+  });
+</script>
 
-      const menu = document.querySelector(".menu");
-      const icon = document.querySelector(".menu-icon");
-
-      icon.addEventListener("click", function () {
-
-        menu.classList.toggle("active");
-
-      });
-
-    });
-
-  </script>
 
 </body>
 </html>

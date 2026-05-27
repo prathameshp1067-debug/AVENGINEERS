@@ -156,6 +156,8 @@ body {
   text-align: center;
 
   padding: 120px 20px 40px;
+
+  position: relative; /* important for aircraft positioning */
 }
 
 /* OVERLAY */
@@ -167,6 +169,7 @@ body {
   border-radius: 20px;
 
   max-width: 900px;
+  z-index: 1;
 }
 
 /* HERO TEXT */
@@ -475,4 +478,31 @@ footer {
   background: black;
 
   border-top: 1px solid #333;
+}
+
+/* =========================
+   AIRCRAFT SCROLL ANIMATION
+========================= */
+.aircraft {
+  width: 200px;
+  position: absolute;
+  bottom: 40px;
+  left: -250px;   /* start off-screen left */
+  opacity: 0;     /* hidden initially */
+  transition: opacity 0.5s ease;
+  z-index: 2;
+}
+
+.aircraft.animate {
+  opacity: 1;
+  animation: flyAcross 4s ease forwards;
+}
+
+@keyframes flyAcross {
+  from {
+    transform: translateX(0) translateY(0);
+  }
+  to {
+    transform: translateX(120vw) translateY(-50px);
+  }
 }
