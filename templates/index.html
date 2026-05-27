@@ -114,18 +114,25 @@
 
   <!-- =========================
        MENU SCRIPT
-  ========================== -->
-  <script>
+ <script>
   document.addEventListener("scroll", function() {
     const aircraft = document.querySelector(".aircraft");
-    const section = document.querySelector(".aircraft-section");
-    const sectionTop = section.getBoundingClientRect().top;
+    const hero = document.querySelector(".hero");
+    const heroTop = hero.getBoundingClientRect().top;
+    const heroBottom = hero.getBoundingClientRect().bottom;
 
-    if (sectionTop < window.innerHeight - 100) {
-      aircraft.classList.add("animate");
+    // When hero section is in view → add animation
+    if (heroTop < window.innerHeight - 100 && heroBottom > 100) {
+      if (!aircraft.classList.contains("animate")) {
+        aircraft.classList.add("animate");
+      }
+    } else {
+      // Reset when hero section is out of view
+      aircraft.classList.remove("animate");
     }
   });
 </script>
+
 
 
 </body>
