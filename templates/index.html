@@ -89,21 +89,23 @@
   <!-- =========================
        HERO SECTION
   ========================== -->
- <section class="hero">
-  <div class="overlay">
-    <h1>AVIATION ENGINEERING SQUAD</h1>
-    <h2>ENGINEER THE SKY</h2>
-    <p>
-      We are Avengineers — a team of pilots,
-      engineers and dreamers building the next
-      generation of aircraft.
-    </p>
-  </div>
+  <section class="hero">
 
-  <!-- Aircraft element -->
-  <img src="/static/images/aircraft.png" alt="Aircraft" class="aircraft">
-</section>
+    <div class="overlay">
 
+      <h1>AVIATION ENGINEERING SQUAD</h1>
+
+      <h2>ENGINEER THE SKY</h2>
+
+      <p>
+        We are Avengineers — a team of pilots,
+        engineers and dreamers building the next
+        generation of aircraft.
+      </p>
+
+    </div>
+
+  </section>
 
   <!-- =========================
        FOOTER
@@ -114,29 +116,23 @@
 
   <!-- =========================
        MENU SCRIPT
- <script>
-  document.addEventListener("scroll", function() {
-    const aircraft = document.querySelector(".aircraft");
-    const hero = document.querySelector(".hero");
+  ========================== -->
+  <script>
 
-    if (!aircraft || !hero) return; // safety check
+    document.addEventListener("DOMContentLoaded", function () {
 
-    const rect = hero.getBoundingClientRect();
+      const menu = document.querySelector(".menu");
+      const icon = document.querySelector(".menu-icon");
 
-    // In view → play animation
-    if (rect.top < window.innerHeight && rect.bottom > 0) {
-      if (!aircraft.classList.contains("animate")) {
-        // force reflow to restart animation
-        aircraft.classList.remove("animate");
-        void aircraft.offsetWidth; 
-        aircraft.classList.add("animate");
-      }
-    } else {
-      // Out of view → reset
-      aircraft.classList.remove("animate");
-    }
-  });
-</script>
+      icon.addEventListener("click", function () {
+
+        menu.classList.toggle("active");
+
+      });
+
+    });
+
+  </script>
 
 </body>
 </html>
