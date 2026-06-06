@@ -575,21 +575,12 @@ footer {
 }
 
 .team-preview {
-  background: #050505;
+  background: #111;
 }
 
 .gallery-preview {
   background: #050505;
 }
-
-.achievements-preview {
-  background: #050505;
-}
-
-.contact-preview {
-  background: #050505;
-}
-
 
 .aircraft-img {
   width: 60%;
