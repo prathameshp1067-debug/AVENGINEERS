@@ -49,7 +49,11 @@
 
 <section class="scroll-section aircraft-section fade-up">
   <h2>Aircraft Innovation</h2>
-  <img src="{{ url_for('static', filename='images/f22.jpg') }}" class="aircraft-img">
+
+  <video autoplay muted loop playsinline class="aircraft-video">
+    <source src="{{ url_for('static', filename='videos/aircraft-animation.mp4') }}" type="video/mp4">
+  </video>
+
   <p>Our aircraft projects combine aerodynamics, electronics, manufacturing and software design.</p>
 </section>
 
@@ -68,11 +72,11 @@
 <section class="scroll-section achievements-preview fade-up">
   <h2>Achievements</h2>
   <p>See our achievements.</p>
-  <a href="/achievements" class="section-btn">Vive Achievements</a>
+  <a href="/achievements" class="section-btn">View Achievements</a>
 </section>
 
 <section class="scroll-section contact-preview fade-up">
-  <h2>contact</h2>
+  <h2>Contact</h2>
   <p>contact to team.</p>
   <a href="/contact" class="section-btn">Open contact</a>
 </section>
