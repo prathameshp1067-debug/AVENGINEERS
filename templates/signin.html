@@ -5,53 +5,75 @@
   <title>Avengineers - Sign In</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
+
 <body>
-  <!-- Navbar -->
-  
-    <div class="menu">
-      <div class="menu-icon">⋮</div>
-      <ul class="menu-list">
-        <li><a href="/">Fleet</a></li>
-        <li><a href="/vision">Our Vision</a></li>
-        <li><a href="/team">Team</a></li>
-        <li><a href="/achievements">Achievements</a></li>
-        <li><a href="{{ url_for('teamwork') }}" class="active">Gallery</a></li>
-        <<li><a href="/contact">Contact</a></li>
-        <li><a href="{{ url_for('news') }}" >News and Updates</a></li>
 
-      </ul>
+<header class="navbar">
+
+  <div class="logo">
+    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+    <span>AVENGINEERS</span>
+  </div>
+
+  <div class="menu">
+
+    <div class="menu-icon">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-  </header>
 
-  <!-- Sign In Section -->
-  <section class="signin">
+    <ul class="menu-list">
+      <li><a href="/home">Fleet</a></li>
+      <li><a href="/vision">Our Vision</a></li>
+      <li><a href="/team">Team</a></li>
+      <li><a href="/achievements">Achievements</a></li>
+      <li><a href="/teamwork">Gallery</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/news">News and Updates</a></li>
+    </ul>
+
+  </div>
+
+</header>
+
+<section class="signin">
+
+  <form action="/signin" method="post" class="signin-form">
+
     <h2>SIGN IN</h2>
-    <form action="/signin" method="post" class="signin-form">
-      <label for="email">Email</label>
-      <input type="text" id="email" name="email" required>
 
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" required>
+    <label for="email">Email</label>
+    <input type="text" id="email" name="email" required>
 
-      <button type="submit" class="btn">Sign In</button>
-    </form>
-    <p style="margin-top:15px;">Don’t have an account? <a href="/" style="color:#00bfff;">Create one here</a></p>
-  </section>
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" required>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2026 Avengineers. All rights reserved.</p>
-  </footer>
+    <button type="submit" class="btn">Sign In</button>
 
-  <!-- Script for 3-dot menu -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const menu = document.querySelector(".menu");
-      const icon = document.querySelector(".menu-icon");
-      icon.addEventListener("click", function() {
-        menu.classList.toggle("active");
-      });
-    });
-  </script>
+    <p style="margin-top:15px;">
+      Don’t have an account?
+      <a href="/" style="color:#00bfff;">Create one here</a>
+    </p>
+
+  </form>
+
+</section>
+
+<footer>
+  <p>© 2026 Avengineers. All rights reserved.</p>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const menu = document.querySelector(".menu");
+  const icon = document.querySelector(".menu-icon");
+
+  icon.addEventListener("click", function () {
+    menu.classList.toggle("active");
+  });
+});
+</script>
+
 </body>
 </html>
