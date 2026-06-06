@@ -1,112 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AVENGINEERS</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta charset="UTF-8">
+    <title>Achievements</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
-
 <body>
 
 <header class="navbar">
-  <div class="logo">
-    <img src="{{ url_for('static', filename='images/logo.png') }}" class="logo-img">
-    <span>AVENGINEERS</span>
-  </div>
 
-  <div class="menu">
-    <div class="menu-icon">
-      <span></span>
-      <span></span>
-      <span></span>
+    <div class="logo">
+        <img src="{{ url_for('static', filename='images/logo.png') }}"
+             alt="Logo"
+             class="logo-img">
+        <span>AVENGINEERS</span>
     </div>
 
-    <ul class="menu-list">
-      <li><a href="/home">Fleet</a></li>
-      <li><a href="/vision">Our Vision</a></li>
-      <li><a href="/team">Team</a></li>
-      <li><a href="/achievements">Achievements</a></li>
-      <li><a href="/teamwork">Gallery</a></li>
-      <li><a href="/contact">Contact</a></li>
-      <li><a href="/news">News and Updates</a></li>
-    </ul>
-  </div>
+    <div class="menu">
+
+        <div class="menu-box">
+            <div class="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <ul class="menu-list">
+            <li><a href="/home">Fleet</a></li>
+            <li><a href="/vision">Our Vision</a></li>
+            <li><a href="/team">Team</a></li>
+            <li><a href="/achievements" class="active">Achievements</a></li>
+            <li><a href="/teamwork">Gallery</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/news">News and Updates</a></li>
+        </ul>
+
+    </div>
+
 </header>
 
-<section class="scroll-section hero-section">
-  <div class="content fade-up">
-    <h1>AVIATION ENGINEERING SQUAD</h1>
-    <h2>ENGINEER THE SKY</h2>
-    <p>We are Avengineers — a team of pilots, engineers and dreamers building the next generation of aircraft.</p>
-  </div>
-</section>
+<section class="achievements">
 
-<section class="scroll-section about-section fade-up">
-  <h2>About AVENGINEERS</h2>
-  <p>We design, develop and test high-performance RC aircraft with engineering precision and teamwork.</p>
-</section>
+    <h2>Our Achievements</h2>
 
-<section class="scroll-section aircraft-section fade-up">
-  <h2>Aircraft Innovation</h2>
-  <img src="{{ url_for('static', filename='images/f22.jpg') }}" class="aircraft-img">
-  <p>Our aircraft projects combine aerodynamics, electronics, manufacturing and software design.</p>
-</section>
+    <div class="achievements-container">
 
-<section class="scroll-section team-preview fade-up">
-  <h2>Our Team</h2>
-  <p>A passionate group of engineers, pilots, designers and innovators.</p>
-  <a href="/team" class="section-btn">View Team</a>
-</section>
+        {% for achievement in achievements %}
+        <div class="achievement-card">
+            <h3>{{ achievement.title }}</h3>
+            <p>{{ achievement.year }}</p>
+        </div>
+        {% endfor %}
 
-<section class="scroll-section gallery-preview fade-up">
-  <h2>Gallery</h2>
-  <p>Explore our aircraft builds, testing sessions and teamwork moments.</p>
-  <a href="/teamwork" class="section-btn">Open Gallery</a>
-</section>
+    </div>
 
-<section class="scroll-section achievements-preview fade-up">
-  <h2>Achievements</h2>
-  <p>See our achievements.</p>
-  <a href="/achievements" class="section-btn">Vive Achievements</a>
-</section>
+    <br><br>
 
-<section class="scroll-section contact-preview fade-up">
-  <h2>contact</h2>
-  <p>contact to team.</p>
-  <a href="/contact" class="section-btn">Open contact</a>
+    <img src="{{ url_for('static', filename='images/work1.jpg') }}"
+         alt="Team working together"
+         style="width:500px; height:auto; border-radius:40px;">
+
 </section>
 
 <footer>
-  <p>© 2026 Avengineers. All rights reserved.</p>
+    <p>© 2026 AVENGINEERS. All rights reserved.</p>
 </footer>
 
 <script>
+
+/* MENU */
+
 document.addEventListener("DOMContentLoaded", function () {
-  const menu = document.querySelector(".menu");
-  const icon = document.querySelector(".menu-icon");
 
-  icon.addEventListener("click", function () {
-    menu.classList.toggle("active");
-  });
+    const menu = document.querySelector(".menu");
+    const menuBox = document.querySelector(".menu-box");
 
-  const animatedItems = document.querySelectorAll(".fade-up");
-
-  function scrollAnimation() {
-    animatedItems.forEach(item => {
-      const position = item.getBoundingClientRect().top;
-
-      if (position < window.innerHeight - 120) {
-        item.classList.add("show");
-      } else {
-        item.classList.remove("show");
-      }
+    menuBox.addEventListener("click", function () {
+        menu.classList.toggle("active");
     });
-  }
 
-  window.addEventListener("scroll", scrollAnimation);
-  scrollAnimation();
 });
+
+/* VOICE WELCOME */
+
+let hasSpoken = false;
+
+document.addEventListener("click", function() {
+
+    if(hasSpoken) return;
+
+    hasSpoken = true;
+
+    const speech = new SpeechSynthesisUtterance(
+        "Hello. I am Avengineers AI assistant. Welcome to our website. Prepare for takeoff."
+    );
+
+    speech.rate = 0.85;
+    speech.pitch = 0.7;
+    speech.volume = 1;
+
+    speechSynthesis.speak(speech);
+
+});
+
 </script>
 
 </body>
