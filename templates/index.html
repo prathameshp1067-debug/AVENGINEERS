@@ -36,19 +36,36 @@
 
 </header>
 
-<section class="hero">
+<section class="scroll-video-section">
 
-  <div class="overlay">
-    <h1>AVIATION ENGINEERING SQUAD</h1>
+  <video id="scrollVideo" class="scroll-video" muted playsinline preload="auto">
+    <source src="{{ url_for('static', filename='videos/aircraft-scroll.mp4') }}" type="video/mp4">
+  </video>
+
+  <div class="scroll-text">
+    <h1>AVENGINEERS</h1>
     <h2>ENGINEER THE SKY</h2>
-    <p>
-      We are Avengineers — a team of pilots, engineers and dreamers
-      building the next generation of aircraft.
-    </p>
   </div>
 
 </section>
 
+<script>
+const video = document.getElementById("scrollVideo");
+const section = document.querySelector(".scroll-video-section");
+
+video.addEventListener("loadedmetadata", function () {
+  window.addEventListener("scroll", function () {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight - window.innerHeight;
+    const scrollY = window.scrollY - sectionTop;
+
+    let progress = scrollY / sectionHeight;
+    progress = Math.min(Math.max(progress, 0), 1);
+
+    video.currentTime = progress * video.duration;
+  });
+});
+</script>
 <footer>
   <p>© 2026 AVENGINEERS. All rights reserved.</p>
 </footer>
