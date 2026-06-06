@@ -66,6 +66,22 @@ document.addEventListener("DOMContentLoaded", function () {
     menu.classList.toggle("active");
   });
 });
+<script>
+document.addEventListener("click", function firstClick() {
+
+    const speech = new SpeechSynthesisUtterance(
+        "Hello. I am Avengineers AI assistant. Welcome to our website. Prepare for takeoff."
+    );
+
+    speech.rate = 0.85;
+    speech.pitch = 0.7;
+
+    speechSynthesis.speak(speech);
+
+    document.removeEventListener("click", firstClick);
+
+});
+</script>
 </script>
 </body>
 </html>
