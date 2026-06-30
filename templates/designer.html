@@ -2,22 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Aircraft Designer - AVENGINEERS</title>
-  <link rel="stylesheet" href="/static/css/style.css">
+  <title>Aircraft Designer</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
   <script src="{{ url_for('static', filename='js/designer.js') }}"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
-  <header>
-    <h1>Aircraft Designer</h1>
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/designer">Aircraft Designer</a></li>
-      </ul>
-    </nav>
-  </header>
+  <!-- Navbar with 3-dot menu -->
+  <header class="navbar">
+    <div class="logo">
+  <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+  <span>AVENGINEERS</span>
+</div>
+
+     <!-- MENU -->
+        <div class="menu">
+  <div class="menu-box">
+    <div class="menu-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <ul class="menu-list">
+    <li><a href="/home">Fleet</a></li>
+    <li><a href="/vision">Our Vision</a></li>
+    <li><a href="/team">Team</a></li>
+    <li><a href="/achievements">Achievements</a></li>
+    <li><a href="/teamwork">Gallery</a></li>
+    <li><a href="/contact">Contact</a></li>
+    <li><a href="/news">News and Updates</a></li>
+    <li><a href="/designer">Aircraft Designer</a></li>
+  </ul>
+</div>
+
+    </header>
 
   <main>
     <!-- Step 1: Aircraft Type -->
