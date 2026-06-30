@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Aircraft Designer - AVENGINEERS</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+  <script src="{{ url_for('static', filename='js/designer.js') }}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Aircraft Designer</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/designer">Aircraft Designer</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Step 1: Aircraft Type -->
+    <section id="step1" class="step">
+      <h2>Step 1: Choose Aircraft Type</h2>
+      <form>
+        <label><input type="radio" name="aircraftType" value="Trainer"> Trainer</label>
+        <label><input type="radio" name="aircraftType" value="Sport"> Sport</label>
+        <label><input type="radio" name="aircraftType" value="Glider"> Glider</label>
+        <label><input type="radio" name="aircraftType" value="UAV"> UAV</label>
+        <label><input type="radio" name="aircraftType" value="Fighter"> Fighter</label>
+        <label><input type="radio" name="aircraftType" value="Cargo"> Cargo</label>
+        <label><input type="radio" name="aircraftType" value="Custom"> Custom</label>
+      </form>
+    </section>
+
+    <!-- Step 2: Wing Shape -->
+    <section id="step2" class="step">
+      <h2>Step 2: Choose Wing Shape</h2>
+      <form>
+        <label><input type="radio" name="wingShape" value="Rectangular"> Rectangular</label>
+        <label><input type="radio" name="wingShape" value="Tapered"> Tapered</label>
+        <label><input type="radio" name="wingShape" value="Elliptical"> Elliptical</label>
+        <label><input type="radio" name="wingShape" value="Delta"> Delta</label>
+        <label><input type="radio" name="wingShape" value="Swept"> Swept</label>
+        <label><input type="radio" name="wingShape" value="Flying Wing"> Flying Wing</label>
+      </form>
+    </section>
+
+    <!-- Step 3: Horizontal Stabilizer -->
+    <section id="step3" class="step">
+      <h2>Step 3: Choose Horizontal Stabilizer</h2>
+      <form>
+        <label><input type="radio" name="hTail" value="Rectangular"> Rectangular</label>
+        <label><input type="radio" name="hTail" value="Tapered"> Tapered</label>
+        <label><input type="radio" name="hTail" value="Elliptical"> Elliptical</label>
+        <label><input type="radio" name="hTail" value="V Tail"> V Tail</label>
+        <label><input type="radio" name="hTail" value="T Tail"> T Tail</label>
+        <label><input type="radio" name="hTail" value="Cruciform"> Cruciform</label>
+      </form>
+    </section>
+
+    <!-- Step 4: Vertical Stabilizer -->
+    <section id="step4" class="step">
+      <h2>Step 4: Choose Vertical Stabilizer</h2>
+      <form>
+        <label><input type="radio" name="vTail" value="Single Fin"> Single Fin</label>
+        <label><input type="radio" name="vTail" value="Twin Fin"> Twin Fin</label>
+        <label><input type="radio" name="vTail" value="Triple Fin"> Triple Fin</label>
+        <label><input type="radio" name="vTail" value="V Tail"> V Tail</label>
+      </form>
+    </section>
+
+    <!-- Step 5: Input Section -->
+    <section id="step5" class="step">
+      <h2>Step 5: Input Parameters</h2>
+      <form id="inputForm">
+        <label>Wing Span <input type="text" name="wingSpan"></label>
+        <label>Wing Area <input type="text" name="wingArea"></label>
+        <label>Estimated Weight <input type="text" name="weight"></label>
+        <label>Payload <input type="text" name="payload"></label>
+      </form>
+      <button id="designBtn">DESIGN MY AIRCRAFT</button>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results">
+      <h2>Results</h2>
+      <div class="card" id="aircraftSummary"></div>
+      <div class="card" id="tailSummary"></div>
+      <div class="card" id="propulsionSummary"></div>
+      <div class="card" id="performanceSummary"></div>
+    </section>
+
+    <!-- 3D Viewer -->
+    <section id="viewer">
+      <h2>3D Model</h2>
+      <div id="threeContainer"></div>
+    </section>
+
+    <!-- Export Buttons -->
+    <section id="export">
+      <h2>Download Report</h2>
+      <button>Download PDF</button>
+      <button>Download Excel</button>
+      <button>Download CAD Dimensions</button>
+      <button>Download STL</button>
+      <button>Download Report</button>
+    </section>
+  </main>
+
+  <script src="/static/js/designer.js"></script>
+</body>
+</html>

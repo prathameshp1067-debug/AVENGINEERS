@@ -656,3 +656,136 @@ footer {
   position: relative;
   z-index: 2;
 }
+/* =========================
+   AIRCRAFT DESIGNER PAGE
+========================= */
+
+body {
+  font-family: Arial, sans-serif;
+  background: #000;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+/* Page Header */
+header {
+  background: #111;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 2px solid #00bfff;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  color: #00bfff;
+}
+
+/* Step Sections */
+.step {
+  background: #111;
+  padding: 40px;
+  margin: 40px auto;
+  border-radius: 20px;
+  max-width: 900px;
+  box-shadow: 0 0 25px rgba(0,191,255,0.2);
+}
+
+.step h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #00bfff;
+}
+
+.step label {
+  display: block;
+  margin: 10px 0;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.step input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0 20px;
+  border: none;
+  border-radius: 10px;
+  background: #222;
+  color: #fff;
+}
+
+/* Design Button */
+#designBtn {
+  display: block;
+  margin: 20px auto;
+  padding: 14px 30px;
+  background: #00bfff;
+  color: #000;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#designBtn:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* Results Section */
+#results {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 60px;
+  padding: 0 20px;
+}
+
+.card {
+  background: #111;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,191,255,0.25);
+  text-align: left;
+}
+
+.card h3 {
+  color: #00bfff;
+  margin-bottom: 15px;
+}
+
+/* 3D Viewer */
+#viewer {
+  margin-top: 60px;
+  text-align: center;
+}
+
+#threeContainer {
+  width: 100%;
+  height: 400px;
+  background: #000;
+  border: 2px solid #00bfff;
+}
+/* Export Buttons */
+#export {
+  margin-top: 60px;
+  text-align: center;
+}
+
+#export button {
+  margin: 10px;
+  padding: 12px 25px;
+  background: #00bfff;
+  color: #000;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#export button:hover {
+  background: #fff;
+}
