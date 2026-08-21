@@ -165,8 +165,8 @@ section h2 {
 ========================= */
 .team-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* centers last row */
+  flex-wrap: nowrap;   /* prevents wrapping */
+  overflow-x: auto;    /* adds horizontal scroll if too many */
   gap: 30px;
 }
 
