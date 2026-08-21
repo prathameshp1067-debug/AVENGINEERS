@@ -27,10 +27,13 @@ body {
   top: 0;
   width: 100%;
   padding: 20px 40px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   background: rgba(0,0,0,0.7);
+
   z-index: 9999;
 }
 
@@ -41,6 +44,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
+
   font-size: 1.5rem;
   font-weight: bold;
 }
@@ -57,54 +61,79 @@ body {
   position: relative;
 }
 
+/* HAMBURGER ICON */
 .menu-icon {
   width: 40px;
+
   display: flex;
   flex-direction: column;
   gap: 6px;
+
   cursor: pointer;
 }
 
+/* LINES */
 .menu-icon span {
   width: 100%;
   height: 4px;
+
   background: white;
+
   border-radius: 10px;
+
   transition: 0.3s;
 }
 
+/* HOVER */
 .menu-icon:hover span {
   background: #00bfff;
 }
 
+/* MENU LIST */
 .menu-list {
   display: none;
+
   position: absolute;
+
   top: 50px;
   right: 0;
+
   background: #111;
+
   min-width: 240px;
+
   border-radius: 10px;
+
   overflow: hidden;
+
   list-style: none;
+
   box-shadow: 0 0 20px rgba(0,0,0,0.5);
+
   z-index: 9999;
 }
 
+/* MENU LINKS */
 .menu-list li a {
   display: block;
+
   padding: 15px 20px;
+
   color: white;
+
   text-decoration: none;
+
   transition: 0.3s;
 }
 
+/* ACTIVE + HOVER */
 .menu-list li a:hover,
 .menu-list li a.active {
   background: #00bfff;
   color: black;
 }
 
+/* SHOW MENU */
 .menu.active .menu-list {
   display: block;
 }
@@ -114,21 +143,33 @@ body {
 ========================= */
 .hero {
   min-height: 100vh;
-  background: url("../images/f22.jpg") no-repeat center center/cover;
+
+  background: url("../images/f22.jpg")
+              no-repeat
+              center
+              center/cover;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
   text-align: center;
+
   padding: 120px 20px 40px;
 }
 
+/* OVERLAY */
 .overlay {
   background: rgba(0,0,0,0.7);
+
   padding: 50px;
+
   border-radius: 20px;
+
   max-width: 900px;
 }
 
+/* HERO TEXT */
 .hero h1 {
   font-size: 4rem;
   margin-bottom: 20px;
@@ -137,6 +178,7 @@ body {
 .hero h2 {
   font-size: 2.5rem;
   margin-bottom: 20px;
+
   color: #00bfff;
 }
 
@@ -150,13 +192,17 @@ body {
 ========================= */
 section {
   padding: 120px 20px;
+
   background: #111;
+
   text-align: center;
 }
 
 section h2 {
   font-size: 2.5rem;
+
   margin-bottom: 40px;
+
   color: #00bfff;
 }
 
@@ -166,39 +212,50 @@ section h2 {
 .team-container {
   display: flex;
   flex-wrap: wrap;
+
   justify-content: center;
+
   gap: 30px;
 }
 
 .team-member {
   width: 240px;
-  text-align: center;
+
   background: #222;
+
   padding: 20px;
+
   border-radius: 15px;
+
   transition: 0.3s;
 }
 
 .team-member:hover {
   transform: translateY(-10px);
+
   background: #333;
 }
 
 .team-member img {
   width: 150px;
   height: 150px;
+
   object-fit: cover;
+
   border-radius: 50%;
+
   margin-bottom: 15px;
 }
 
 .team-member h3 {
   margin-bottom: 10px;
+
   color: #00bfff;
 }
 
 .team-member p {
   color: #ccc;
+
   font-size: 15px;
 }
 
@@ -207,8 +264,11 @@ section h2 {
 ========================= */
 .vision p {
   max-width: 900px;
+
   margin: 20px auto;
+
   line-height: 1.9;
+
   font-size: 1.2rem;
 }
 
@@ -218,25 +278,33 @@ section h2 {
 .achievements-container {
   display: flex;
   flex-wrap: wrap;
+
   justify-content: center;
+
   gap: 30px;
 }
 
 .achievement-card {
   width: 260px;
+
   background: #222;
+
   padding: 25px;
+
   border-radius: 15px;
+
   transition: 0.3s;
 }
 
 .achievement-card:hover {
   transform: translateY(-10px);
+
   background: #333;
 }
 
 .achievement-card h3 {
   color: #00bfff;
+
   margin-bottom: 10px;
 }
 
@@ -246,15 +314,20 @@ section h2 {
 .teamwork-gallery {
   display: flex;
   flex-wrap: wrap;
+
   justify-content: center;
+
   gap: 25px;
 }
 
 .teamwork-gallery img,
 .teamwork-gallery video {
   width: 300px;
+
   border-radius: 15px;
+
   transition: 0.3s;
+
   box-shadow: 0 0 15px rgba(0,0,0,0.5);
 }
 
@@ -268,8 +341,11 @@ section h2 {
 ========================= */
 .contact-info {
   max-width: 700px;
+
   margin: auto;
+
   line-height: 2;
+
   font-size: 1.2rem;
 }
 
@@ -279,20 +355,27 @@ section h2 {
 .news-container {
   display: flex;
   flex-direction: column;
+
   align-items: center;
+
   gap: 25px;
 }
 
 .news-card {
   width: 70%;
+
   background: #222;
+
   padding: 25px;
+
   border-radius: 15px;
+
   text-align: left;
 }
 
 .news-card h3 {
   color: #00bfff;
+
   margin-bottom: 10px;
 }
 
@@ -305,50 +388,75 @@ section h2 {
 ========================= */
 .signin {
   min-height: 100vh;
-  background: url("../images/f22.jpg") no-repeat center center/cover;
+
+  background: url("../images/f22.jpg")
+              no-repeat
+              center
+              center/cover;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
   padding: 120px 20px;
 }
 
 .signin-form {
   background: rgba(0,0,0,0.8);
+
   padding: 40px;
+
   border-radius: 20px;
+
   width: 100%;
   max-width: 400px;
 }
 
 .signin-form h2 {
   text-align: center;
+
   margin-bottom: 30px;
+
   color: #00bfff;
 }
 
 .signin-form label {
   display: block;
+
   margin-bottom: 8px;
 }
 
 .signin-form input {
   width: 100%;
+
   padding: 12px;
+
   margin-bottom: 20px;
+
   border: none;
+
   border-radius: 10px;
+
   outline: none;
 }
 
 .signin-form button {
   width: 100%;
+
   padding: 12px;
+
   border: none;
+
   border-radius: 10px;
+
   background: #00bfff;
+
   color: black;
+
   font-size: 1rem;
+
   cursor: pointer;
+
   transition: 0.3s;
 }
 
@@ -361,14 +469,209 @@ section h2 {
 ========================= */
 footer {
   text-align: center;
+
   padding: 20px;
+
   background: black;
+
   border-top: 1px solid #333;
 }
 
+.scroll-scene {
+  height: 400vh;
+  position: relative;
+  background: black;
+}
+
+.scroll-video {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  display: block;
+}
+
+.scene-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  text-align: center;
+  color: white;
+  background: rgba(0,0,0,0.45);
+  padding: 40px;
+  border-radius: 20px;
+}
+
+.scene-content h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.scene-content h2 {
+  font-size: 2.5rem;
+  color: #00bfff;
+  margin-bottom: 20px;
+}
+
+.scene-content p {
+  font-size: 1.2rem;
+}
+
+.after-scene {
+  padding: 120px 20px;
+  background: #111;
+  color: white;
+  text-align: center;
+}
+
+.scroll-section {
+  min-height: 100vh;
+  padding: 120px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  background: #000;
+}
+
+.hero-section {
+  background: url("../images/f22.jpg") no-repeat center center/cover;
+}
+
+.hero-section .content {
+  background: rgba(0,0,0,0.7);
+  padding: 50px;
+  border-radius: 20px;
+  max-width: 900px;
+}
+
+.scroll-section h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.scroll-section h2 {
+  font-size: 2.8rem;
+  color: #00bfff;
+  margin-bottom: 20px;
+}
+
+.scroll-section p {
+  max-width: 800px;
+  font-size: 1.3rem;
+  line-height: 1.8;
+}
+
+.about-section {
+  background: #050505;
+}
+
+.aircraft-section {
+  background: #050505;
+}
+
+.team-preview {
+  background: #050505;
+}
+
+.gallery-preview {
+  background: #050505;
+}
+
+.achievements-preview {
+  background: #050505;
+}
+
+.contact-preview {
+  background: #050505;
+}
+
+.Aircraft Designer-preview{
+ background: #050505;
+}
+
+.aircraft-img {
+  width: 60%;
+  max-width: 700px;
+  border-radius: 20px;
+  margin: 30px 0;
+  box-shadow: 0 0 30px rgba(0,191,255,0.3);
+}
+
+.section-btn {
+  margin-top: 30px;
+  padding: 14px 30px;
+  background: #00bfff;
+  color: #000;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(100px) scale(0.95);
+  transition: 1s ease;
+}
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+#bg3d {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  display: block;
+}
+
+body {
+  margin: 0;
+  background: #000;
+}
+
+.navbar {
+  position: fixed;
+  z-index: 99999;
+}
+
+.menu {
+  position: relative;
+  z-index: 100000;
+}
+
+.menu-list {
+  z-index: 100001;
+}
+
+.hero,
+section,
+footer {
+  position: relative;
+  z-index: 2;
+}
 /* =========================
    AIRCRAFT DESIGNER PAGE
 ========================= */
+
+body {
+  font-family: Arial, sans-serif;
+  background: #000;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+/* Page Header */
 header {
   background: #111;
   padding: 20px;
@@ -382,6 +685,7 @@ header h1 {
   color: #00bfff;
 }
 
+/* Step Sections */
 .step {
   background: #111;
   padding: 40px;
@@ -411,4 +715,80 @@ header h1 {
   border: none;
   border-radius: 10px;
   background: #222;
-  color
+  color: #fff;
+}
+
+/* Design Button */
+#designBtn {
+  display: block;
+  margin: 20px auto;
+  padding: 14px 30px;
+  background: #00bfff;
+  color: #000;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#designBtn:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* Results Section */
+#results {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 60px;
+  padding: 0 20px;
+}
+
+.card {
+  background: #111;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,191,255,0.25);
+  text-align: left;
+}
+
+.card h3 {
+  color: #00bfff;
+  margin-bottom: 15px;
+}
+
+/* 3D Viewer */
+#viewer {
+  margin-top: 60px;
+  text-align: center;
+}
+
+#threeContainer {
+  width: 100%;
+  height: 400px;
+  background: #000;
+  border: 2px solid #00bfff;
+}
+/* Export Buttons */
+#export {
+  margin-top: 60px;
+  text-align: center;
+}
+
+#export button {
+  margin: 10px;
+  padding: 12px 25px;
+  background: #00bfff;
+  color: #000;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#export button:hover {
+  background: #fff;
+}
