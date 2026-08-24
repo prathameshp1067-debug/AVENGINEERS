@@ -67,7 +67,7 @@ def news():
         {
             "title": "New Jet Prototype Tested",
             "date": "2026-08-20",
-            "content": "Our team successfully tested the latest jet prototype with improved aerodynamics.",
+            "content": "Prototype tested successfully with improved aerodynamics.",
             "image": "work12.jpg"
         },
         {
@@ -78,6 +78,7 @@ def news():
         }
     ]
     return render_template("news.html", updates=updates)
+
 
 # =========================
 # AIRCRAFT DESIGNER PAGE
