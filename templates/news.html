@@ -44,7 +44,8 @@
       {% for item in updates %}
       <div class="news-card">
         <!-- News Image -->
-        <img src="{{ url_for('static', filename='images/' + item.image) }}" alt="{{ item.title }}" style="width:100%; border-radius:10px; margin-bottom:15px;">
+        <img src="{{ url_for('static', filename='images/' ~ item.image) }}" alt="{{ item.title }}">
+
         
         <!-- News Content -->
         <h3>{{ item.title }}</h3>
