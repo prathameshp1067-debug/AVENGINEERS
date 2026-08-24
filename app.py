@@ -64,8 +64,18 @@ def contact():
 @app.route("/news")
 def news():
     updates = [
-        {"title": "New Jet Prototype Tested", "content": "Prototype tested successfully"},
-        {"title": "Innovation Award", "content": "Avengineers won award"}
+        {
+            "title": "New Jet Prototype Tested",
+            "date": "2026-08-20",
+            "content": "Our team successfully tested the latest jet prototype with improved aerodynamics.",
+            "image": "work12.jpg"
+        },
+        {
+            "title": "Avengineers Won Innovation Award",
+            "date": "2026-08-15",
+            "content": "We received the National Innovation Award for aerospace engineering excellence.",
+            "image": "award.jpg"
+        }
     ]
     return render_template("news.html", updates=updates)
 
