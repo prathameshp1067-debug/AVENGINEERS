@@ -74,7 +74,7 @@ def news():
             "title": "Avengineers Won Innovation Award",
             "date": "2026-08-15",
             "content": "We received the National Innovation Award for aerospace engineering excellence.",
-            "image": "award.jpg"
+            "image": "work13.jpg"
         }
     ]
     return render_template("news.html", updates=updates)
