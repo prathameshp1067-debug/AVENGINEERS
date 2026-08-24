@@ -8,47 +8,45 @@
 <body>
   <!-- Navbar -->
   <header class="navbar">
-    
     <div class="logo">
       <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
       <span>AVENGINEERS</span>
     </div>
-     <!-- MENU -->
-       <div class="menu">
-  <div class="menu-box">
-    <div class="menu-icon">
-      <span></span>
-      <span></span>
-      <span></span>
+
+    <!-- MENU -->
+    <div class="menu">
+      <div class="menu-box">
+        <div class="menu-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <ul class="menu-list">
+        <li><a href="/home">Fleet</a></li>
+        <li><a href="/vision">Our Vision</a></li>
+        <li><a href="/team">Team</a></li>
+        <li><a href="/achievements">Achievements</a></li>
+        <li><a href="/teamwork">Gallery</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/news">News and Updates</a></li>
+        <li><a href="/designer">Aircraft Designer</a></li>
+      </ul>
     </div>
-  </div>
-
-  <ul class="menu-list">
-    <li><a href="/home">Fleet</a></li>
-    <li><a href="/vision">Our Vision</a></li>
-    <li><a href="/team">Team</a></li>
-    <li><a href="/achievements">Achievements</a></li>
-    <li><a href="/teamwork">Gallery</a></li>
-    <li><a href="/contact">Contact</a></li>
-    <li><a href="/news">News and Updates</a></li>
-    <li><a href="/designer">Aircraft Designer</a></li>
-  </ul>
-</div>
-    </header>
-
+  </header>
 
   <!-- News Section -->
   <section class="news">
     <h2>News and Updates</h2>
-<div class="team-member">
-      <img src="{{ url_for('static', filename='C:\Users\Prathamesh4\OneDrive\Desktop\team\static\images\work12.jpg') }}" alt="Tanuja Shravan">
-      <h3>Tanuja Shravan</h3>
-      <p>Documentation & Electronics</p>
-    </div>
 
     <div class="news-container">
       {% for item in updates %}
       <div class="news-card">
+        <!-- News Image -->
+        <img src="{{ url_for('static', filename='images/' + item.image) }}" alt="{{ item.title }}" style="width:100%; border-radius:10px; margin-bottom:15px;">
+        
+        <!-- News Content -->
         <h3>{{ item.title }}</h3>
         <p class="date">{{ item.date }}</p>
         <p>{{ item.content }}</p>
@@ -56,17 +54,18 @@
       {% endfor %}
     </div>
   </section>
+
+  <!-- Menu Script -->
   <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const menu = document.querySelector(".menu");
-  const menuBox = document.querySelector(".menu-box");
+    document.addEventListener("DOMContentLoaded", function () {
+      const menu = document.querySelector(".menu");
+      const menuBox = document.querySelector(".menu-box");
 
-  menuBox.addEventListener("click", function () {
-    menu.classList.toggle("active");
-  });
-});
-</script>
-
+      menuBox.addEventListener("click", function () {
+        menu.classList.toggle("active");
+      });
+    });
+  </script>
 
   <!-- Footer -->
   <footer>
