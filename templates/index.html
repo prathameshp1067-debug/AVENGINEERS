@@ -1,143 +1,637 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AVENGINEERS</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>AVENGINEERS | Engineer The Sky</title>
+
+
+    <!-- =====================================================
+         CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
 </head>
+
 
 <body>
 
-<canvas id="bg3d"></canvas>
+
+<!-- =====================================================
+     NAVBAR
+====================================================== -->
 
 <header class="navbar">
-  <div class="logo">
-    <img src="{{ url_for('static', filename='images/logo.png') }}" class="logo-img" alt="Logo">
-    <span>AVENGINEERS</span>
-  </div>
 
-  <div class="menu">
-    <div class="menu-icon">
-      <span></span>
-      <span></span>
-      <span></span>
+    <div class="logo">
+
+        <img
+            src="{{ url_for('static', filename='images/logo.png') }}"
+            class="logo-img"
+            alt="AVENGINEERS Logo"
+        >
+
+        <span>
+            AVENGINEERS
+        </span>
+
     </div>
 
-    <ul class="menu-list">
-      <li><a href="/home">Fleet</a></li>
-      <li><a href="/vision">Our Vision</a></li>
-      <li><a href="/team">Team</a></li>
-      <li><a href="/achievements">Achievements</a></li>
-      <li><a href="/teamwork">Gallery</a></li>
-      <li><a href="/contact">Contact</a></li>
-      <li><a href="/news">News and Updates</a></li>
-      <li><a href="/designer">Aircraft Designer</a></li>
-    </ul>
-  </div>
+
+    <div class="menu">
+
+        <div class="menu-icon">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+
+        <ul class="menu-list">
+
+            <li>
+                <a
+                    href="/home"
+                    class="active"
+                >
+                    Fleet
+                </a>
+            </li>
+
+            <li>
+                <a href="/vision">
+                    Our Vision
+                </a>
+            </li>
+
+            <li>
+                <a href="/team">
+                    Team
+                </a>
+            </li>
+
+            <li>
+                <a href="/achievements">
+                    Achievements
+                </a>
+            </li>
+
+            <li>
+                <a href="/teamwork">
+                    Gallery
+                </a>
+            </li>
+
+            <li>
+                <a href="/contact">
+                    Contact
+                </a>
+            </li>
+
+            <li>
+                <a href="/news">
+                    News and Updates
+                </a>
+            </li>
+
+            <li>
+                <a href="/designer">
+                    Aircraft Designer
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
 </header>
 
-<section class="scroll-section hero-section">
-  <div class="content fade-up">
-    <h1>AVIATION ENGINEERING SQUAD</h1>
-    <h2>ENGINEER THE SKY</h2>
-    <p>
-      We are Avengineers — a team of pilots, engineers and dreamers building the next generation of aircraft.
-    </p>
-  </div>
+
+
+<!-- =====================================================
+     AIRCRAFT SCROLL SEQUENCE
+====================================================== -->
+
+<section class="scroll-scene">
+
+
+    <!-- =================================================
+         STICKY FULL-SCREEN VIEWPORT
+    ================================================== -->
+
+    <div class="sequence-viewport">
+
+
+        <!-- =================================================
+             AIRCRAFT CANVAS
+        ================================================== -->
+
+        <canvas
+            id="sequenceCanvas"
+        ></canvas>
+
+
+        <!-- =================================================
+             INTRO TEXT
+        ================================================== -->
+
+        <div class="scene-content">
+
+            <span class="eyebrow">
+                AVENGINEERS · FLEET SEQUENCE
+            </span>
+
+
+            <h1>
+                ENGINEER THE SKY
+            </h1>
+
+            <p>
+                We are AVENGINEERS — a team of pilots,
+                engineers and dreamers building the next
+                generation of aircraft.
+                Keep scrolling to experience the aircraft
+                through its complete flight sequence.
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             SCROLL INDICATOR
+        ================================================== -->
+
+        <div class="scene-hint">
+
+            <span>
+                SCROLL
+            </span>
+
+            <div class="scroll-arrow">
+                ↓
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             PROGRESS BAR
+        ================================================== -->
+
+        <div class="scene-progress">
+
+            <div
+                class="scene-progress-bar"
+            ></div>
+
+        </div>
+
+    </div>
+
 </section>
 
-<section class="scroll-section about-section fade-up">
-  <h2>About AVENGINEERS</h2>
-  <p>
-    We design, develop and test high-performance RC aircraft with engineering precision and teamwork.
-  </p>
+
+
+<!-- =====================================================
+     ABOUT
+====================================================== -->
+
+<section
+    class="scroll-section about-section fade-up"
+>
+
+    <div class="section-container">
+
+        <span class="section-label">
+            WHO WE ARE
+        </span>
+
+
+        <h2>
+            About AVENGINEERS
+        </h2>
+
+
+        <p>
+            We design, develop and test
+            high-performance RC aircraft
+            with engineering precision,
+            creativity and teamwork.
+        </p>
+
+    </div>
+
 </section>
 
-<section class="scroll-section aircraft-section fade-up">
-  <h2>Aircraft Innovation</h2>
-  <img src="{{ url_for('static', filename='images/f22.jpg') }}" class="aircraft-img" alt="Aircraft">
-  <p>
-    Our aircraft projects combine aerodynamics, electronics, manufacturing and software design.
-  </p>
+
+
+<!-- =====================================================
+     AIRCRAFT INNOVATION
+====================================================== -->
+
+<section
+    class="scroll-section aircraft-section fade-up"
+>
+
+    <div class="section-container">
+
+        <span class="section-label">
+            INNOVATION
+        </span>
+
+
+        <h2>
+            Aircraft Innovation
+        </h2>
+
+
+        <div class="aircraft-image-container">
+
+            <img
+                src="{{ url_for(
+                    'static',
+                    filename='images/frames/frame-150.jpg'
+                ) }}"
+                class="aircraft-img"
+                alt="AVENGINEERS Aircraft"
+            >
+
+        </div>
+
+
+        <p>
+            Our aircraft projects combine
+            aerodynamics, electronics,
+            manufacturing and software design.
+        </p>
+
+    </div>
+
 </section>
 
-<section class="scroll-section team-preview fade-up">
-  <h2>Our Team</h2>
-  <p>
-    A passionate group of engineers, pilots, designers and innovators.
-  </p>
-  <a href="/team" class="section-btn">View Team</a>
+
+
+<!-- =====================================================
+     TEAM
+====================================================== -->
+
+<section
+    class="scroll-section team-preview fade-up"
+>
+
+    <div class="section-container">
+
+        <span class="section-label">
+            PEOPLE
+        </span>
+
+
+        <h2>
+            Our Team
+        </h2>
+
+
+        <p>
+            A passionate group of engineers,
+            pilots, designers and innovators
+            working together to engineer
+            the future of flight.
+        </p>
+
+
+        <a
+            href="/team"
+            class="section-btn"
+        >
+            View Team
+        </a>
+
+    </div>
+
 </section>
 
-<section class="scroll-section gallery-preview fade-up">
-  <h2>Gallery</h2>
-  <p>
-    Explore our aircraft builds, testing sessions and teamwork moments.
-  </p>
-  <a href="/teamwork" class="section-btn">Open Gallery</a>
+
+
+<!-- =====================================================
+     GALLERY
+====================================================== -->
+
+<section
+    class="scroll-section gallery-preview fade-up"
+>
+
+    <div class="section-container">
+
+        <span class="section-label">
+            EXPLORE
+        </span>
+
+
+        <h2>
+            Gallery
+        </h2>
+
+
+        <p>
+            Explore our aircraft builds,
+            testing sessions, competitions
+            and teamwork moments.
+        </p>
+
+
+        <a
+            href="/teamwork"
+            class="section-btn"
+        >
+            Open Gallery
+        </a>
+
+    </div>
+
 </section>
 
-<section class="scroll-section achievements-preview fade-up">
-  <h2>Achievements</h2>
-  <p>
-    See our achievements.
-  </p>
-  <a href="/achievements" class="section-btn">View Achievements</a>
+
+
+<!-- =====================================================
+     ACHIEVEMENTS
+====================================================== -->
+
+<section
+    class="scroll-section achievements-preview fade-up"
+>
+
+    <div class="section-container">
+
+        <span class="section-label">
+            MILESTONES
+        </span>
+
+
+        <h2>
+            Achievements
+        </h2>
+
+
+        <p>
+            Discover our achievements,
+            competitions and milestones
+            in aircraft engineering.
+        </p>
+
+
+        <a
+            href="/achievements"
+            class="section-btn"
+        >
+            View Achievements
+        </a>
+
+    </div>
+
 </section>
 
-<section class="scroll-section contact-preview fade-up">
-  <h2>Contact</h2>
-  <p>
-    Contact our team.
-  </p>
-  <a href="/contact" class="section-btn">Open Contact</a>
+
+
+<!-- =====================================================
+     CONTACT
+====================================================== -->
+
+<section
+    class="scroll-section contact-preview fade-up"
+>
+
+    <div class="section-container">
+
+        <span class="section-label">
+            CONNECT
+        </span>
+
+
+        <h2>
+            Contact
+        </h2>
+
+
+        <p>
+            Have an idea, collaboration
+            opportunity or aircraft project?
+            Get in touch with AVENGINEERS.
+        </p>
+
+
+        <a
+            href="/contact"
+            class="section-btn"
+        >
+            Open Contact
+        </a>
+
+    </div>
+
 </section>
 
-<section class="scroll-section contact-preview fade-up">
-  <h2>Aircraft Designer</h2>
-  <p>
-    Make your aircraft.
-  </p>
-  <a href="/designer" class="section-btn">Aircraft Designer</a>
+
+
+<!-- =====================================================
+     AIRCRAFT DESIGNER
+====================================================== -->
+
+<section
+    class="scroll-section designer-preview fade-up"
+>
+
+    <div class="section-container">
+
+        <span class="section-label">
+            CREATE
+        </span>
+
+
+        <h2>
+            Aircraft Designer
+        </h2>
+
+
+        <p>
+            Design your own aircraft and
+            explore the engineering behind flight.
+        </p>
+
+
+        <a
+            href="/designer"
+            class="section-btn"
+        >
+            Aircraft Designer
+        </a>
+
+    </div>
+
 </section>
 
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
 
 <footer>
-  <p>© 2026 Avengineers. All rights reserved.</p>
+
+    <p>
+        &copy; 2026 AVENGINEERS.
+        All rights reserved.
+    </p>
+
 </footer>
 
+
+
+<!-- =====================================================
+     FLASK FRAME PATH
+     
+     IMPORTANT:
+     This MUST come before scroll-sequence.js
+====================================================== -->
+
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const menu = document.querySelector(".menu");
-  const icon = document.querySelector(".menu-icon");
 
-  icon.addEventListener("click", function () {
-    menu.classList.toggle("active");
-  });
+    const STATIC_FRAME_BASE =
+        "{{ url_for(
+            'static',
+            filename='images/frames/'
+        ) }}";
 
-  const animatedItems = document.querySelectorAll(".fade-up");
-
-  function scrollAnimation() {
-    animatedItems.forEach(item => {
-      const position = item.getBoundingClientRect().top;
-
-      if (position < window.innerHeight - 120) {
-        item.classList.add("show");
-      } else {
-        item.classList.remove("show");
-      }
-    });
-  }
-
-  window.addEventListener("scroll", scrollAnimation);
-  scrollAnimation();
-});
 </script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
-<script src="{{ url_for('static', filename='js/three-bg.js') }}"></script>
+
+
+<!-- =====================================================
+     MENU + SECTION ANIMATION
+====================================================== -->
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+
+        /* =================================================
+           MOBILE MENU
+        ================================================= */
+
+        const menu =
+            document.querySelector(
+                ".menu"
+            );
+
+
+        const menuIcon =
+            document.querySelector(
+                ".menu-icon"
+            );
+
+
+        if (
+            menu &&
+            menuIcon
+        ) {
+
+            menuIcon.addEventListener(
+                "click",
+                function () {
+
+                    menu.classList.toggle(
+                        "active"
+                    );
+
+                }
+            );
+
+        }
+
+
+
+        /* =================================================
+           FADE-UP SECTIONS
+        ================================================= */
+
+        const animatedItems =
+            document.querySelectorAll(
+                ".fade-up"
+            );
+
+
+        function scrollAnimation() {
+
+            animatedItems.forEach(
+                function (item) {
+
+                    const position =
+                        item.getBoundingClientRect()
+                            .top;
+
+
+                    if (
+                        position <
+                        window.innerHeight - 120
+                    ) {
+
+                        item.classList.add(
+                            "show"
+                        );
+
+                    }
+
+                }
+            );
+
+        }
+
+
+        window.addEventListener(
+            "scroll",
+            scrollAnimation,
+            {
+                passive: true
+            }
+        );
+
+
+        scrollAnimation();
+
+    }
+);
+
+</script>
+
+
+
+<!-- =====================================================
+     AIRCRAFT SCROLL JS
+====================================================== -->
+
+<script
+    src="{{ url_for(
+        'static',
+        filename='js/scroll-sequence.js'
+    ) }}"
+></script>
+
 
 </body>
+
 </html>

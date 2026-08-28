@@ -1,794 +1,2312 @@
-/* =========================
+/* =========================================================
+   AVENGINEERS
+   COMPLETE STYLE.CSS
+   Aircraft + Vision + Team + Contact
+========================================================= */
+
+
+/* =========================================================
    RESET
-========================= */
+========================================================= */
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* =========================
-   BODY
-========================= */
-html,
+html {
+    width: 100%;
+    min-height: 100%;
+    scroll-behavior: auto;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  color: white;
-  background: black;
-  min-height: 100vh;
-  overflow-x: hidden;
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+
+    background: #000;
+    color: #fff;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    overflow-x: hidden;
 }
 
-/* =========================
+
+/* =========================================================
    NAVBAR
-========================= */
+========================================================= */
+
 .navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 20px 40px;
+    position: fixed;
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    top: 0;
+    left: 0;
 
-  background: rgba(0,0,0,0.7);
+    width: 100%;
+    height: 80px;
 
-  z-index: 9999;
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 45px;
+
+    background:
+        rgba(0, 0, 0, 0.35);
+
+    backdrop-filter:
+        blur(10px);
+
+    -webkit-backdrop-filter:
+        blur(10px);
+
+    z-index: 1000;
 }
 
-/* =========================
-   LOGO
-========================= */
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
 
-  font-size: 1.5rem;
-  font-weight: bold;
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: #fff;
+
+    font-size: 20px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    white-space: nowrap;
 }
 
 .logo-img {
-  width: 45px;
-  height: auto;
+    width: 42px;
+    height: 42px;
+
+    object-fit: contain;
+
+    display: block;
 }
 
-/* =========================
+
+/* =========================================================
    MENU
-========================= */
+========================================================= */
+
 .menu {
-  position: relative;
+    position: relative;
 }
 
-/* HAMBURGER ICON */
 .menu-icon {
-  width: 40px;
+    display: none;
 
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+    width: 32px;
 
-  cursor: pointer;
+    cursor: pointer;
+
+    z-index: 1100;
 }
 
-/* LINES */
 .menu-icon span {
-  width: 100%;
-  height: 4px;
+    display: block;
 
-  background: white;
+    width: 100%;
+    height: 3px;
 
-  border-radius: 10px;
+    margin: 5px 0;
 
-  transition: 0.3s;
+    background: #fff;
+
+    border-radius: 10px;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
 }
 
-/* HOVER */
-.menu-icon:hover span {
-  background: #00bfff;
-}
 
-/* MENU LIST */
+/* =========================================================
+   MENU LIST
+========================================================= */
+
 .menu-list {
-  display: none;
+    display: flex;
 
-  position: absolute;
+    align-items: center;
 
-  top: 50px;
-  right: 0;
+    list-style: none;
 
-  background: #111;
+    gap: 25px;
 
-  min-width: 240px;
-
-  border-radius: 10px;
-
-  overflow: hidden;
-
-  list-style: none;
-
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
-
-  z-index: 9999;
+    margin: 0;
+    padding: 0;
 }
 
-/* MENU LINKS */
-.menu-list li a {
-  display: block;
-
-  padding: 15px 20px;
-
-  color: white;
-
-  text-decoration: none;
-
-  transition: 0.3s;
+.menu-list li {
+    list-style: none;
 }
 
-/* ACTIVE + HOVER */
-.menu-list li a:hover,
-.menu-list li a.active {
-  background: #00bfff;
-  color: black;
+.menu-list a {
+    position: relative;
+
+    display: inline-block;
+
+    padding: 8px 0;
+
+    color:
+        rgba(255, 255, 255, 0.85);
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition:
+        color 0.3s ease;
 }
 
-/* SHOW MENU */
-.menu.active .menu-list {
-  display: block;
+.menu-list a:hover {
+    color: #00c8ff;
 }
 
-/* =========================
-   HERO SECTION
-========================= */
-.hero {
-  min-height: 100vh;
-
-  background: url("../images/f22.jpg")
-              no-repeat
-              center
-              center/cover;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  text-align: center;
-
-  padding: 120px 20px 40px;
+.menu-list a.active {
+    color: #00c8ff;
 }
 
-/* OVERLAY */
-.overlay {
-  background: rgba(0,0,0,0.7);
+.menu-list a.active::after {
+    content: "";
 
-  padding: 50px;
+    position: absolute;
 
-  border-radius: 20px;
+    left: 0;
+    bottom: 0;
 
-  max-width: 900px;
+    width: 100%;
+    height: 2px;
+
+    background: #00c8ff;
 }
 
-/* HERO TEXT */
-.hero h1 {
-  font-size: 4rem;
-  margin-bottom: 20px;
-}
 
-.hero h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-
-  color: #00bfff;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  line-height: 1.8;
-}
-
-/* =========================
-   COMMON SECTION
-========================= */
-section {
-  padding: 120px 20px;
-
-  background: #111;
-
-  text-align: center;
-}
-
-section h2 {
-  font-size: 2.5rem;
-
-  margin-bottom: 40px;
-
-  color: #00bfff;
-}
-
-/* =========================
-   TEAM SECTION
-========================= */
-.team-container {
-  display: flex;
-  flex-wrap: wrap;
-
-  justify-content: center;
-
-  gap: 30px;
-}
-
-.team-member {
-  width: 240px;
-
-  background: #222;
-
-  padding: 20px;
-
-  border-radius: 15px;
-
-  transition: 0.3s;
-}
-
-.team-member:hover {
-  transform: translateY(-10px);
-
-  background: #333;
-}
-
-.team-member img {
-  width: 150px;
-  height: 150px;
-
-  object-fit: cover;
-
-  border-radius: 50%;
-
-  margin-bottom: 15px;
-}
-
-.team-member h3 {
-  margin-bottom: 10px;
-
-  color: #00bfff;
-}
-
-.team-member p {
-  color: #ccc;
-
-  font-size: 15px;
-}
-
-/* =========================
-   VISION
-========================= */
-.vision p {
-  max-width: 900px;
-
-  margin: 20px auto;
-
-  line-height: 1.9;
-
-  font-size: 1.2rem;
-}
-
-/* =========================
-   ACHIEVEMENTS
-========================= */
-.achievements-container {
-  display: flex;
-  flex-wrap: wrap;
-
-  justify-content: center;
-
-  gap: 30px;
-}
-
-.achievement-card {
-  width: 260px;
-
-  background: #222;
-
-  padding: 25px;
-
-  border-radius: 15px;
-
-  transition: 0.3s;
-}
-
-.achievement-card:hover {
-  transform: translateY(-10px);
-
-  background: #333;
-}
-
-.achievement-card h3 {
-  color: #00bfff;
-
-  margin-bottom: 10px;
-}
-
-/* =========================
-   GALLERY
-========================= */
-.teamwork-gallery {
-  display: flex;
-  flex-wrap: wrap;
-
-  justify-content: center;
-
-  gap: 25px;
-}
-
-.teamwork-gallery img,
-.teamwork-gallery video {
-  width: 300px;
-
-  border-radius: 15px;
-
-  transition: 0.3s;
-
-  box-shadow: 0 0 15px rgba(0,0,0,0.5);
-}
-
-.teamwork-gallery img:hover,
-.teamwork-gallery video:hover {
-  transform: scale(1.05);
-}
-
-/* =========================
-   CONTACT
-========================= */
-.contact-info {
-  max-width: 700px;
-
-  margin: auto;
-
-  line-height: 2;
-
-  font-size: 1.2rem;
-}
-
-/* =========================
-   NEWS
-========================= */
-.news-container {
-  display: flex;
-  flex-direction: column;
-
-  align-items: center;
-
-  gap: 25px;
-}
-
-.news-card {
-  width: 70%;
-
-  background: #222;
-
-  padding: 25px;
-
-  border-radius: 15px;
-
-  text-align: left;
-}
-
-.news-card h3 {
-  color: #00bfff;
-
-  margin-bottom: 10px;
-}
-
-.news-card p {
-  line-height: 1.8;
-}
-
-/* =========================
-   SIGN IN / SIGN UP
-========================= */
-.signin {
-  min-height: 100vh;
-
-  background: url("../images/f22.jpg")
-              no-repeat
-              center
-              center/cover;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  padding: 120px 20px;
-}
-
-.signin-form {
-  background: rgba(0,0,0,0.8);
-
-  padding: 40px;
-
-  border-radius: 20px;
-
-  width: 100%;
-  max-width: 400px;
-}
-
-.signin-form h2 {
-  text-align: center;
-
-  margin-bottom: 30px;
-
-  color: #00bfff;
-}
-
-.signin-form label {
-  display: block;
-
-  margin-bottom: 8px;
-}
-
-.signin-form input {
-  width: 100%;
-
-  padding: 12px;
-
-  margin-bottom: 20px;
-
-  border: none;
-
-  border-radius: 10px;
-
-  outline: none;
-}
-
-.signin-form button {
-  width: 100%;
-
-  padding: 12px;
-
-  border: none;
-
-  border-radius: 10px;
-
-  background: #00bfff;
-
-  color: black;
-
-  font-size: 1rem;
-
-  cursor: pointer;
-
-  transition: 0.3s;
-}
-
-.signin-form button:hover {
-  background: white;
-}
-
-/* =========================
-   FOOTER
-========================= */
-footer {
-  text-align: center;
-
-  padding: 20px;
-
-  background: black;
-
-  border-top: 1px solid #333;
-}
+/* =========================================================
+   AIRCRAFT SCROLL SCENE
+========================================================= */
 
 .scroll-scene {
-  height: 400vh;
-  position: relative;
-  background: black;
+    position: relative;
+
+    width: 100%;
+
+    /*
+       Controls animation speed.
+
+       800vh  = faster
+       1200vh = slow
+       1500vh = very slow
+       1800vh = extremely slow
+    */
+
+    height: 1500vh;
+
+    margin: 0;
+    padding: 0;
+
+    background: #000;
 }
 
-.scroll-video {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  height: 100vh;
-  object-fit: cover;
-  display: block;
+
+/* =========================================================
+   STICKY VIEWPORT
+========================================================= */
+
+.sequence-viewport {
+    position: sticky;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    background: #000;
+
+    z-index: 1;
 }
+
+
+/* =========================================================
+   CANVAS
+========================================================= */
+
+#sequenceCanvas {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100vw !important;
+    height: 100vh !important;
+
+    min-width: 100vw;
+    min-height: 100vh;
+
+    display: block;
+
+    margin: 0;
+    padding: 0;
+
+    background: #000;
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   SCENE CONTENT
+========================================================= */
 
 .scene-content {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 10;
-  text-align: center;
-  color: white;
-  background: rgba(0,0,0,0.45);
-  padding: 40px;
-  border-radius: 20px;
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: min(900px, 85vw);
+
+    transform:
+        translate(-50%, -50%);
+
+    text-align: center;
+
+    z-index: 10;
+
+    color: #fff;
+
+    pointer-events: none;
 }
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.eyebrow {
+    display: block;
+
+    margin-bottom: 22px;
+
+    color: #00c8ff;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   MAIN TITLE
+========================================================= */
 
 .scene-content h1 {
-  font-size: 4rem;
-  margin-bottom: 20px;
+    margin: 0;
+
+    color: #fff;
+
+    font-size:
+        clamp(
+            55px,
+            8vw,
+            130px
+        );
+
+    line-height: 0.9;
+
+    font-weight: 900;
+
+    letter-spacing: -4px;
 }
+
+
+/* =========================================================
+   SUBTITLE
+========================================================= */
 
 .scene-content h2 {
-  font-size: 2.5rem;
-  color: #00bfff;
-  margin-bottom: 20px;
+    margin-top: 30px;
+
+    color: #00c8ff;
+
+    font-size:
+        clamp(
+            20px,
+            3vw,
+            38px
+        );
+
+    line-height: 1.2;
+
+    font-weight: 400;
 }
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
 
 .scene-content p {
-  font-size: 1.2rem;
+    width:
+        min(
+            700px,
+            90vw
+        );
+
+    margin:
+        25px auto 0;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.8
+        );
+
+    font-size: 18px;
+
+    line-height: 1.7;
 }
 
-.after-scene {
-  padding: 120px 20px;
-  background: #111;
-  color: white;
-  text-align: center;
+
+/* =========================================================
+   SCROLL HINT
+========================================================= */
+
+.scene-hint {
+    position: absolute;
+
+    left: 50%;
+    bottom: 35px;
+
+    transform:
+        translateX(-50%);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 8px;
+
+    z-index: 20;
+
+    color: #fff;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 5px;
+
+    opacity: 0.8;
 }
+
+.scroll-arrow {
+    font-size: 25px;
+
+    line-height: 1;
+
+    animation:
+        scrollArrow
+        1.5s
+        infinite
+        ease-in-out;
+}
+
+@keyframes scrollArrow {
+
+    0% {
+        transform:
+            translateY(0);
+
+        opacity: 0.4;
+    }
+
+    50% {
+        transform:
+            translateY(8px);
+
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(0);
+
+        opacity: 0.4;
+    }
+}
+
+
+/* =========================================================
+   PROGRESS BAR
+========================================================= */
+
+.scene-progress {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    z-index: 2000;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.15
+        );
+}
+
+.scene-progress-bar {
+    width: 0;
+
+    height: 100%;
+
+    background: #00c8ff;
+
+    transition:
+        width 0.05s linear;
+}
+
+
+/* =========================================================
+   GENERAL SECTIONS
+========================================================= */
 
 .scroll-section {
-  min-height: 100vh;
-  padding: 120px 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  background: #000;
+    position: relative;
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding:
+        120px
+        30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background: #050505;
+
+    border-top:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.05
+        );
 }
 
-.hero-section {
-  background: url("../images/f22.jpg") no-repeat center center/cover;
+
+/* =========================================================
+   SECTION CONTAINER
+========================================================= */
+
+.section-container {
+    width:
+        min(
+            1000px,
+            90vw
+        );
+
+    margin: auto;
 }
 
-.hero-section .content {
-  background: rgba(0,0,0,0.7);
-  padding: 50px;
-  border-radius: 20px;
-  max-width: 900px;
+
+/* =========================================================
+   SECTION LABEL
+========================================================= */
+
+.section-label {
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    color: #00c8ff;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
 }
 
-.scroll-section h1 {
-  font-size: 4rem;
-  margin-bottom: 20px;
-}
+
+/* =========================================================
+   SECTION HEADINGS
+========================================================= */
 
 .scroll-section h2 {
-  font-size: 2.8rem;
-  color: #00bfff;
-  margin-bottom: 20px;
+    margin-bottom: 25px;
+
+    color: #fff;
+
+    font-size:
+        clamp(
+            40px,
+            6vw,
+            80px
+        );
+
+    line-height: 1;
+
+    font-weight: 800;
 }
+
+
+/* =========================================================
+   SECTION PARAGRAPHS
+========================================================= */
 
 .scroll-section p {
-  max-width: 800px;
-  font-size: 1.3rem;
-  line-height: 1.8;
+    max-width: 750px;
+
+    margin:
+        0 auto 30px;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.7
+        );
+
+    font-size: 18px;
+
+    line-height: 1.8;
 }
 
-.about-section {
-  background: #050505;
-}
 
-.aircraft-section {
-  background: #050505;
-}
+/* =========================================================
+   AIRCRAFT IMAGE SECTION
+========================================================= */
 
-.team-preview {
-  background: #050505;
-}
+.aircraft-image-container {
+    width:
+        min(
+            900px,
+            90vw
+        );
 
-.gallery-preview {
-  background: #050505;
-}
-
-.achievements-preview {
-  background: #050505;
-}
-
-.contact-preview {
-  background: #050505;
-}
-
-.Aircraft Designer-preview{
- background: #050505;
+    margin:
+        40px auto;
 }
 
 .aircraft-img {
-  width: 60%;
-  max-width: 700px;
-  border-radius: 20px;
-  margin: 30px 0;
-  box-shadow: 0 0 30px rgba(0,191,255,0.3);
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    max-height: 600px;
+
+    object-fit: contain;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 80px
+        rgba(
+            0,
+            0,
+            0,
+            0.5
+        );
 }
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
 
 .section-btn {
-  margin-top: 30px;
-  padding: 14px 30px;
-  background: #00bfff;
-  color: #000;
-  text-decoration: none;
-  border-radius: 10px;
-  font-weight: bold;
+    display: inline-block;
+
+    padding:
+        14px
+        30px;
+
+    color: #fff;
+
+    background:
+        rgba(
+            0,
+            200,
+            255,
+            0.1
+        );
+
+    border:
+        1px solid
+        #00c8ff;
+
+    border-radius: 50px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
 }
 
+.section-btn:hover {
+    background: #00c8ff;
+
+    color: #000;
+
+    transform:
+        translateY(-3px);
+}
+
+
+/* =========================================================
+   FADE-UP ANIMATION
+========================================================= */
+
 .fade-up {
-  opacity: 0;
-  transform: translateY(100px) scale(0.95);
-  transition: 1s ease;
+    opacity: 0;
+
+    transform:
+        translateY(70px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
 }
 
 .fade-up.show {
-  opacity: 1;
-  transform: translateY(0) scale(1);
+    opacity: 1;
+
+    transform:
+        translateY(0);
 }
 
-#bg3d {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  z-index: -1;
-  pointer-events: none;
-  display: block;
+
+/* =========================================================
+   HOME SECTIONS
+========================================================= */
+
+.about-section {
+    background:
+        linear-gradient(
+            180deg,
+            #050505,
+            #080808
+        );
 }
 
-body {
-  margin: 0;
-  background: #000;
+.aircraft-section {
+    background: #020202;
 }
 
-.navbar {
-  position: fixed;
-  z-index: 99999;
+.gallery-preview {
+    background: #050505;
 }
 
-.menu {
-  position: relative;
-  z-index: 100000;
+.achievements-preview {
+    background: #080808;
 }
 
-.menu-list {
-  z-index: 100001;
+.contact-preview {
+    background: #050505;
 }
 
-.hero,
-section,
+.designer-preview {
+    background: #020202;
+}
+
+
+/* =========================================================
+   TEAM PAGE
+========================================================= */
+
+.team {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding:
+        150px
+        50px
+        100px;
+
+    background:
+        radial-gradient(
+            circle at 50% 15%,
+            rgba(
+                0,
+                200,
+                255,
+                0.12
+            ),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 10% 80%,
+            rgba(
+                0,
+                150,
+                255,
+                0.05
+            ),
+            transparent 30%
+        ),
+        #000;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   TEAM BACKGROUND GRID
+========================================================= */
+
+.team::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(
+                255,
+                255,
+                255,
+                0.025
+            ) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(
+                255,
+                255,
+                255,
+                0.025
+            ) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        70px
+        70px;
+
+    pointer-events: none;
+
+    opacity: 0.35;
+}
+
+
+/* =========================================================
+   TEAM TITLE
+========================================================= */
+
+.team > h2 {
+    position: relative;
+
+    margin:
+        0 auto
+        70px;
+
+    text-align: center;
+
+    color: #fff;
+
+    font-size:
+        clamp(
+            55px,
+            8vw,
+            110px
+        );
+
+    line-height: 1;
+
+    font-weight: 900;
+
+    letter-spacing: -4px;
+
+    z-index: 2;
+}
+
+.team > h2::before {
+    content:
+        "AVENGINEERS · PEOPLE";
+
+    display: block;
+
+    margin-bottom: 22px;
+
+    color: #00c8ff;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 5px;
+}
+
+.team > h2::after {
+    content: "";
+
+    display: block;
+
+    width: 80px;
+
+    height: 3px;
+
+    margin:
+        25px
+        auto
+        0;
+
+    background: #00c8ff;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 0 20px
+        rgba(
+            0,
+            200,
+            255,
+            0.7
+        );
+}
+
+
+/* =========================================================
+   TEAM CONTAINER
+========================================================= */
+
+.team-container {
+    position: relative;
+
+    width:
+        min(
+            1250px,
+            95vw
+        );
+
+    margin:
+        0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            1fr
+        );
+
+    gap: 25px;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   TEAM MEMBER CARD
+========================================================= */
+
+.team-member {
+    position: relative;
+
+    min-height: 330px;
+
+    padding:
+        30px
+        20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.035
+        );
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.10
+        );
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    backdrop-filter:
+        blur(12px);
+
+    -webkit-backdrop-filter:
+        blur(12px);
+
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        background 0.4s ease,
+        box-shadow 0.4s ease;
+
+    animation:
+        teamCardAppear
+        0.7s
+        ease
+        both;
+}
+
+
+/* =========================================================
+   TEAM CARD GLOW
+========================================================= */
+
+.team-member::before {
+    content: "";
+
+    position: absolute;
+
+    top: -100px;
+
+    left: 50%;
+
+    width: 220px;
+    height: 220px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        rgba(
+            0,
+            200,
+            255,
+            0.08
+        );
+
+    filter: blur(55px);
+
+    transition:
+        all 0.4s ease;
+}
+
+
+/* =========================================================
+   TEAM CARD HOVER
+========================================================= */
+
+.team-member:hover {
+    transform:
+        translateY(-12px);
+
+    background:
+        rgba(
+            0,
+            200,
+            255,
+            0.055
+        );
+
+    border-color:
+        rgba(
+            0,
+            200,
+            255,
+            0.65
+        );
+
+    box-shadow:
+        0 25px 70px
+        rgba(
+            0,
+            0,
+            0,
+            0.55
+        ),
+        0 0 35px
+        rgba(
+            0,
+            200,
+            255,
+            0.08
+        );
+}
+
+
+/* =========================================================
+   MEMBER IMAGE
+========================================================= */
+
+.team-member img {
+    position: relative;
+
+    width: 145px;
+    height: 145px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border:
+        3px solid
+        rgba(
+            0,
+            200,
+            255,
+            0.45
+        );
+
+    margin-bottom: 22px;
+
+    z-index: 2;
+
+    background: #111;
+
+    transition:
+        transform 0.45s ease,
+        border-color 0.45s ease,
+        box-shadow 0.45s ease;
+}
+
+.team-member:hover img {
+    transform:
+        scale(1.08);
+
+    border-color:
+        #00c8ff;
+
+    box-shadow:
+        0 0 30px
+        rgba(
+            0,
+            200,
+            255,
+            0.25
+        );
+}
+
+
+/* =========================================================
+   MEMBER NAME
+========================================================= */
+
+.team-member h3 {
+    position: relative;
+
+    margin:
+        0 0 10px;
+
+    color: #fff;
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   MEMBER ROLE
+========================================================= */
+
+.team-member p {
+    position: relative;
+
+    max-width: 230px;
+
+    margin: 0;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.62
+        );
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   TEAM CARD ANIMATION
+========================================================= */
+
+@keyframes teamCardAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================================================
+   TEAM STAGGER
+========================================================= */
+
+.team-member:nth-child(1) {
+    animation-delay: 0.05s;
+}
+
+.team-member:nth-child(2) {
+    animation-delay: 0.10s;
+}
+
+.team-member:nth-child(3) {
+    animation-delay: 0.15s;
+}
+
+.team-member:nth-child(4) {
+    animation-delay: 0.20s;
+}
+
+.team-member:nth-child(5) {
+    animation-delay: 0.25s;
+}
+
+.team-member:nth-child(6) {
+    animation-delay: 0.30s;
+}
+
+.team-member:nth-child(7) {
+    animation-delay: 0.35s;
+}
+
+.team-member:nth-child(8) {
+    animation-delay: 0.40s;
+}
+
+.team-member:nth-child(9) {
+    animation-delay: 0.45s;
+}
+
+.team-member:nth-child(10) {
+    animation-delay: 0.50s;
+}
+
+.team-member:nth-child(11) {
+    animation-delay: 0.55s;
+}
+
+.team-member:nth-child(12) {
+    animation-delay: 0.60s;
+}
+
+.team-member:nth-child(13) {
+    animation-delay: 0.65s;
+}
+
+.team-member:nth-child(14) {
+    animation-delay: 0.70s;
+}
+
+.team-member:nth-child(15) {
+    animation-delay: 0.75s;
+}
+
+.team-member:nth-child(16) {
+    animation-delay: 0.80s;
+}
+
+.team-member:nth-child(17) {
+    animation-delay: 0.85s;
+}
+
+.team-member:nth-child(18) {
+    animation-delay: 0.90s;
+}
+
+.team-member:nth-child(19) {
+    animation-delay: 0.95s;
+}
+
+.team-member:nth-child(20) {
+    animation-delay: 1s;
+}
+
+.team-member:nth-child(21) {
+    animation-delay: 1.05s;
+}
+
+.team-member:nth-child(22) {
+    animation-delay: 1.10s;
+}
+
+.team-member:nth-child(23) {
+    animation-delay: 1.15s;
+}
+
+
+/* =========================================================
+   VISION PAGE
+========================================================= */
+
+.vision {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding:
+        140px
+        25px
+        100px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(
+                0,
+                200,
+                255,
+                0.10
+            ),
+            transparent 45%
+        ),
+        #000;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   VISION GLOW
+========================================================= */
+
+.vision::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    border-radius: 50%;
+
+    background:
+        rgba(
+            0,
+            200,
+            255,
+            0.06
+        );
+
+    filter: blur(80px);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   VISION TITLE
+========================================================= */
+
+.vision h2 {
+    position: relative;
+
+    margin:
+        0 0 40px;
+
+    color: #fff;
+
+    font-size:
+        clamp(
+            55px,
+            8vw,
+            105px
+        );
+
+    font-weight: 900;
+
+    line-height: 1;
+
+    letter-spacing: -4px;
+
+    text-align: center;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   VISION SMALL TITLE
+========================================================= */
+
+.vision h2::before {
+    content:
+        "AVENGINEERS · OUR FUTURE";
+
+    display: block;
+
+    margin-bottom: 22px;
+
+    color: #00c8ff;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 5px;
+}
+
+
+/* =========================================================
+   VISION LINE
+========================================================= */
+
+.vision h2::after {
+    content: "";
+
+    display: block;
+
+    width: 80px;
+
+    height: 3px;
+
+    margin:
+        25px
+        auto
+        0;
+
+    background: #00c8ff;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 0 20px
+        rgba(
+            0,
+            200,
+            255,
+            0.7
+        );
+}
+
+
+/* =========================================================
+   VISION TEXT
+========================================================= */
+
+.vision p {
+    position: relative;
+
+    width:
+        min(
+            850px,
+            90vw
+        );
+
+    margin:
+        0 auto 25px;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.70
+        );
+
+    font-size: 17px;
+
+    line-height: 1.9;
+
+    text-align: center;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   CONTACT PAGE
+========================================================= */
+
+.contact {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding:
+        150px
+        25px
+        100px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at 50% 15%,
+            rgba(
+                0,
+                200,
+                255,
+                0.12
+            ),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(
+                0,
+                150,
+                255,
+                0.05
+            ),
+            transparent 30%
+        ),
+        #000;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   CONTACT GRID BACKGROUND
+========================================================= */
+
+.contact::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(
+                255,
+                255,
+                255,
+                0.025
+            ) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(
+                255,
+                255,
+                255,
+                0.025
+            ) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        70px
+        70px;
+
+    opacity: 0.35;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CONTACT TITLE
+========================================================= */
+
+.contact h2 {
+    position: relative;
+
+    margin:
+        0 0 40px;
+
+    color: #fff;
+
+    font-size:
+        clamp(
+            55px,
+            8vw,
+            105px
+        );
+
+    line-height: 1;
+
+    font-weight: 900;
+
+    letter-spacing: -4px;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   CONTACT SMALL TITLE
+========================================================= */
+
+.contact h2::before {
+    content:
+        "AVENGINEERS · GET IN TOUCH";
+
+    display: block;
+
+    margin-bottom: 22px;
+
+    color: #00c8ff;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 5px;
+}
+
+
+/* =========================================================
+   CONTACT TITLE LINE
+========================================================= */
+
+.contact h2::after {
+    content: "";
+
+    display: block;
+
+    width: 900px;
+
+    height: 3px;
+
+    margin:
+        25px
+        auto
+        0;
+
+    background: #00c8ff;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 0 20px
+        rgba(
+            0,
+            200,
+            255,
+            0.7
+        );
+}
+
+
+/* =========================================================
+   CONTACT DESCRIPTION
+========================================================= */
+
+.contact > p {
+    position: relative;
+
+    width:
+        min(
+            750px,
+            90vw
+        );
+
+    margin:
+        0 auto 25px;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.70
+        );
+
+    font-size: 17px;
+
+    line-height: 1.9;
+
+    text-align: center;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   CONTACT INFO
+========================================================= */
+
+.contact-info {
+    position: relative;
+
+    width:
+        min(
+            900px,
+            92vw
+        );
+
+    margin:
+        35px auto 0;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            1fr
+        );
+
+    gap: 20px;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   CONTACT CARD
+========================================================= */
+
+.contact-card {
+    padding:
+        35px
+        25px;
+
+    min-height: 170px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.035
+        );
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.10
+        );
+
+    border-radius: 22px;
+
+    backdrop-filter:
+        blur(12px);
+
+    -webkit-backdrop-filter:
+        blur(12px);
+
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        background 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+
+/* =========================================================
+   CONTACT CARD HOVER
+========================================================= */
+
+.contact-card:hover {
+    transform:
+        translateY(-10px);
+
+    background:
+        rgba(
+            0,
+            200,
+            255,
+            0.055
+        );
+
+    border-color:
+        rgba(
+            0,
+            200,
+            255,
+            0.65
+        );
+
+    box-shadow:
+        0 25px 70px
+        rgba(
+            0,
+            0,
+            0,
+            0.55
+        ),
+        0 0 35px
+        rgba(
+            0,
+            200,
+            255,
+            0.08
+        );
+}
+
+
+/* =========================================================
+   CONTACT CARD TITLE
+========================================================= */
+
+.contact-card h3 {
+    margin-bottom: 12px;
+
+    color: #00c8ff;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   CONTACT CARD TEXT
+========================================================= */
+
+.contact-card p {
+    width: auto;
+
+    margin: 0;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.65
+        );
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   CONTACT LINKS
+========================================================= */
+
+.contact-card a {
+    color: #fff;
+
+    text-decoration: none;
+
+    transition:
+        color 0.3s ease;
+}
+
+.contact-card a:hover {
+    color: #00c8ff;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
 footer {
-  position: relative;
-  z-index: 2;
-}
-/* =========================
-   AIRCRAFT DESIGNER PAGE
-========================= */
+    width: 100%;
 
-body {
-  font-family: Arial, sans-serif;
-  background: #000;
-  color: #fff;
-  margin: 0;
-  padding: 0;
-}
+    padding:
+        40px
+        20px;
 
-/* Page Header */
-header {
-  background: #111;
-  padding: 20px;
-  text-align: center;
-  border-bottom: 2px solid #00bfff;
+    text-align: center;
+
+    background: #000;
+
+    border-top:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
 }
 
-header h1 {
-  margin: 0;
-  font-size: 2.5rem;
-  color: #00bfff;
+footer p {
+    margin: 0;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.5
+        );
+
+    font-size: 13px;
 }
 
-/* Step Sections */
-.step {
-  background: #111;
-  padding: 40px;
-  margin: 40px auto;
-  border-radius: 20px;
-  max-width: 900px;
-  box-shadow: 0 0 25px rgba(0,191,255,0.2);
+
+/* =========================================================
+   TABLET — TEAM
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .team {
+        padding:
+            130px
+            30px
+            80px;
+    }
+
+    .team-container {
+        grid-template-columns:
+            repeat(
+                3,
+                1fr
+            );
+    }
+
 }
 
-.step h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #00bfff;
+
+/* =========================================================
+   MOBILE NAVIGATION
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .navbar {
+        height: 70px;
+
+        padding:
+            0 25px;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .menu-list {
+        position: fixed;
+
+        top: 70px;
+
+        right: -100%;
+
+        width: 280px;
+
+        height:
+            calc(
+                100vh - 70px
+            );
+
+        padding: 30px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+
+        background:
+            rgba(
+                0,
+                0,
+                0,
+                0.96
+            );
+
+        backdrop-filter:
+            blur(15px);
+
+        -webkit-backdrop-filter:
+            blur(15px);
+
+        transition:
+            right 0.35s ease;
+    }
+
+    .menu.active .menu-list {
+        right: 0;
+    }
+
+    .menu-list a {
+        font-size: 16px;
+    }
+
 }
 
-.step label {
-  display: block;
-  margin: 10px 0;
-  font-size: 1.1rem;
-  cursor: pointer;
+
+/* =========================================================
+   TABLET — TEAM 2 COLUMNS
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .team-container {
+        grid-template-columns:
+            repeat(
+                2,
+                1fr
+            );
+
+        gap: 20px;
+    }
+
+    .team-member {
+        min-height: 300px;
+    }
+
+    .team-member img {
+        width: 125px;
+        height: 125px;
+    }
+
+    .contact-info {
+        grid-template-columns:
+            1fr;
+    }
+
 }
 
-.step input[type="text"] {
-  width: 100%;
-  padding: 12px;
-  margin: 8px 0 20px;
-  border: none;
-  border-radius: 10px;
-  background: #222;
-  color: #fff;
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding:
+            0 18px;
+    }
+
+    .logo {
+        font-size: 16px;
+
+        letter-spacing: 1px;
+    }
+
+    .logo-img {
+        width: 34px;
+        height: 34px;
+    }
+
+
+    /* Aircraft */
+
+    .scroll-scene {
+        height: 1500vh;
+    }
+
+    .scene-content {
+        width: 92vw;
+    }
+
+    .scene-content h1 {
+        font-size: 42px;
+
+        letter-spacing: -2px;
+    }
+
+    .scene-content h2 {
+        margin-top: 20px;
+
+        font-size: 18px;
+    }
+
+    .scene-content p {
+        margin-top: 18px;
+
+        font-size: 14px;
+
+        line-height: 1.6;
+    }
+
+    .scene-hint {
+        bottom: 25px;
+    }
+
+
+    /* General sections */
+
+    .scroll-section {
+        padding:
+            100px
+            20px;
+    }
+
+
+    /* Team */
+
+    .team {
+        padding:
+            120px
+            18px
+            70px;
+    }
+
+    .team > h2 {
+        font-size: 48px;
+
+        letter-spacing: -2px;
+
+        margin-bottom: 50px;
+    }
+
+    .team > h2::before {
+        font-size: 10px;
+
+        letter-spacing: 3px;
+
+        margin-bottom: 18px;
+    }
+
+    .team-container {
+        width: 100%;
+
+        grid-template-columns:
+            1fr;
+
+        gap: 18px;
+    }
+
+    .team-member {
+        min-height: 280px;
+
+        padding:
+            30px
+            20px;
+    }
+
+    .team-member img {
+        width: 120px;
+        height: 120px;
+    }
+
+
+    /* Vision */
+
+    .vision {
+        padding:
+            110px
+            18px
+            70px;
+    }
+
+    .vision h2 {
+        font-size: 42px;
+
+        letter-spacing: -2px;
+    }
+
+    .vision h2::before {
+        font-size: 9px;
+
+        letter-spacing: 3px;
+
+        margin-bottom: 18px;
+    }
+
+    .vision p {
+        width: 95vw;
+
+        font-size: 14px;
+
+        line-height: 1.75;
+    }
+
+
+    /* Contact */
+
+    .contact {
+        padding:
+            110px
+            18px
+            70px;
+    }
+
+    .contact h2 {
+        font-size: 42px;
+
+        letter-spacing: -2px;
+    }
+
+    .contact h2::before {
+        font-size: 9px;
+
+        letter-spacing: 3px;
+
+        margin-bottom: 18px;
+    }
+
+    .contact > p {
+        width: 95vw;
+
+        font-size: 14px;
+
+        line-height: 1.75;
+    }
+
+    .contact-card {
+        padding:
+            30px
+            20px;
+    }
+
 }
 
-/* Design Button */
-#designBtn {
-  display: block;
-  margin: 20px auto;
-  padding: 14px 30px;
-  background: #00bfff;
-  color: #000;
-  border: none;
-  border-radius: 10px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-}
 
-#designBtn:hover {
-  background: #fff;
-  color: #000;
-}
+/* =========================================================
+   VERY SMALL PHONE
+========================================================= */
 
-/* Results Section */
-#results {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  margin-top: 60px;
-  padding: 0 20px;
-}
+@media (max-width: 400px) {
 
-.card {
-  background: #111;
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 0 20px rgba(0,191,255,0.25);
-  text-align: left;
-}
+    .scene-content h1 {
+        font-size: 35px;
+    }
 
-.card h3 {
-  color: #00bfff;
-  margin-bottom: 15px;
-}
+    .scene-content h2 {
+        font-size: 16px;
+    }
 
-/* 3D Viewer */
-#viewer {
-  margin-top: 60px;
-  text-align: center;
-}
+    .scene-content p {
+        font-size: 13px;
+    }
 
-#threeContainer {
-  width: 100%;
-  height: 400px;
-  background: #000;
-  border: 2px solid #00bfff;
-}
-/* Export Buttons */
-#export {
-  margin-top: 60px;
-  text-align: center;
-}
+    .team > h2 {
+        font-size: 40px;
+    }
 
-#export button {
-  margin: 10px;
-  padding: 12px 25px;
-  background: #00bfff;
-  color: #000;
-  border: none;
-  border-radius: 10px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-}
+    .vision h2 {
+        font-size: 38px;
+    }
 
-#export button:hover {
-  background: #fff;
+    .contact h2 {
+        font-size: 38px;
+    }
+
 }
